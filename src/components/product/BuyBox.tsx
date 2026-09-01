@@ -23,8 +23,8 @@ export function BuyBox() {
       </div>
 
       <div className="flex items-baseline gap-2">
-        <span className="text-2xl font-bold">${product.price.toFixed(2)}</span>
-        <span className="text-sm text-muted-foreground">USD</span>
+        <span className="text-2xl font-bold">€{product.price.toFixed(2)}</span>
+        <span className="text-sm text-muted-foreground">EUR</span>
       </div>
 
       <div className="flex items-center gap-4">
@@ -66,14 +66,14 @@ export function BuyBox() {
           <Truck className="size-4" />
           {remaining > 0 ? (
             <span>
-              You're <strong>${remaining.toFixed(2)}</strong> away from free shipping!
+              You're <strong>€{remaining.toFixed(2)}</strong> away from free shipping!
             </span>
           ) : (
             <span>You've unlocked free shipping!</span>
           )}
         </div>
         <p className="mt-2 text-muted-foreground">
-          For orders over $35.00, select installments at checkout to split your purchase over time.
+          For orders over €35.00, select installments at checkout to split your purchase over time.
         </p>
       </div>
 

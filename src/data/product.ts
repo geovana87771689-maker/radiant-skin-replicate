@@ -12,7 +12,7 @@ export const product = {
   title: "Hypochlorous Acid Rice Body Peel Shot",
   subtitle:
     "Gentle Body Exfoliating Serum for Dead Skin Cells & Rough Patches & Uneven Texture",
-  price: 28,
+  price: 38,
   reviewCount: 10,
   rating: 5.0,
   skinType: "Combination, Oily, Sensitive",
