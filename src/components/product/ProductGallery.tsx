@@ -1,6 +1,15 @@
 import { useState } from "react";
 import { productImages, product } from "@/data/product";
 
+const FALLBACK_IMAGE = productImages[0];
+
+function handleImageError(e: React.SyntheticEvent<HTMLImageElement>) {
+  const img = e.currentTarget;
+  if (img.src !== FALLBACK_IMAGE) {
+    img.src = FALLBACK_IMAGE;
+  }
+}
+
 export function ProductGallery() {
   const [active, setActive] = useState(0);
 
@@ -12,6 +21,8 @@ export function ProductGallery() {
           alt={`${product.title} — image ${active + 1}`}
           width={1200}
           height={1200}
+          referrerPolicy="no-referrer"
+          onError={handleImageError}
           className="aspect-square w-full object-cover"
         />
       </div>
