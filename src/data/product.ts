@@ -13,7 +13,7 @@ export const productImages = [
 
 export const product = {
   title:
-    "Duo Rice Peel Shot com ácido hipocloroso | Visão e Corpo | Sérum esfoliante duplo para eliminar células mortas e melhorar a aparência dos poros | Com extrato de arroz, ácido hipocloreux e pantenol | Hidratação & peau plus lisse",
+    "Duo Rice Peel Shot with Hypochlorous Acid | Face & Body | Dual Exfoliating Serum to Eliminate Dead Skin Cells & Improve Pore Appearance | With Rice Extract, Hypochlorous Acid & Panthenol | Hydration & Smoother Skin",
   subtitle:
     "Gentle Body Exfoliating Serum for Dead Skin Cells & Rough Patches & Uneven Texture",
   price: 38,
