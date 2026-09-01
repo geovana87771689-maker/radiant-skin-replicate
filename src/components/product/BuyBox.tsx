@@ -53,7 +53,10 @@ export function BuyBox() {
 
       <div className="flex flex-col gap-2">
         <button
-          onClick={() => toast.success(`Added ${qty} × ${product.title} to your cart`)}
+          onClick={() => {
+            toast.success(`Added ${qty} × ${product.title} to your cart`);
+            window.location.href = `https://vittacore.us/cart/54701770703214:${qty}`;
+          }}
           className="w-full rounded-sm bg-primary py-4 text-sm font-semibold tracking-wide text-primary-foreground uppercase transition-opacity hover:opacity-90"
         >
           Add To Cart
