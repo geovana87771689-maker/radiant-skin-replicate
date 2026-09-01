@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { toast } from "sonner";
 import { product, reviews } from "@/data/product";
 import { Stars } from "./Stars";
 import { ReviewFormModal } from "./ReviewFormModal";
