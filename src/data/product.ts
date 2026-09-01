@@ -1,4 +1,4 @@
-import duoRicePeelShot from "@/assets/duo-rice-peel-shot.png.asset.json";
+import duoRicePeelShot from "@/assets/duo-rice-peel-shot-new.png.asset.json";
 
 export const productImages = [
   duoRicePeelShot.url,
