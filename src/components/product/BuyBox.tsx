@@ -66,7 +66,7 @@ export function BuyBox() {
           <Truck className="size-4" />
           {remaining > 0 ? (
             <span>
-              You're <strong>${remaining.toFixed(2)}</strong> away from free shipping!
+              You're <strong>€{remaining.toFixed(2)}</strong> away from free shipping!
             </span>
           ) : (
             <span>You've unlocked free shipping!</span>
