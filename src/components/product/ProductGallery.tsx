@@ -17,10 +17,11 @@ export function ProductGallery() {
     <div className="flex flex-col gap-3">
       <div className="overflow-hidden rounded-sm bg-muted">
         <img
-          src={productImages[active]}
-          alt={`${product.title} — image ${active + 1}`}
+          src={productImages[active] || FALLBACK_IMAGE}
+          alt={product.title || "Product Image"}
           width={1200}
           height={1200}
+          loading="eager"
           referrerPolicy="no-referrer"
           onError={handleImageError}
           className="aspect-square w-full object-cover"
