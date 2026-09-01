@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { productImages, product } from "@/data/product";
 
-const FALLBACK_IMAGE = productImages[0];
+const FALLBACK_IMAGE = productImages[0] ?? "";
 
 function handleImageError(e: React.SyntheticEvent<HTMLImageElement>) {
   const img = e.currentTarget;
