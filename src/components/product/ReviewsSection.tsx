@@ -1,6 +1,7 @@
-import { toast } from "sonner";
+import { useState } from "react";
 import { product, reviews } from "@/data/product";
 import { Stars } from "./Stars";
+import { ReviewFormModal } from "./ReviewFormModal";
 
 const distribution = [
   { stars: 5, pct: 100, count: 10 },
@@ -11,6 +12,7 @@ const distribution = [
 ];
 
 export function ReviewsSection() {
+  const [reviewOpen, setReviewOpen] = useState(false);
   return (
     <section className="bg-muted py-16">
       <div className="mx-auto max-w-4xl px-4">
@@ -29,7 +31,7 @@ export function ReviewsSection() {
               Based on {product.reviewCount} Reviews
             </p>
             <button
-              onClick={() => toast("Review submission is not available in this demo")}
+              onClick={() => setReviewOpen(true)}
               className="mt-4 w-full rounded-sm bg-primary py-2.5 text-xs font-semibold tracking-wide text-primary-foreground uppercase"
             >
               Write a review
@@ -81,6 +83,7 @@ export function ReviewsSection() {
           ))}
         </ul>
       </div>
+      <ReviewFormModal open={reviewOpen} onClose={() => setReviewOpen(false)} />
     </section>
   );
 }
