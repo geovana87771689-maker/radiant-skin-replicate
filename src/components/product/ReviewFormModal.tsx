@@ -6,13 +6,7 @@ const skinTones = ["Fair to Light", "Medium to Tan", "Deep to Rich"];
 const skinTypes = ["Combination", "Dry", "Normal", "Oily"];
 const ages = ["18-25", "26-35", "36-45", "46-55", "56-65", "Above 66"];
 
-export function ReviewFormModal({
-  open,
-  onClose,
-}: {
-  open: boolean;
-  onClose: () => void;
-}) {
+export function ReviewFormModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
   const [skinTone, setSkinTone] = useState<string | null>(null);
@@ -53,11 +47,7 @@ export function ReviewFormModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/50 p-4 py-10">
-      <div
-        className="absolute inset-0"
-        onClick={onClose}
-        aria-hidden="true"
-      />
+      <div className="absolute inset-0" onClick={onClose} aria-hidden="true" />
       <div className="relative z-10 w-full max-w-md rounded-lg bg-background shadow-xl">
         <div className="flex items-center justify-between border-b border-border px-6 py-4">
           <h3 className="text-base font-bold">Write a Review</h3>
@@ -108,9 +98,7 @@ export function ReviewFormModal({
                   <Star
                     size={24}
                     className={
-                      i <= (hover || rating)
-                        ? "fill-primary text-primary"
-                        : "text-muted-foreground"
+                      i <= (hover || rating) ? "fill-primary text-primary" : "text-muted-foreground"
                     }
                   />
                 </button>

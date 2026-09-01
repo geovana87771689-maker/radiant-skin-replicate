@@ -36,7 +36,14 @@ export function ProductGallery() {
               i === active ? "border-foreground" : "border-border hover:border-muted-foreground"
             }`}
           >
-            <img src={src} alt="" loading="lazy" referrerPolicy="no-referrer" onError={handleImageError} className="aspect-square w-full object-cover" />
+            <img
+              src={src}
+              alt=""
+              loading="lazy"
+              referrerPolicy="no-referrer"
+              onError={handleImageError}
+              className="aspect-square w-full object-cover"
+            />
           </button>
         ))}
       </div>
