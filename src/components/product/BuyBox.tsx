@@ -23,8 +23,8 @@ export function BuyBox() {
       </div>
 
       <div className="flex items-baseline gap-2">
-        <span className="text-2xl font-bold">${product.price.toFixed(2)}</span>
-        <span className="text-sm text-muted-foreground">USD</span>
+        <span className="text-2xl font-bold">€{product.price.toFixed(2)}</span>
+        <span className="text-sm text-muted-foreground">EUR</span>
       </div>
 
       <div className="flex items-center gap-4">
