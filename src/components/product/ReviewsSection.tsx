@@ -84,6 +84,7 @@ export function ReviewsSection() {
           ))}
         </ul>
       </div>
+      <ReviewFormModal open={reviewOpen} onClose={() => setReviewOpen(false)} />
     </section>
   );
 }
