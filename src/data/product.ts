@@ -1,4 +1,7 @@
+import duoRicePeelShot from "@/assets/duo-rice-peel-shot.png.asset.json";
+
 export const productImages = [
+  duoRicePeelShot.url,
   "https://medicube.us/cdn/shop/files/00_43ae12cc-101f-477e-a4c8-6944dce6f4e2.jpg?v=1770188425&width=1200",
   "https://medicube.us/cdn/shop/files/01_802e4e48-5987-4965-b4f8-f1a76265607a.jpg?v=1770188425&width=1200",
   "https://medicube.us/cdn/shop/files/02_721e6205-5b24-432a-bec8-3b57415e15c4.jpg?v=1770188425&width=1200",
@@ -9,7 +12,8 @@ export const productImages = [
 ];
 
 export const product = {
-  title: "Hypochlorous Acid Rice Body Peel Shot",
+  title:
+    "Duo Rice Peel Shot com ácido hipocloroso | Visão e Corpo | Sérum esfoliante duplo para eliminar células mortas e melhorar a aparência dos poros | Com extrato de arroz, ácido hipocloreux e pantenol | Hidratação & peau plus lisse",
   subtitle:
     "Gentle Body Exfoliating Serum for Dead Skin Cells & Rough Patches & Uneven Texture",
   price: 38,
