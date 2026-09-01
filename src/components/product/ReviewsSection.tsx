@@ -32,7 +32,7 @@ export function ReviewsSection() {
               Based on {product.reviewCount} Reviews
             </p>
             <button
-              onClick={() => toast("Review submission is not available in this demo")}
+              onClick={() => setReviewOpen(true)}
               className="mt-4 w-full rounded-sm bg-primary py-2.5 text-xs font-semibold tracking-wide text-primary-foreground uppercase"
             >
               Write a review
