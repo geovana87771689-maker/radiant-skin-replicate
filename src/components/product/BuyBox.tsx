@@ -58,13 +58,8 @@ export function BuyBox() {
         >
           Add To Cart
         </button>
-        <button
-          onClick={() => toast("Checkout is not available in this demo")}
-          className="w-full rounded-sm border border-foreground py-4 text-sm font-semibold tracking-wide uppercase transition-colors hover:bg-accent"
-        >
-          Buy it now
-        </button>
       </div>
+
 
       <div className="rounded-sm bg-muted px-4 py-3 text-xs">
         <div className="flex items-center gap-2 font-medium">
