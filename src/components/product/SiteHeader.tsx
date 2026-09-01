@@ -27,8 +27,16 @@ export function SiteHeader() {
           <button className="lg:hidden" aria-label="Menu">
             <Menu className="size-5" />
           </button>
-          <a href="/" className="text-xl font-extrabold tracking-[0.2em] uppercase">
-            medicube
+          <a href="/" className="flex items-center">
+            <img
+              src="/images/logotipo.png"
+              alt="medicube K-Beauty Tech"
+              className="h-9 w-auto"
+              width={120}
+              height={40}
+              loading="eager"
+              referrerPolicy="no-referrer"
+            />
           </a>
           <nav className="hidden flex-1 items-center gap-6 lg:flex">
             {nav.map((item) => (
