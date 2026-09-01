@@ -73,7 +73,7 @@ export function BuyBox() {
           )}
         </div>
         <p className="mt-2 text-muted-foreground">
-          For orders over $35.00, select installments at checkout to split your purchase over time.
+          For orders over €35.00, select installments at checkout to split your purchase over time.
         </p>
       </div>
 
