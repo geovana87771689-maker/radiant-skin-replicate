@@ -19,7 +19,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 bg-background">
-      <div className="bg-foreground px-4 py-2 text-center text-[11px] font-semibold tracking-wide text-background uppercase">
+      <div className="bg-primary px-4 py-2 text-center text-[11px] font-semibold tracking-wide text-primary-foreground uppercase">
         {announcements[index]}
       </div>
       <div className="border-b border-border">
@@ -50,7 +50,7 @@ export function SiteHeader() {
             </button>
             <button aria-label="Cart" className="relative">
               <ShoppingBag className="size-5" />
-              <span className="absolute -top-1.5 -right-2 rounded-full bg-foreground px-1.5 text-[10px] leading-4 font-semibold text-background">
+              <span className="absolute -top-1.5 -right-2 rounded-full bg-primary px-1.5 text-[10px] leading-4 font-semibold text-primary-foreground">
                 0
               </span>
             </button>

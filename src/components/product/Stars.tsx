@@ -9,7 +9,7 @@ export function Stars({ rating = 5, size = 14 }: { rating?: number; size?: numbe
           width={size}
           height={size}
           className={
-            i <= Math.round(rating) ? "fill-foreground text-foreground" : "text-muted-foreground"
+            i <= Math.round(rating) ? "fill-primary text-primary" : "text-muted-foreground"
           }
         />
       ))}

@@ -40,7 +40,7 @@ export function ReviewsSection() {
               <div key={row.stars} className="flex items-center gap-3 text-xs">
                 <span className="w-12 text-muted-foreground">{row.stars} stars</span>
                 <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
-                  <div className="h-full bg-foreground" style={{ width: `${row.pct}%` }} />
+                  <div className="h-full bg-primary" style={{ width: `${row.pct}%` }} />
                 </div>
                 <span className="w-10 text-right text-muted-foreground">{row.pct}%</span>
                 <span className="w-6 text-right text-muted-foreground">{row.count}</span>
