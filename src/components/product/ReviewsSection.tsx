@@ -13,6 +13,7 @@ const distribution = [
 ];
 
 export function ReviewsSection() {
+  const [reviewOpen, setReviewOpen] = useState(false);
   return (
     <section className="bg-muted py-16">
       <div className="mx-auto max-w-4xl px-4">
