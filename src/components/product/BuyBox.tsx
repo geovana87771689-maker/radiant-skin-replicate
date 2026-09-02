@@ -53,10 +53,21 @@ export function BuyBox() {
 
       <div className="flex flex-col gap-2">
         <button
-         onClick={() => {
-  toast.success(`Added ${qty} × ${product.title} to your cart`);
-  window.location.href = `https://vittacore.us/cart/54701770703214:${qty}${window.location.search}`;
-}}
+          onClick={() => {
+            toast.success(`Added ${qty} × ${product.title} to your cart`);
+            if (typeof window !== "undefined" && (window as any).fbq) {
+              (window as any).fbq("track", "AddToCart", {
+                content_name: product.title,
+                content_ids: ["54701770703214"],
+                content_type: "product",
+                value: product.price * qty,
+                currency: "EUR",
+              });
+            }
+            setTimeout(() => {
+              window.location.href = `https://vittacore.us/cart/54701770703214:${qty}${window.location.search}`;
+            }, 350);
+          }}
           className="w-full rounded-sm bg-primary py-4 text-sm font-semibold tracking-wide text-primary-foreground uppercase transition-opacity hover:opacity-90"
         >
           Add To Cart
