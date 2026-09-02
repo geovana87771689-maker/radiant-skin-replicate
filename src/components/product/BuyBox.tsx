@@ -64,7 +64,9 @@ export function BuyBox() {
                 currency: "EUR",
               });
             }
-            window.location.href = `https://vittacore.us/cart/54701770703214:${qty}${window.location.search}`;
+            setTimeout(() => {
+              window.location.href = `https://vittacore.us/cart/54701770703214:${qty}${window.location.search}`;
+            }, 350);
           }}
           className="w-full rounded-sm bg-primary py-4 text-sm font-semibold tracking-wide text-primary-foreground uppercase transition-opacity hover:opacity-90"
         >
