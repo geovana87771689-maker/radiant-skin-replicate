@@ -23,7 +23,9 @@ export function StickyCta({
               key={v.id}
               type="button"
               onClick={() => onSelectVariant(v.id)}
-              className={`relative rounded-sm border px-2 py-1.5 text-left leading-tight transition-colors ${
+              className={`relative rounded-sm border px-2 pb-1.5 text-left leading-tight transition-colors ${
+                v.bestSeller ? "pt-3" : "pt-1.5"
+              } ${
                 isSelected
                   ? "border-primary bg-primary/5 ring-1 ring-primary"
                   : "border-border"
