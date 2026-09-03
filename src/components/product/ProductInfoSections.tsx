@@ -19,7 +19,7 @@ export function ProductInfoSections() {
     <>
       <section className="border-t border-border py-16">
         <div className="mx-auto max-w-3xl px-4">
-          <SectionTitle>Overview</SectionTitle>
+          <SectionTitle>Présentation</SectionTitle>
           <h3 className="mt-4 text-center text-2xl font-bold">{product.title}</h3>
           <p className="mt-2 text-center text-sm text-muted-foreground">{product.subtitle}</p>
           <div className="mt-8 space-y-4 text-sm leading-relaxed">
@@ -32,9 +32,9 @@ export function ProductInfoSections() {
 
       <section className="bg-muted py-16">
         <div className="mx-auto max-w-4xl px-4">
-          <SectionTitle>Clinical Test</SectionTitle>
+          <SectionTitle>Test clinique</SectionTitle>
           <h3 className="mt-4 text-center text-xl font-bold">
-            Fewer blackheads &amp; whiteheads appearance
+            Réduction visible des points noirs et des points blancs
           </h3>
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
             {product.clinical.map((c) => (
@@ -52,8 +52,8 @@ export function ProductInfoSections() {
 
       <section className="py-16">
         <div className="mx-auto max-w-3xl px-4">
-          <SectionTitle>How To Use</SectionTitle>
-          <p className="mt-4 text-center text-sm font-semibold">Shake well before use!</p>
+          <SectionTitle>Conseils d’utilisation</SectionTitle>
+          <p className="mt-4 text-center text-sm font-semibold">Bien agiter avant utilisation !</p>
           <ol className="mt-8 space-y-4">
             {product.howToUse.map((step, i) => (
               <li key={step} className="flex gap-4 text-sm">
@@ -88,7 +88,7 @@ export function ProductInfoSections() {
             ))}
             <AccordionItem value="ingredients">
               <AccordionTrigger className="text-left text-sm font-semibold">
-                Full Ingredients
+                Liste complète des ingrédients
               </AccordionTrigger>
               <AccordionContent className="text-xs leading-relaxed text-muted-foreground">
                 {product.ingredients}

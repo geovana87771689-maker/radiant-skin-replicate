@@ -18,7 +18,7 @@ export function ProductGallery() {
       <div className="overflow-hidden rounded-sm bg-muted">
         <img
           src={productImages[active] || FALLBACK_IMAGE}
-          alt={product.title || "Product Image"}
+          alt={product.title || "Photo du produit"}
           width={1200}
           height={1200}
           loading="eager"
@@ -32,7 +32,7 @@ export function ProductGallery() {
           <button
             key={src}
             onClick={() => setActive(i)}
-            aria-label={`Show image ${i + 1}`}
+            aria-label={`Afficher l’image ${i + 1}`}
             className={`overflow-hidden rounded-sm border transition-colors ${
               i === active ? "border-foreground" : "border-border hover:border-muted-foreground"
             }`}
