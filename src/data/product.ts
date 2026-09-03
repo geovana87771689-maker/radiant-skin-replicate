@@ -14,7 +14,7 @@ export const product = {
     "Duo Rice Peel Shot with Hypochlorous Acid | Face & Body | Dual Exfoliating Serum to Eliminate Dead Skin Cells & Improve Pore Appearance | With Rice Extract, Hypochlorous Acid & Panthenol | Hydration & Smoother Skin",
   subtitle:
     "Gentle Body Exfoliating Serum for Dead Skin Cells & Rough Patches & Uneven Texture",
-  price: 38,
+  price: 32.99,
   reviewCount: 10,
   rating: 5.0,
   skinType: "Combination, Oily, Sensitive",
