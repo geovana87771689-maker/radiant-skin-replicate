@@ -59,7 +59,7 @@ export const product = {
   subtitle:
     "Sérum exfoliant et lissant visage & corps — Teint uniforme et pores resserrés.",
   price: 32.99,
-  reviewCount: 10,
+  reviewCount: 97,
   rating: 5.0,
   skinType: "Mixte, Grasse, Sensible",
   skinConcerns:

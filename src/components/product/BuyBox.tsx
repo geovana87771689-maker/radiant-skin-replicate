@@ -21,7 +21,7 @@ export function BuyBox({
   const totalValue = unitPrice * qty;
 
   return (
-    <div className="flex flex-col gap-5">
+    <div id="acheter" className="flex flex-col gap-5 scroll-mt-24">
       <div>
         <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
           {product.title}
@@ -109,9 +109,9 @@ export function BuyBox({
         <span className="text-sm text-muted-foreground">TTC</span>
       </div>
 
-      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+      <div className="flex items-center gap-2 text-xs font-medium text-primary">
         <Truck className="size-4" />
-        <span>Frais de livraison calculés au paiement.</span>
+        <span>Livraison standard offerte — sans minimum d'achat.</span>
       </div>
 
       <div className="flex flex-col gap-3">
