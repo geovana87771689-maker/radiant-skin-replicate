@@ -12,6 +12,39 @@ export const productImages = [
 export const formatPrice = (value: number) =>
   new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" }).format(value);
 
+export type Variant = {
+  id: "1kit" | "2kits";
+  variantId: string;
+  title: string;
+  price: number;
+  compareAt?: number;
+  badge?: string;
+  support: string;
+  urgency?: string;
+  popular?: boolean;
+};
+
+export const variants: Variant[] = [
+  {
+    id: "1kit",
+    variantId: "54701770703214",
+    title: "1 Coffret (2 Sérums) — Cure Découverte",
+    price: 32.99,
+    support: "Idéal pour tester les premiers résultats (1 mois).",
+  },
+  {
+    id: "2kits",
+    variantId: "54713347244398",
+    title: "2 Coffrets (4 Sérums) — Cure Complète Anti-Âge",
+    price: 49.99,
+    compareAt: 65.98,
+    badge: "MEILLEURE VALEUR",
+    support: "Recommandé pour des résultats durables (2 à 3 mois).",
+    urgency: "+ Livraison Prioritaire Gratuite",
+    popular: true,
+  },
+];
+
 export const product = {
   title:
     "Duo Rice Peel Shot à l'Acide Hypochloreux | Visage & Corps | Double sérum exfoliant pour éliminer les cellules mortes et affiner l'apparence des pores | À l'extrait de riz, acide hypochloreux et panthénol | Hydratation & peau plus lisse",

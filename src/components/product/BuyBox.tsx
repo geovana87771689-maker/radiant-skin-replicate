@@ -1,16 +1,24 @@
 import { useState } from "react";
-import { Minus, Plus, Truck } from "lucide-react";
+import { Minus, Plus, Truck, Check } from "lucide-react";
 import { toast } from "sonner";
-import { product, formatPrice } from "@/data/product";
+import { product, variants, formatPrice } from "@/data/product";
 import { Stars } from "./Stars";
 
 export function BuyBox() {
+  const [selectedVariantId, setSelectedVariantId] = useState("2kits");
   const [qty, setQty] = useState(1);
+
+  const selectedVariant =
+    variants.find((v) => v.id === selectedVariantId) ?? variants[0]!;
+  const unitPrice = selectedVariant.price;
+  const totalValue = unitPrice * qty;
 
   return (
     <div className="flex flex-col gap-5">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">{product.title}</h1>
+        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
+          {product.title}
+        </h1>
         <p className="mt-2 text-sm text-muted-foreground">{product.subtitle}</p>
         <div className="mt-3 flex items-center gap-2">
           <Stars rating={product.rating} />
@@ -20,8 +28,73 @@ export function BuyBox() {
         </div>
       </div>
 
+      {/* Variant selector */}
+      <div className="flex flex-col gap-3">
+        <p className="text-sm font-semibold uppercase tracking-wide">
+          Choisissez votre cure
+        </p>
+        <div className="flex flex-col gap-3">
+          {variants.map((v) => {
+            const isSelected = v.id === selectedVariantId;
+            return (
+              <button
+                key={v.id}
+                type="button"
+                onClick={() => setSelectedVariantId(v.id)}
+                className={`relative flex flex-col gap-1 rounded-sm border p-4 text-left transition-colors ${
+                  isSelected
+                    ? "border-primary bg-primary/5 ring-1 ring-primary"
+                    : "border-border hover:border-muted-foreground"
+                }`}
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex flex-col gap-1">
+                    <span className="flex items-center gap-2">
+                      {isSelected && (
+                        <span className="flex size-5 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                          <Check className="size-3" />
+                        </span>
+                      )}
+                      <span className="text-sm font-bold">{v.title}</span>
+                      {v.badge && (
+                        <span className="rounded-sm bg-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary-foreground">
+                          {v.badge}
+                        </span>
+                      )}
+                    </span>
+                    <span className="text-xs text-muted-foreground">
+                      {v.support}
+                    </span>
+                    {v.urgency && (
+                      <span className="text-xs font-semibold text-primary">
+                        {v.urgency}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex shrink-0 flex-col items-end gap-0.5">
+                    {v.compareAt && (
+                      <span className="text-xs text-muted-foreground line-through">
+                        {formatPrice(v.compareAt)}
+                      </span>
+                    )}
+                    <span className="text-lg font-bold">
+                      {formatPrice(v.price)}
+                    </span>
+                    {v.compareAt && (
+                      <span className="text-[10px] font-semibold uppercase text-primary">
+                        Économisez {formatPrice(v.compareAt - v.price)}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
       <div className="flex items-baseline gap-2">
-        <span className="text-2xl font-bold">{formatPrice(product.price)}</span>
+        <span className="text-2xl font-bold">{formatPrice(unitPrice)}</span>
         <span className="text-sm text-muted-foreground">TTC</span>
       </div>
 
@@ -52,21 +125,24 @@ export function BuyBox() {
       <div className="flex flex-col gap-2">
         <button
           onClick={() => {
-            toast.success(`${qty} × ${product.title} ajouté à votre panier`);
-            const queryString = typeof window !== "undefined" ? window.location.search : "";
-            const checkoutUrl = `https://vittacore.us/cart/54701770703214:${qty}?checkout${queryString ? `&${queryString.slice(1)}` : ""}`;
+            toast.success(
+              `${qty} × ${selectedVariant.title} ajouté à votre panier`,
+            );
+            const queryString =
+              typeof window !== "undefined" ? window.location.search : "";
+            const checkoutUrl = `https://vittacore.us/cart/${selectedVariant.variantId}:${qty}?checkout${queryString ? `&${queryString.slice(1)}` : ""}`;
             if (typeof window !== "undefined" && (window as any).fbq) {
               (window as any).fbq("track", "AddToCart", {
-                content_name: product.title,
-                content_ids: ["54701770703214"],
+                content_name: selectedVariant.title,
+                content_ids: [selectedVariant.variantId],
                 content_type: "product",
-                value: product.price * qty,
+                value: totalValue,
                 currency: "EUR",
               });
               (window as any).fbq("track", "InitiateCheckout", {
-                content_name: product.title,
+                content_name: selectedVariant.title,
                 currency: "EUR",
-                value: product.price * qty,
+                value: totalValue,
               });
             }
             setTimeout(() => {
@@ -85,23 +161,29 @@ export function BuyBox() {
           <span>Livraison offerte sur toutes les commandes !</span>
         </div>
         <p className="mt-2 text-muted-foreground">
-          Pour les commandes supérieures à 35,00 €, choisissez le paiement en plusieurs fois au
-          moment du règlement.
+          Pour les commandes supérieures à 35,00 €, choisissez le paiement en
+          plusieurs fois au moment du règlement.
         </p>
       </div>
 
       <dl className="divide-y divide-border border-y border-border text-sm">
         <div className="grid grid-cols-3 gap-4 py-3">
           <dt className="font-semibold">Type de peau</dt>
-          <dd className="col-span-2 text-muted-foreground">{product.skinType}</dd>
+          <dd className="col-span-2 text-muted-foreground">
+            {product.skinType}
+          </dd>
         </div>
         <div className="grid grid-cols-3 gap-4 py-3">
           <dt className="font-semibold">Problématiques</dt>
-          <dd className="col-span-2 text-muted-foreground">{product.skinConcerns}</dd>
+          <dd className="col-span-2 text-muted-foreground">
+            {product.skinConcerns}
+          </dd>
         </div>
         <div className="grid grid-cols-3 gap-4 py-3">
           <dt className="font-semibold">Ingrédients clés</dt>
-          <dd className="col-span-2 text-muted-foreground">{product.keyIngredients}</dd>
+          <dd className="col-span-2 text-muted-foreground">
+            {product.keyIngredients}
+          </dd>
         </div>
       </dl>
     </div>
