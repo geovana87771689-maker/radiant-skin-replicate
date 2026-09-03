@@ -16,6 +16,8 @@ export type Variant = {
   id: "1kit" | "2kits";
   variantId: string;
   title: string;
+  qtyLabel: string;
+  shortSupport: string;
   price: number;
   compareAt?: number;
   badge?: string;
@@ -30,6 +32,8 @@ export const variants: Variant[] = [
     id: "1kit",
     variantId: "54701770703214",
     title: "1 Coffret (2 Sérums) — Cure Découverte",
+    qtyLabel: "1 Coffret · 2 Sérums",
+    shortSupport: "Cure découverte — 1 mois",
     price: 32.99,
     support: "Idéal pour tester les premiers résultats (1 mois).",
     image: productImages[0]!,
@@ -38,11 +42,13 @@ export const variants: Variant[] = [
     id: "2kits",
     variantId: "54713347244398",
     title: "2 Coffrets (4 Sérums) — Cure Complète Anti-Âge",
+    qtyLabel: "2 Coffrets · 4 Sérums",
+    shortSupport: "Cure complète — 2 à 3 mois",
     price: 49.99,
     compareAt: 65.98,
     badge: "MEILLEURE VALEUR",
     support: "Recommandé pour des résultats durables (2 à 3 mois).",
-    urgency: "+ Livraison Prioritaire Gratuite",
+    urgency: "Livraison prioritaire offerte",
     popular: true,
     image: "/images/duo-rice-peel-shot-2kits.png",
   },

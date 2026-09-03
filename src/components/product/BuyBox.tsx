@@ -2,6 +2,7 @@ import { Truck, Check, ShieldCheck, Package } from "lucide-react";
 import { toast } from "sonner";
 import { product, variants, formatPrice } from "@/data/product";
 import { Stars } from "./Stars";
+import { CardBrands } from "./CardBrands";
 
 type VariantId = "1kit" | "2kits";
 
@@ -47,52 +48,56 @@ export function BuyBox({
                 key={v.id}
                 type="button"
                 onClick={() => onSelectVariant(v.id)}
-                className={`relative flex flex-col gap-1 rounded-sm border p-4 text-left transition-colors ${
+                className={`relative rounded-sm border px-3 py-3 text-left transition-colors sm:px-4 ${
                   isSelected
                     ? "border-primary bg-primary/5 ring-1 ring-primary"
                     : "border-border hover:border-muted-foreground"
                 }`}
               >
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex flex-col gap-1">
-                    <span className="flex items-center gap-2">
-                      {isSelected && (
-                        <span className="flex size-5 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                          <Check className="size-3" />
-                        </span>
-                      )}
-                      <span className="text-sm font-bold">{v.title}</span>
-                      {v.badge && (
-                        <span className="rounded-sm bg-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary-foreground">
-                          {v.badge}
-                        </span>
-                      )}
+                {v.badge && (
+                  <span className="absolute -top-2 right-3 rounded-sm bg-primary px-2 py-0.5 text-[9px] font-bold tracking-wide text-primary-foreground uppercase">
+                    {v.badge}
+                  </span>
+                )}
+                <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3">
+                  <span
+                    className={`flex size-5 shrink-0 items-center justify-center rounded-full border ${
+                      isSelected
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "border-border"
+                    }`}
+                  >
+                    {isSelected && <Check className="size-3" />}
+                  </span>
+                  <span className="flex min-w-0 flex-col">
+                    <span className="text-sm leading-tight font-bold">
+                      {v.qtyLabel}
                     </span>
-                    <span className="text-xs text-muted-foreground">
-                      {v.support}
+                    <span className="text-xs leading-tight text-muted-foreground">
+                      {v.shortSupport}
                     </span>
-                    {v.urgency && (
-                      <span className="text-xs font-semibold text-primary">
-                        {v.urgency}
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex shrink-0 flex-col items-end gap-0.5">
+                  </span>
+                  <span className="flex shrink-0 flex-col items-end leading-tight">
                     {v.compareAt && (
-                      <span className="text-xs text-muted-foreground line-through">
+                      <span className="text-[11px] text-muted-foreground line-through">
                         {formatPrice(v.compareAt)}
                       </span>
                     )}
-                    <span className="text-lg font-bold">
+                    <span className="text-base font-bold sm:text-lg">
                       {formatPrice(v.price)}
                     </span>
+                  </span>
+                </div>
+                {(v.compareAt || v.urgency) && (
+                  <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 pl-8 text-[11px] font-semibold text-primary">
                     {v.compareAt && (
-                      <span className="text-[10px] font-semibold uppercase text-primary">
+                      <span>
                         Économisez {formatPrice(v.compareAt - v.price)}
                       </span>
                     )}
+                    {v.urgency && <span>{v.urgency}</span>}
                   </div>
-                </div>
+                )}
               </button>
             );
           })}
@@ -142,13 +147,8 @@ export function BuyBox({
         </button>
 
         {/* Trust badges */}
+        <CardBrands />
         <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] font-medium text-muted-foreground">
-          <div className="flex items-center gap-1.5">
-            <span className="flex items-center gap-1">
-              <span className="rounded-sm border border-border px-1.5 py-0.5 text-[10px] font-bold tracking-tight">VISA</span>
-              <span className="rounded-sm border border-border px-1.5 py-0.5 text-[10px] font-bold tracking-tight">Mastercard</span>
-            </span>
-          </div>
           <span className="flex items-center gap-1.5">
             <ShieldCheck className="size-4 text-primary" />
             Garantie 30 jours
