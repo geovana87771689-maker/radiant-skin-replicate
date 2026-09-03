@@ -54,11 +54,6 @@ export function BuyBox({
                     : "border-border hover:border-muted-foreground"
                 }`}
               >
-                {v.bestSeller && (
-                  <span className="absolute -top-2 left-3 rounded-sm bg-foreground px-2 py-0.5 text-[9px] font-bold tracking-wide text-background uppercase">
-                    {v.bestSeller}
-                  </span>
-                )}
                 {v.badge && (
                   <span className="absolute -top-2 right-3 rounded-sm bg-primary px-2 py-0.5 text-[9px] font-bold tracking-wide text-primary-foreground uppercase">
                     {v.badge}

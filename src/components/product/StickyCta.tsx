@@ -23,12 +23,19 @@ export function StickyCta({
               key={v.id}
               type="button"
               onClick={() => onSelectVariant(v.id)}
-              className={`rounded-sm border px-2 py-1.5 text-left leading-tight transition-colors ${
+              className={`relative rounded-sm border px-2 pb-1.5 text-left leading-tight transition-colors ${
+                v.bestSeller ? "pt-3" : "pt-1.5"
+              } ${
                 isSelected
                   ? "border-primary bg-primary/5 ring-1 ring-primary"
                   : "border-border"
               }`}
             >
+              {v.bestSeller && (
+                <span className="absolute -top-1.5 left-1 rounded-sm bg-foreground px-1 py-0.5 text-[7px] font-bold leading-none tracking-wide text-background uppercase">
+                  {v.bestSeller}
+                </span>
+              )}
               <span className="block text-[11px] font-bold">{v.qtyLabel}</span>
               <span className="flex items-center gap-1.5">
                 <span className="text-[11px] font-bold">
