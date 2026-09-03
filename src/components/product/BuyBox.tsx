@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Minus, Plus, Truck, Check } from "lucide-react";
+import { Truck, Check, ShieldCheck, Package } from "lucide-react";
 import { toast } from "sonner";
 import { product, variants, formatPrice } from "@/data/product";
 import { Stars } from "./Stars";
@@ -13,7 +12,7 @@ export function BuyBox({
   selectedVariantId: VariantId;
   onSelectVariant: (id: VariantId) => void;
 }) {
-  const [qty, setQty] = useState(1);
+  const qty = 1;
 
   const selectedVariant =
     variants.find((v) => v.id === selectedVariantId) ?? variants[0]!;
@@ -105,35 +104,16 @@ export function BuyBox({
         <span className="text-sm text-muted-foreground">TTC</span>
       </div>
 
-      <div className="flex items-center gap-4">
-        <div className="flex items-center rounded-sm border border-border">
-          <button
-            className="px-3 py-2 disabled:opacity-40"
-            onClick={() => setQty((q) => Math.max(1, q - 1))}
-            disabled={qty === 1}
-            aria-label="Diminuer la quantité"
-          >
-            <Minus className="size-4" />
-          </button>
-          <span className="w-10 text-center text-sm font-medium">{qty}</span>
-          <button
-            className="px-3 py-2"
-            onClick={() => setQty((q) => q + 1)}
-            aria-label="Augmenter la quantité"
-          >
-            <Plus className="size-4" />
-          </button>
-        </div>
-        <span className="text-xs text-muted-foreground">
-          Frais de livraison calculés au paiement.
-        </span>
+      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+        <Truck className="size-4" />
+        <span>Frais de livraison calculés au paiement.</span>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-3">
         <button
           onClick={() => {
             toast.success(
-              `${qty} × ${selectedVariant.title} ajouté à votre panier`,
+              `${selectedVariant.title} — redirection vers le paiement`,
             );
             const queryString =
               typeof window !== "undefined" ? window.location.search : "";
@@ -158,8 +138,26 @@ export function BuyBox({
           }}
           className="w-full rounded-sm bg-primary py-4 text-sm font-semibold tracking-wide text-primary-foreground uppercase transition-opacity hover:opacity-90"
         >
-          Ajouter au panier
+          Commander maintenant
         </button>
+
+        {/* Trust badges */}
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] font-medium text-muted-foreground">
+          <div className="flex items-center gap-1.5">
+            <span className="flex items-center gap-1">
+              <span className="rounded-sm border border-border px-1.5 py-0.5 text-[10px] font-bold tracking-tight">VISA</span>
+              <span className="rounded-sm border border-border px-1.5 py-0.5 text-[10px] font-bold tracking-tight">Mastercard</span>
+            </span>
+          </div>
+          <span className="flex items-center gap-1.5">
+            <ShieldCheck className="size-4 text-primary" />
+            Garantie 30 jours
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Package className="size-4 text-primary" />
+            Livraison suivie
+          </span>
+        </div>
       </div>
 
       <div className="rounded-sm bg-muted px-4 py-3 text-xs">
