@@ -7,6 +7,7 @@ import { ProductGallery } from "@/components/product/ProductGallery";
 import { BuyBox } from "@/components/product/BuyBox";
 import { ProductInfoSections } from "@/components/product/ProductInfoSections";
 import { ReviewsSection } from "@/components/product/ReviewsSection";
+import { StickyCta } from "@/components/product/StickyCta";
 import { product, productImages } from "@/data/product";
 
 const title = "Duo Rice Peel Shot à l'Acide Hypochloreux | MEDICUBE";
@@ -74,6 +75,8 @@ function ProductPage() {
         <ReviewsSection />
       </main>
       <SiteFooter />
+      <div className="h-20 lg:hidden" />
+      <StickyCta selectedVariantId={selectedVariantId} />
       <Toaster />
     </div>
   );
