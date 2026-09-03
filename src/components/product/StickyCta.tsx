@@ -21,7 +21,7 @@ export function StickyCta({
         }
         className="w-full rounded-sm bg-primary py-3 text-sm font-semibold tracking-wide text-primary-foreground uppercase"
       >
-        Commander — {formatPrice(variant.price)}
+        Commander maintenant
       </button>
     </div>
   );
