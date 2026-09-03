@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
 import { SiteHeader } from "@/components/product/SiteHeader";
@@ -55,13 +56,19 @@ export const Route = createFileRoute("/")({
 });
 
 function ProductPage() {
+  const [selectedVariantId, setSelectedVariantId] = useState<"1kit" | "2kits">(
+    "2kits",
+  );
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
       <main>
         <div className="mx-auto grid max-w-[1280px] gap-10 px-4 py-10 lg:grid-cols-2 lg:gap-16">
-          <ProductGallery />
-          <BuyBox />
+          <ProductGallery selectedVariantId={selectedVariantId} />
+          <BuyBox
+            selectedVariantId={selectedVariantId}
+            onSelectVariant={setSelectedVariantId}
+          />
         </div>
         <ProductInfoSections />
         <ReviewsSection />

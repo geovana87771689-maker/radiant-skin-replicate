@@ -22,6 +22,7 @@ export type Variant = {
   support: string;
   urgency?: string;
   popular?: boolean;
+  image: string;
 };
 
 export const variants: Variant[] = [
@@ -31,6 +32,7 @@ export const variants: Variant[] = [
     title: "1 Coffret (2 Sérums) — Cure Découverte",
     price: 32.99,
     support: "Idéal pour tester les premiers résultats (1 mois).",
+    image: productImages[0]!,
   },
   {
     id: "2kits",
@@ -42,6 +44,7 @@ export const variants: Variant[] = [
     support: "Recommandé pour des résultats durables (2 à 3 mois).",
     urgency: "+ Livraison Prioritaire Gratuite",
     popular: true,
+    image: "/images/duo-rice-peel-shot-2kits.png",
   },
 ];
 

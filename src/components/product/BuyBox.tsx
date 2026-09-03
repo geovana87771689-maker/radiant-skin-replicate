@@ -4,8 +4,15 @@ import { toast } from "sonner";
 import { product, variants, formatPrice } from "@/data/product";
 import { Stars } from "./Stars";
 
-export function BuyBox() {
-  const [selectedVariantId, setSelectedVariantId] = useState("2kits");
+type VariantId = "1kit" | "2kits";
+
+export function BuyBox({
+  selectedVariantId,
+  onSelectVariant,
+}: {
+  selectedVariantId: VariantId;
+  onSelectVariant: (id: VariantId) => void;
+}) {
   const [qty, setQty] = useState(1);
 
   const selectedVariant =
@@ -40,7 +47,7 @@ export function BuyBox() {
               <button
                 key={v.id}
                 type="button"
-                onClick={() => setSelectedVariantId(v.id)}
+                onClick={() => onSelectVariant(v.id)}
                 className={`relative flex flex-col gap-1 rounded-sm border p-4 text-left transition-colors ${
                   isSelected
                     ? "border-primary bg-primary/5 ring-1 ring-primary"
