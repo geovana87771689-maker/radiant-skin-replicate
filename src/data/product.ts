@@ -49,10 +49,9 @@ export const variants: Variant[] = [
 ];
 
 export const product = {
-  title:
-    "Duo Rice Peel Shot à l'Acide Hypochloreux | Visage & Corps | Double sérum exfoliant pour éliminer les cellules mortes et affiner l'apparence des pores | À l'extrait de riz, acide hypochloreux et panthénol | Hydratation & peau plus lisse",
+  title: "Duo Rice Peel Shot à l'Acide Hypochloreux",
   subtitle:
-    "Sérum exfoliant corps doux pour les cellules mortes, les zones rugueuses et le grain de peau irrégulier",
+    "Sérum exfoliant et lissant visage & corps — Teint uniforme et pores resserrés.",
   price: 32.99,
   reviewCount: 10,
   rating: 5.0,
