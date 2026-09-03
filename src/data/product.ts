@@ -21,6 +21,7 @@ export type Variant = {
   price: number;
   compareAt?: number;
   badge?: string;
+  bestSeller?: string;
   support: string;
   urgency?: string;
   popular?: boolean;
