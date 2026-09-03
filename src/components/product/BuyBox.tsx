@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Minus, Plus, Truck, Check } from "lucide-react";
+import { Truck, Check, ShieldCheck, Package } from "lucide-react";
 import { toast } from "sonner";
 import { product, variants, formatPrice } from "@/data/product";
 import { Stars } from "./Stars";
@@ -13,7 +12,7 @@ export function BuyBox({
   selectedVariantId: VariantId;
   onSelectVariant: (id: VariantId) => void;
 }) {
-  const [qty, setQty] = useState(1);
+  const qty = 1;
 
   const selectedVariant =
     variants.find((v) => v.id === selectedVariantId) ?? variants[0]!;
