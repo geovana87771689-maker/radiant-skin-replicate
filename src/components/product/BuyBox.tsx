@@ -104,10 +104,6 @@ export function BuyBox({
         </div>
       </div>
 
-      <div className="flex items-baseline gap-2">
-        <span className="text-2xl font-bold">{formatPrice(unitPrice)}</span>
-        <span className="text-sm text-muted-foreground">TTC</span>
-      </div>
 
       <div className="flex items-center gap-2 text-xs font-medium text-primary">
         <Truck className="size-4" />
