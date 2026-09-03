@@ -142,13 +142,8 @@ export function BuyBox({
         </button>
 
         {/* Trust badges */}
+        <CardBrands />
         <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] font-medium text-muted-foreground">
-          <div className="flex items-center gap-1.5">
-            <span className="flex items-center gap-1">
-              <span className="rounded-sm border border-border px-1.5 py-0.5 text-[10px] font-bold tracking-tight">VISA</span>
-              <span className="rounded-sm border border-border px-1.5 py-0.5 text-[10px] font-bold tracking-tight">Mastercard</span>
-            </span>
-          </div>
           <span className="flex items-center gap-1.5">
             <ShieldCheck className="size-4 text-primary" />
             Garantie 30 jours
