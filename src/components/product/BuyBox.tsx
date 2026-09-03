@@ -109,11 +109,11 @@ export function BuyBox({
         <span>Frais de livraison calculés au paiement.</span>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-3">
         <button
           onClick={() => {
             toast.success(
-              `${qty} × ${selectedVariant.title} ajouté à votre panier`,
+              `${selectedVariant.title} — redirection vers le paiement`,
             );
             const queryString =
               typeof window !== "undefined" ? window.location.search : "";
@@ -138,8 +138,26 @@ export function BuyBox({
           }}
           className="w-full rounded-sm bg-primary py-4 text-sm font-semibold tracking-wide text-primary-foreground uppercase transition-opacity hover:opacity-90"
         >
-          Ajouter au panier
+          Commander maintenant
         </button>
+
+        {/* Trust badges */}
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] font-medium text-muted-foreground">
+          <div className="flex items-center gap-1.5">
+            <span className="flex items-center gap-1">
+              <span className="rounded-sm border border-border px-1.5 py-0.5 text-[10px] font-bold tracking-tight">VISA</span>
+              <span className="rounded-sm border border-border px-1.5 py-0.5 text-[10px] font-bold tracking-tight">Mastercard</span>
+            </span>
+          </div>
+          <span className="flex items-center gap-1.5">
+            <ShieldCheck className="size-4 text-primary" />
+            Garantie 30 jours
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Package className="size-4 text-primary" />
+            Livraison suivie
+          </span>
+        </div>
       </div>
 
       <div className="rounded-sm bg-muted px-4 py-3 text-xs">
