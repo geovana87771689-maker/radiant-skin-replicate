@@ -32,7 +32,7 @@ export const variants: Variant[] = [
     title: "1 Coffret (2 Sérums) — Cure Découverte",
     price: 32.99,
     support: "Idéal pour tester les premiers résultats (1 mois).",
-    image: productImages[0],
+    image: productImages[0]!,
   },
   {
     id: "2kits",
