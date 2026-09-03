@@ -9,7 +9,7 @@ export function BuyBox() {
   const [qty, setQty] = useState(1);
 
   const selectedVariant =
-    variants.find((v) => v.id === selectedVariantId) ?? variants[0];
+    variants.find((v) => v.id === selectedVariantId) ?? variants[0]!;
   const unitPrice = selectedVariant.price;
   const totalValue = unitPrice * qty;
 
