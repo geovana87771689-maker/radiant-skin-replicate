@@ -53,6 +53,8 @@ export function BuyBox() {
         <button
           onClick={() => {
             toast.success(`${qty} × ${product.title} ajouté à votre panier`);
+            const queryString = typeof window !== "undefined" ? window.location.search : "";
+            const checkoutUrl = `https://vittacore.us/cart/54701770703214:${qty}?checkout${queryString ? `&${queryString.slice(1)}` : ""}`;
             if (typeof window !== "undefined" && (window as any).fbq) {
               (window as any).fbq("track", "AddToCart", {
                 content_name: product.title,
@@ -61,9 +63,14 @@ export function BuyBox() {
                 value: product.price * qty,
                 currency: "EUR",
               });
+              (window as any).fbq("track", "InitiateCheckout", {
+                content_name: product.title,
+                currency: "EUR",
+                value: product.price * qty,
+              });
             }
             setTimeout(() => {
-              window.location.href = `https://vittacore.us/cart/54701770703214:${qty}${window.location.search}`;
+              window.location.href = checkoutUrl;
             }, 350);
           }}
           className="w-full rounded-sm bg-primary py-4 text-sm font-semibold tracking-wide text-primary-foreground uppercase transition-opacity hover:opacity-90"
