@@ -75,6 +75,8 @@ function ProductPage() {
         <ReviewsSection />
       </main>
       <SiteFooter />
+      <div className="h-20 lg:hidden" />
+      <StickyCta selectedVariantId={selectedVariantId} />
       <Toaster />
     </div>
   );
