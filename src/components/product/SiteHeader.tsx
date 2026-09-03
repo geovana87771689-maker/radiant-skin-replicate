@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { Search, User, ShoppingBag, Menu } from "lucide-react";
 
 const announcements = [
-  "Experience Pro-Level Treatment Results with AGE-R",
-  "YOU'RE SHOPPING THE OFFICIAL MEDICUBE STORE",
-  "Refer Friends, Earn Discounts 🎫 Give $5, Get $5 for Both!",
+  "Des résultats dignes d'un institut avec AGE-R",
+  "VOUS ÊTES SUR LA BOUTIQUE OFFICIELLE MEDICUBE",
+  "Parrainez vos amis 🎫 5 € offerts pour vous et pour eux !",
 ];
 
-const nav = ["Shop", "Best Sellers", "AGE-R", "Skincare", "Body", "About"];
+const nav = ["Boutique", "Meilleures ventes", "AGE-R", "Soins visage", "Corps", "À propos"];
 
 export function SiteHeader() {
   const [index, setIndex] = useState(0);
@@ -50,13 +50,13 @@ export function SiteHeader() {
             ))}
           </nav>
           <div className="ml-auto flex items-center gap-4 lg:ml-0">
-            <button aria-label="Search">
+            <button aria-label="Rechercher">
               <Search className="size-5" />
             </button>
-            <button aria-label="Account">
+            <button aria-label="Mon compte">
               <User className="size-5" />
             </button>
-            <button aria-label="Cart" className="relative">
+            <button aria-label="Panier" className="relative">
               <ShoppingBag className="size-5" />
               <span className="absolute -top-1.5 -right-2 rounded-full bg-primary px-1.5 text-[10px] leading-4 font-semibold text-primary-foreground">
                 0

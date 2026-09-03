@@ -9,60 +9,63 @@ export const productImages = [
   "https://medicube.us/cdn/shop/files/06_8d70c34b-cad2-4e03-ad3d-6f941daf9ff9.jpg?v=1770188425&width=1200",
 ];
 
+export const formatPrice = (value: number) =>
+  new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" }).format(value);
+
 export const product = {
   title:
-    "Duo Rice Peel Shot with Hypochlorous Acid | Face & Body | Dual Exfoliating Serum to Eliminate Dead Skin Cells & Improve Pore Appearance | With Rice Extract, Hypochlorous Acid & Panthenol | Hydration & Smoother Skin",
+    "Duo Rice Peel Shot à l'Acide Hypochloreux | Visage & Corps | Double sérum exfoliant pour éliminer les cellules mortes et affiner l'apparence des pores | À l'extrait de riz, acide hypochloreux et panthénol | Hydratation & peau plus lisse",
   subtitle:
-    "Gentle Body Exfoliating Serum for Dead Skin Cells & Rough Patches & Uneven Texture",
+    "Sérum exfoliant corps doux pour les cellules mortes, les zones rugueuses et le grain de peau irrégulier",
   price: 32.99,
   reviewCount: 10,
   rating: 5.0,
-  skinType: "Combination, Oily, Sensitive",
+  skinType: "Mixte, Grasse, Sensible",
   skinConcerns:
-    "Troubled skin, Body acne marks, Body redness, Bumpy skin, Excess sebum, Dead skin cell",
-  keyIngredients: "Hypochlorous Acid, Rice Extract, Sodium Hyaluronate, Panthenol",
+    "Peau à imperfections, Marques d'acné corporelle, Rougeurs du corps, Peau granuleuse, Excès de sébum, Cellules mortes",
+  keyIngredients: "Acide hypochloreux, Extrait de riz, Hyaluronate de sodium, Panthénol",
   overview: [
-    "Serum with Hypochlorous Acid and Rice Extract gently removes dead skin cells and impurities while soothing and refreshing troubled skin.",
-    "HOCl is known for its skin-calming and purifying properties, soothing stressed skin while targeting excess sebum and pore impurities for a clearer, healthier-looking complexion.",
-    "Specially designed with double the concentration of Hypochlorous Acid to improve the appearance of rough, bumpy skin.",
-    "A refreshing watery formula spreads easily across larger body areas and absorbs quickly.",
+    "Ce sérum à l'acide hypochloreux et à l'extrait de riz élimine en douceur les cellules mortes et les impuretés tout en apaisant et rafraîchissant les peaux à imperfections.",
+    "L'HOCl est reconnu pour ses propriétés apaisantes et purifiantes : il apaise les peaux stressées tout en agissant sur l'excès de sébum et les impuretés des pores, pour un teint plus net et plus sain en apparence.",
+    "Spécialement formulé avec une concentration deux fois plus élevée en acide hypochloreux pour améliorer l'aspect des peaux rugueuses et granuleuses.",
+    "Sa texture aqueuse et rafraîchissante s'étale facilement sur les grandes zones du corps et pénètre rapidement.",
   ],
   clinical: [
-    { value: "-88.98%", label: "Reduction in Dead Skin on Elbows" },
-    { value: "-81.13%", label: "Reduction in Dead Skin on Leg" },
-    { value: "-94.85%", label: "Reduction in Pore Impurities" },
+    { value: "-88,98 %", label: "de cellules mortes sur les coudes" },
+    { value: "-81,13 %", label: "de cellules mortes sur les jambes" },
+    { value: "-94,85 %", label: "d'impuretés dans les pores" },
   ],
   clinicalNote:
-    "*Clinically Tested by 'Global Institute of Dermatological Sciences' / Results may vary depending on individual skin types",
+    "*Test clinique réalisé par le « Global Institute of Dermatological Sciences ». Les résultats peuvent varier selon les types de peau.",
   howToUse: [
-    "Apply onto dry skin and gently massage over rough or textured areas.",
-    "As impurities and dead skin cells roll up, rinse off thoroughly with lukewarm water.",
-    "After use, apply body cream or lotion for best results.",
+    "Appliquer sur peau sèche et masser délicatement les zones rugueuses ou irrégulières.",
+    "Lorsque les impuretés et les cellules mortes se décollent, rincer abondamment à l'eau tiède.",
+    "Après utilisation, appliquer une crème ou un lait corporel pour un résultat optimal.",
   ],
   howToUseNotes: [
-    "*Use 2 times per week for optimal results.",
-    "*Some residue may harden around the nozzle, but this does not affect product quality.",
+    "*Utiliser 2 fois par semaine pour des résultats optimaux.",
+    "*Un léger résidu peut se former autour de l'embout : cela n'altère en rien la qualité du produit.",
   ],
   faq: [
     {
-      q: "What are the main benefits of the Hypochlorous Acid Body Peel Shot?",
-      a: "It gently exfoliates dead skin cells and removes impurities while helping soothe troubled-looking skin, refine uneven texture, and maintain hydration for smoother, clearer-looking skin.",
+      q: "Quels sont les principaux bienfaits du Body Peel Shot à l'acide hypochloreux ?",
+      a: "Il exfolie en douceur les cellules mortes et élimine les impuretés tout en aidant à apaiser les peaux à imperfections, à affiner le grain de peau irrégulier et à maintenir l'hydratation pour une peau visiblement plus lisse et plus nette.",
     },
     {
-      q: "What does Hypochlorous Acid (HOCl) do?",
-      a: "HOCl is known for its soothing and purifying properties, helping calm stressed-looking skin while caring for excess sebum and impurities. *The information above pertains only to the characteristics of the raw material.",
+      q: "Que fait l'acide hypochloreux (HOCl) ?",
+      a: "L'HOCl est reconnu pour ses propriétés apaisantes et purifiantes : il aide à calmer les peaux stressées tout en prenant soin de l'excès de sébum et des impuretés. *Les informations ci-dessus concernent uniquement les caractéristiques de la matière première.",
     },
     {
-      q: "Does this help with rough or uneven body texture?",
-      a: "Yes. It gently removes dead skin cells and buildup to help refine rough, uneven texture and leave body skin feeling smoother and softer.",
+      q: "Aide-t-il à lisser le grain de peau du corps ?",
+      a: "Oui. Il élimine délicatement les cellules mortes et les accumulations pour affiner le grain de peau irrégulier et laisser la peau du corps plus douce et plus lisse.",
     },
     {
-      q: "Does it help with body breakouts?",
-      a: "It is designed to care for troubled-looking body skin by helping remove excess sebum and pore impurities while providing soothing care for a clearer-looking appearance.",
+      q: "Agit-il sur les imperfections corporelles ?",
+      a: "Il est conçu pour prendre soin des peaux du corps à imperfections en aidant à éliminer l'excès de sébum et les impuretés des pores, tout en apportant une action apaisante pour un aspect plus net.",
     },
     {
-      q: "Where can I use the Body Peel Shot?",
-      a: "It can be used on body areas concerned with rough texture, dead skin buildup, excess sebum, or troubled-looking skin, such as the back, chest, arms, and legs.",
+      q: "Où puis-je utiliser le Body Peel Shot ?",
+      a: "Il peut s'utiliser sur les zones du corps sujettes aux rugosités, à l'accumulation de cellules mortes, à l'excès de sébum ou aux imperfections, comme le dos, le torse, les bras et les jambes.",
     },
   ],
   ingredients:
@@ -70,45 +73,55 @@ export const product = {
 };
 
 export const reviews = [
-  { name: "Summer", date: "08/30/2026", text: "It delivered quickly", verified: true },
-  { name: "Amber", date: "08/01/2026", text: "It works will be buying again!", verified: true },
-  { name: "IRINA", date: "07/21/2026", text: "Great stuff! My skin looks healthy!", verified: true },
+  { name: "Summer", date: "30/08/2026", text: "Livraison très rapide.", verified: true },
+  { name: "Amber", date: "01/08/2026", text: "Ça fonctionne, j'en rachèterai !", verified: true },
+  {
+    name: "IRINA",
+    date: "21/07/2026",
+    text: "Super produit ! Ma peau a l'air en pleine santé !",
+    verified: true,
+  },
   {
     name: "Adam",
-    date: "06/24/2026",
-    text: "I absolutely love this skin product it helps me have great looking skin in my mid forties",
+    date: "24/06/2026",
+    text: "J'adore vraiment ce produit, il m'aide à avoir une belle peau à plus de quarante ans.",
     verified: true,
   },
   {
     name: "Laura",
-    date: "06/13/2026",
-    text: "I love how this body peel shot removes tge dead skin off of my body!",
+    date: "13/06/2026",
+    text: "J'adore la façon dont ce body peel shot élimine les peaux mortes sur tout mon corps !",
     verified: true,
   },
   {
     name: "Laura",
-    date: "04/19/2026",
-    text: "Absolutely LOVE this product. Medicube never disappoints. This product helps remove sebum build up on your nose as well as dead skin, leaving your face smooth. Obsessed with this product is an understatement.",
+    date: "19/04/2026",
+    text: "J'adore absolument ce produit. Medicube ne déçoit jamais. Il aide à éliminer l'accumulation de sébum sur le nez ainsi que les cellules mortes, et laisse le visage tout lisse. Dire que je suis obsédée est un euphémisme.",
     verified: true,
   },
   {
     name: "Sethrina",
-    date: "04/10/2026",
-    text: "Feel way cleaner after using it",
+    date: "10/04/2026",
+    text: "Je me sens bien plus propre après l'avoir utilisé.",
     verified: false,
-    title: "Hypochlorous Acid Rice Body Peel Shot",
+    title: "Body Peel Shot à l'acide hypochloreux et au riz",
   },
-  { name: "Ananna", date: "04/01/2026", text: "Makes your body silky and shiny.", verified: true },
   {
-    name: "Sethrina",
-    date: "03/15/2026",
-    text: "Love how good it is for exfoliating dirt on my body! Would recommend to others",
+    name: "Ananna",
+    date: "01/04/2026",
+    text: "Rend la peau du corps soyeuse et lumineuse.",
     verified: true,
   },
   {
     name: "Sethrina",
-    date: "03/15/2026",
-    text: "Love how good it is for exfoliating dirt on my body! Would recommend to others",
+    date: "15/03/2026",
+    text: "J'adore son efficacité pour exfolier les impuretés sur le corps ! Je le recommande.",
+    verified: true,
+  },
+  {
+    name: "Sethrina",
+    date: "15/03/2026",
+    text: "J'adore son efficacité pour exfolier les impuretés sur le corps ! Je le recommande.",
     verified: true,
   },
 ];

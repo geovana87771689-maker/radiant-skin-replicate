@@ -1,9 +1,19 @@
 import { toast } from "sonner";
 
 const columns = [
-  { title: "Help", links: ["Contact Us", "Shipping Policy", "Return & Refund", "Track Order"] },
-  { title: "About", links: ["Our Story", "AGE-R", "Ingredients", "Blog"] },
-  { title: "Policies", links: ["Privacy Policy", "Terms of Service", "Fake Product Guide"] },
+  {
+    title: "Aide",
+    links: ["Nous contacter", "Livraison", "Retours & remboursements", "Suivre ma commande"],
+  },
+  { title: "À propos", links: ["Notre histoire", "AGE-R", "Ingrédients", "Blog"] },
+  {
+    title: "Mentions légales",
+    links: [
+      "Politique de confidentialité",
+      "Conditions générales de vente",
+      "Reconnaître un faux produit",
+    ],
+  },
 ];
 
 export function SiteFooter() {
@@ -13,23 +23,24 @@ export function SiteFooter() {
         <div>
           <p className="text-xl font-extrabold tracking-[0.2em] uppercase">medicube</p>
           <p className="mt-3 max-w-xs text-sm text-muted-foreground">
-            Dermatologist-inspired Korean skincare for clearer, healthier-looking skin.
+            Soins coréens inspirés par la dermatologie, pour une peau visiblement plus nette et plus
+            saine.
           </p>
           <form
             className="mt-5 flex max-w-sm gap-2"
             onSubmit={(e) => {
               e.preventDefault();
-              toast.success("Thanks for subscribing!");
+              toast.success("Merci pour votre inscription !");
             }}
           >
             <input
               type="email"
               required
-              placeholder="Email address"
+              placeholder="Adresse e-mail"
               className="w-full rounded-sm border border-border bg-background px-3 py-2 text-sm outline-none focus:border-foreground"
             />
             <button className="rounded-sm bg-primary px-4 text-xs font-semibold tracking-wide text-primary-foreground uppercase">
-              Join
+              S'inscrire
             </button>
           </form>
           <div className="mt-5 flex gap-4 text-xs text-muted-foreground">
@@ -55,7 +66,7 @@ export function SiteFooter() {
         ))}
       </div>
       <p className="mx-auto mt-12 max-w-[1280px] px-4 text-[11px] text-muted-foreground">
-        © {new Date().getFullYear()} MEDICUBE US. All rights reserved.
+        © {new Date().getFullYear()} MEDICUBE. Tous droits réservés.
       </p>
     </footer>
   );
