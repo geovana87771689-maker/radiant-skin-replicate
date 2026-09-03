@@ -77,7 +77,9 @@ export function ReviewsSection() {
                 </div>
               </div>
               <p className="mt-4 text-sm leading-relaxed">{r.text}</p>
-              <p className="mt-3 text-[11px] text-muted-foreground">Cet avis vous a-t-il été utile ? 0 · 0</p>
+              <p className="mt-3 text-[11px] text-muted-foreground">
+                Cet avis vous a-t-il été utile ? 0 · 0
+              </p>
             </li>
           ))}
         </ul>
