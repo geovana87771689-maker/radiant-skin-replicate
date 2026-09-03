@@ -21,6 +21,7 @@ export type Variant = {
   price: number;
   compareAt?: number;
   badge?: string;
+  bestSeller?: string;
   support: string;
   urgency?: string;
   popular?: boolean;
@@ -47,6 +48,7 @@ export const variants: Variant[] = [
     price: 49.99,
     compareAt: 65.98,
     badge: "MEILLEURE VALEUR",
+    bestSeller: "MEILLEURE VENTE",
     support: "Recommandé pour des résultats durables (2 à 3 mois).",
     urgency: "Livraison prioritaire offerte",
     popular: true,
