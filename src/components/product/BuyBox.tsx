@@ -6,8 +6,6 @@ import { Stars } from "./Stars";
 
 export function BuyBox() {
   const [qty, setQty] = useState(1);
-  const total = product.price * qty;
-  const remaining = Math.max(0, 80 - total);
 
   return (
     <div className="flex flex-col gap-5">
