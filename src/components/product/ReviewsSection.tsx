@@ -17,9 +17,9 @@ export function ReviewsSection() {
     <section className="bg-muted py-16">
       <div className="mx-auto max-w-4xl px-4">
         <p className="text-center text-xs tracking-[0.25em] text-muted-foreground uppercase">
-          The real reviews of the community
+          Les avis authentiques de la communauté
         </p>
-        <h2 className="mt-3 text-center text-2xl font-bold">Reviews</h2>
+        <h2 className="mt-3 text-center text-2xl font-bold">Avis clients</h2>
 
         <div className="mt-10 grid gap-8 rounded-sm bg-background p-8 sm:grid-cols-[200px_1fr]">
           <div className="text-center">
@@ -28,19 +28,19 @@ export function ReviewsSection() {
               <Stars rating={product.rating} size={16} />
             </div>
             <p className="mt-2 text-xs text-muted-foreground">
-              Based on {product.reviewCount} Reviews
+              Basé sur {product.reviewCount} avis
             </p>
             <button
               onClick={() => setReviewOpen(true)}
               className="mt-4 w-full rounded-sm bg-primary py-2.5 text-xs font-semibold tracking-wide text-primary-foreground uppercase"
             >
-              Write a review
+              Rédiger un avis
             </button>
           </div>
           <div className="space-y-2">
             {distribution.map((row) => (
               <div key={row.stars} className="flex items-center gap-3 text-xs">
-                <span className="w-12 text-muted-foreground">{row.stars} stars</span>
+                <span className="w-12 text-muted-foreground">{row.stars} étoiles</span>
                 <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
                   <div className="h-full bg-primary" style={{ width: `${row.pct}%` }} />
                 </div>
@@ -49,8 +49,7 @@ export function ReviewsSection() {
               </div>
             ))}
             <p className="pt-4 text-xs text-muted-foreground">
-              <strong className="text-foreground">100%</strong> of reviewers would recommend this
-              product
+              <strong className="text-foreground">100%</strong> des clients recommandent ce produit
             </p>
           </div>
         </div>
@@ -67,7 +66,7 @@ export function ReviewsSection() {
                     {r.name}
                     {r.verified && (
                       <span className="rounded-sm bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground">
-                        Verified by Shop
+                        Achat vérifié
                       </span>
                     )}
                   </div>
@@ -78,7 +77,9 @@ export function ReviewsSection() {
                 </div>
               </div>
               <p className="mt-4 text-sm leading-relaxed">{r.text}</p>
-              <p className="mt-3 text-[11px] text-muted-foreground">Was this helpful? 0 · 0</p>
+              <p className="mt-3 text-[11px] text-muted-foreground">
+                Cet avis vous a-t-il été utile ? 0 · 0
+              </p>
             </li>
           ))}
         </ul>

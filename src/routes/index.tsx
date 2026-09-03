@@ -8,9 +8,9 @@ import { ProductInfoSections } from "@/components/product/ProductInfoSections";
 import { ReviewsSection } from "@/components/product/ReviewsSection";
 import { product, productImages } from "@/data/product";
 
-const title = "Hypochlorous Acid Rice Body Peel Shot | MEDICUBE US";
+const title = "Duo Rice Peel Shot à l'Acide Hypochloreux | MEDICUBE";
 const description =
-  "Gentle body exfoliating serum with Hypochlorous Acid and Rice Extract that removes dead skin cells, impurities and rough texture.";
+  "Sérum exfoliant corps à l'acide hypochloreux et à l'extrait de riz : élimine les cellules mortes, les impuretés et lisse le grain de peau.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
