@@ -6,8 +6,6 @@ import { Stars } from "./Stars";
 
 export function BuyBox() {
   const [qty, setQty] = useState(1);
-  const total = product.price * qty;
-  const remaining = Math.max(0, 80 - total);
 
   return (
     <div className="flex flex-col gap-5">
@@ -78,13 +76,7 @@ export function BuyBox() {
       <div className="rounded-sm bg-muted px-4 py-3 text-xs">
         <div className="flex items-center gap-2 font-medium">
           <Truck className="size-4" />
-          {remaining > 0 ? (
-            <span>
-              You're <strong>€{remaining.toFixed(2)}</strong> away from free shipping!
-            </span>
-          ) : (
-            <span>You've unlocked free shipping!</span>
-          )}
+          <span>Free shipping on all orders!</span>
         </div>
         <p className="mt-2 text-muted-foreground">
           For orders over €35.00, select installments at checkout to split your purchase over time.
