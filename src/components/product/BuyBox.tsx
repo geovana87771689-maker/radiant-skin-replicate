@@ -104,28 +104,9 @@ export function BuyBox({
         <span className="text-sm text-muted-foreground">TTC</span>
       </div>
 
-      <div className="flex items-center gap-4">
-        <div className="flex items-center rounded-sm border border-border">
-          <button
-            className="px-3 py-2 disabled:opacity-40"
-            onClick={() => setQty((q) => Math.max(1, q - 1))}
-            disabled={qty === 1}
-            aria-label="Diminuer la quantité"
-          >
-            <Minus className="size-4" />
-          </button>
-          <span className="w-10 text-center text-sm font-medium">{qty}</span>
-          <button
-            className="px-3 py-2"
-            onClick={() => setQty((q) => q + 1)}
-            aria-label="Augmenter la quantité"
-          >
-            <Plus className="size-4" />
-          </button>
-        </div>
-        <span className="text-xs text-muted-foreground">
-          Frais de livraison calculés au paiement.
-        </span>
+      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+        <Truck className="size-4" />
+        <span>Frais de livraison calculés au paiement.</span>
       </div>
 
       <div className="flex flex-col gap-2">
