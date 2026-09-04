@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
 import { SiteHeader } from "@/components/product/SiteHeader";
@@ -9,6 +9,7 @@ import { ProductInfoSections } from "@/components/product/ProductInfoSections";
 import { ReviewsSection } from "@/components/product/ReviewsSection";
 import { StickyCta } from "@/components/product/StickyCta";
 import { product, productImages } from "@/data/product";
+import { captureTrackingParams } from "@/lib/tracking";
 
 const title = "Duo Rice Peel Shot à l'Acide Hypochloreux | MEDICUBE";
 const description =
@@ -60,6 +61,9 @@ function ProductPage() {
   const [selectedVariantId, setSelectedVariantId] = useState<"1kit" | "2kits">(
     "2kits",
   );
+  useEffect(() => {
+    captureTrackingParams();
+  }, []);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
