@@ -1,6 +1,7 @@
 import { Truck, Check, ShieldCheck, Package } from "lucide-react";
 import { toast } from "sonner";
 import { product, variants, formatPrice } from "@/data/product";
+import { appendTrackingParams } from "@/lib/tracking";
 import { Stars } from "./Stars";
 import { CardBrands } from "./CardBrands";
 
@@ -116,9 +117,9 @@ export function BuyBox({
             toast.success(
               `${selectedVariant.title} — redirection vers le paiement`,
             );
-            const queryString =
-              typeof window !== "undefined" ? window.location.search : "";
-            const checkoutUrl = `https://vittacore.us/cart/${selectedVariant.variantId}:${qty}?checkout${queryString ? `&${queryString.slice(1)}` : ""}`;
+            const checkoutUrl = appendTrackingParams(
+              `https://vittacore.us/cart/${selectedVariant.variantId}:${qty}?checkout`,
+            );
             if (typeof window !== "undefined" && (window as any).fbq) {
               (window as any).fbq("track", "AddToCart", {
                 content_name: selectedVariant.title,
