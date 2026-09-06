@@ -40,7 +40,7 @@ export const variants: Variant[] = [
     compareAt: 49.9,
     badge: "-30%",
     support: "Idéal pour tester les premiers résultats (1 mois).",
-    unitPriceNote: "Soit € 17,45 par unité",
+    unitPriceNote: "Soit € 17,45 par sérum",
     image: productImages[0]!,
   },
   {
