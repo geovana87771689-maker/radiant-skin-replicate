@@ -26,6 +26,7 @@ export type Variant = {
   urgency?: string;
   popular?: boolean;
   image: string;
+  unitPriceNote?: string;
 };
 
 export const variants: Variant[] = [
@@ -35,8 +36,11 @@ export const variants: Variant[] = [
     title: "1 Coffret (2 Sérums) — Cure Découverte",
     qtyLabel: "1 Coffret · 2 Sérums",
     shortSupport: "Cure découverte — 1 mois",
-    price: 32.99,
+    price: 34.9,
+    compareAt: 49.9,
+    badge: "-30%",
     support: "Idéal pour tester les premiers résultats (1 mois).",
+    unitPriceNote: "Soit € 17,45 par unité",
     image: productImages[0]!,
   },
   {
@@ -45,13 +49,14 @@ export const variants: Variant[] = [
     title: "2 Coffrets (4 Sérums) — Cure Complète Anti-Âge",
     qtyLabel: "2 Coffrets · 4 Sérums",
     shortSupport: "Cure complète — 2 à 3 mois",
-    price: 49.99,
-    compareAt: 65.98,
-    badge: "MEILLEURE VALEUR",
+    price: 54.9,
+    compareAt: 109.9,
+    badge: "OFFRE SPÉCIALE",
     bestSeller: "MEILLEURE VENTE",
     support: "Recommandé pour des résultats durables (2 à 3 mois).",
     urgency: "Livraison prioritaire offerte",
     popular: true,
+    unitPriceNote: "Soit € 13,72 par unité — Économisez € 55,00",
     image: "/images/duo-rice-peel-shot-2kits.png",
   },
 ];
