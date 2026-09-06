@@ -40,7 +40,7 @@ export const variants: Variant[] = [
     compareAt: 49.9,
     badge: "-30%",
     support: "Idéal pour tester les premiers résultats (1 mois).",
-    unitPriceNote: "Soit € 17,45 par unité",
+    unitPriceNote: "Soit € 17,45 par sérum",
     image: productImages[0]!,
   },
   {
@@ -56,7 +56,7 @@ export const variants: Variant[] = [
     support: "Recommandé pour des résultats durables (2 à 3 mois).",
     urgency: "Livraison prioritaire offerte",
     popular: true,
-    unitPriceNote: "Soit € 13,72 par unité — Économisez € 55,00",
+    unitPriceNote: "Soit € 13,72 par sérum — Économisez € 55,00",
     image: "/images/duo-rice-peel-shot-2kits.png",
   },
 ];
