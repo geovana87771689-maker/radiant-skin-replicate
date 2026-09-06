@@ -147,6 +147,20 @@ export function BuyBox({
           Commander maintenant
         </button>
 
+        {/* Stock scarcity */}
+        <p className="text-center text-[11px] font-semibold text-primary">
+          Forte demande : plus que 7 coffrets disponibles pour l'expédition
+          d'aujourd'hui.
+        </p>
+        <div className="flex items-center gap-2" aria-hidden="true">
+          <div className="h-1 flex-1 overflow-hidden rounded-full bg-muted">
+            <div className="h-full w-[18%] rounded-full bg-primary" />
+          </div>
+          <span className="text-[10px] font-medium text-muted-foreground">
+            7 restants
+          </span>
+        </div>
+
         {/* Trust badges */}
         <CardBrands />
         <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] font-medium text-muted-foreground">
