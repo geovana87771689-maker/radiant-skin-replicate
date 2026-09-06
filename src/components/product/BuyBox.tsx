@@ -89,12 +89,16 @@ export function BuyBox({
                     </span>
                   </span>
                 </div>
-                {(v.compareAt || v.urgency) && (
+                {(v.unitPriceNote || v.compareAt || v.urgency) && (
                   <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 pl-8 text-[11px] font-semibold text-primary">
-                    {v.compareAt && (
-                      <span>
-                        Économisez {formatPrice(v.compareAt - v.price)}
-                      </span>
+                    {v.unitPriceNote ? (
+                      <span>{v.unitPriceNote}</span>
+                    ) : (
+                      v.compareAt && (
+                        <span>
+                          Économisez {formatPrice(v.compareAt - v.price)}
+                        </span>
+                      )
                     )}
                     {v.urgency && <span>{v.urgency}</span>}
                   </div>
