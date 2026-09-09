@@ -198,8 +198,6 @@ export function BuyBox({
         </div>
       </div>
 
-      {/* 5b — Order bump */}
-      <OrderBump selected={bumpSelected} onToggle={onToggleBump} />
 
       {/* 6 — CTA (rounded-full, flex layout) */}
       <Button
