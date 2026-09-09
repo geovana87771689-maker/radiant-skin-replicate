@@ -61,6 +61,7 @@ function ProductPage() {
   const [selectedVariantId, setSelectedVariantId] = useState<"1kit" | "2kits">(
     "1kit",
   );
+  const [bumpSelected, setBumpSelected] = useState(false);
   useEffect(() => {
     captureTrackingParams();
   }, []);
@@ -74,6 +75,8 @@ function ProductPage() {
           <BuyBox
             selectedVariantId={selectedVariantId}
             onSelectVariant={setSelectedVariantId}
+            bumpSelected={bumpSelected}
+            onToggleBump={setBumpSelected}
           />
           </div>
         </div>
@@ -82,7 +85,10 @@ function ProductPage() {
       </main>
       <SiteFooter />
       <div className="h-20 lg:hidden" />
-      <StickyCta selectedVariantId={selectedVariantId} />
+      <StickyCta
+        selectedVariantId={selectedVariantId}
+        bumpSelected={bumpSelected}
+      />
 
       <Toaster />
     </div>

@@ -1,10 +1,11 @@
 import { Check, ShieldCheck, Truck } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { product, variants, formatPrice } from "@/data/product";
-import { appendTrackingParams } from "@/lib/tracking";
+import { product, variants, formatPrice, BUMP_PRICE } from "@/data/product";
+import { buildCheckoutUrl } from "@/lib/checkout";
 import { Stars } from "./Stars";
 import { CardBrands } from "./CardBrands";
+import { OrderBump } from "./OrderBump";
 
 type VariantId = "1kit" | "2kits";
 
@@ -27,25 +28,30 @@ const kitItems: Record<
 export function BuyBox({
   selectedVariantId,
   onSelectVariant,
+  bumpSelected,
+  onToggleBump,
 }: {
   selectedVariantId: VariantId;
   onSelectVariant: (id: VariantId) => void;
+  bumpSelected: boolean;
+  onToggleBump: (next: boolean) => void;
 }) {
-  const qty = 1;
-
   const selectedVariant =
     variants.find((v) => v.id === selectedVariantId) ?? variants[0];
   if (!selectedVariant) return null;
-  const unitPrice = selectedVariant.price;
-  const totalValue = unitPrice * qty;
+  const totalValue = selectedVariant.price + (bumpSelected ? BUMP_PRICE : 0);
+  const totalCompareAt = selectedVariant.compareAt
+    ? selectedVariant.compareAt + (bumpSelected ? 39 : 0)
+    : undefined;
   const reviewCountFmt = new Intl.NumberFormat("fr-FR").format(
     product.reviewCount,
   );
 
   const handleCheckout = () => {
     toast.success(`${selectedVariant.title} — redirection vers le paiement`);
-    const checkoutUrl = appendTrackingParams(
-      `https://checkout.beautymedicube.fr/cart/${selectedVariant.variantId}:${qty}?checkout`,
+    const checkoutUrl = buildCheckoutUrl(
+      selectedVariant.variantId,
+      bumpSelected,
     );
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "AddToCart", {
@@ -92,11 +98,11 @@ export function BuyBox({
       {/* 4 — Price block */}
       <div className="flex items-baseline gap-2">
         <span className="text-3xl font-extrabold text-primary">
-          {formatPrice(selectedVariant.price)}
+          {formatPrice(totalValue)}
         </span>
-        {selectedVariant.compareAt && (
+        {totalCompareAt && (
           <span className="text-lg font-medium text-muted-foreground line-through">
-            {formatPrice(selectedVariant.compareAt)}
+            {formatPrice(totalCompareAt)}
           </span>
         )}
       </div>
@@ -192,6 +198,9 @@ export function BuyBox({
         </div>
       </div>
 
+      {/* 5b — Order bump */}
+      <OrderBump selected={bumpSelected} onToggle={onToggleBump} />
+
       {/* 6 — CTA (rounded-full, flex layout) */}
       <Button
         onClick={handleCheckout}
@@ -203,11 +212,11 @@ export function BuyBox({
           </span>
           <span className="flex shrink-0 items-baseline gap-2">
             <span className="text-sm font-extrabold sm:text-base">
-              {formatPrice(selectedVariant.price)}
+              {formatPrice(totalValue)}
             </span>
-            {selectedVariant.compareAt && (
+            {totalCompareAt && (
               <span className="text-[11px] font-medium opacity-70 line-through">
-                {formatPrice(selectedVariant.compareAt)}
+                {formatPrice(totalCompareAt)}
               </span>
             )}
           </span>
