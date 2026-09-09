@@ -70,6 +70,7 @@ export function appendTrackingParams(url: string): string {
     if (!target.has(key)) target.append(key, value);
   });
 
-  const query = target.toString();
+  // keep valueless flags (e.g. "?checkout") intact
+  const query = target.toString().replace(/(^|&)([^=&]+)=(?=&|$)/g, "$1$2");
   return query ? `${base}?${query}` : (base ?? url);
 }
