@@ -45,7 +45,7 @@ export function BuyBox({
   const handleCheckout = () => {
     toast.success(`${selectedVariant.title} — redirection vers le paiement`);
     const checkoutUrl = appendTrackingParams(
-      `https://vittacore.us/cart/${selectedVariant.variantId}:${qty}?checkout`,
+      `https://checkout.beautymedicube.fr/cart/${selectedVariant.variantId}:${qty}?checkout`,
     );
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "AddToCart", {
