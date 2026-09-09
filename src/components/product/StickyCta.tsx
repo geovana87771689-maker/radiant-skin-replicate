@@ -2,6 +2,7 @@ import { toast } from "sonner";
 import { product, variants, formatPrice, BUMP_PRICE } from "@/data/product";
 import { Button } from "@/components/ui/button";
 import { buildCheckoutUrl } from "@/lib/checkout";
+import { trackCheckoutEvents } from "@/lib/pixel";
 
 type VariantId = "1kit" | "2kits";
 
@@ -23,20 +24,11 @@ export function StickyCta({
   const handleCheckout = () => {
     toast.success(`${variant.title} — redirection vers le paiement`);
     const checkoutUrl = buildCheckoutUrl(variant.variantId, bumpSelected);
-    if (typeof window !== "undefined" && (window as any).fbq) {
-      (window as any).fbq("track", "AddToCart", {
-        content_name: variant.title,
-        content_ids: [variant.variantId],
-        content_type: "product",
-        value: totalValue,
-        currency: "EUR",
-      });
-      (window as any).fbq("track", "InitiateCheckout", {
-        content_name: variant.title,
-        currency: "EUR",
-        value: totalValue,
-      });
-    }
+    trackCheckoutEvents({
+      title: variant.title,
+      variantId: variant.variantId,
+      value: totalValue,
+    });
     setTimeout(() => {
       window.location.href = checkoutUrl;
     }, 350);

@@ -3,6 +3,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { product, variants, formatPrice, BUMP_PRICE } from "@/data/product";
 import { buildCheckoutUrl } from "@/lib/checkout";
+import { trackCheckoutEvents } from "@/lib/pixel";
 import { Stars } from "./Stars";
 import { CardBrands } from "./CardBrands";
 import { OrderBump } from "./OrderBump";
@@ -53,20 +54,11 @@ export function BuyBox({
       selectedVariant.variantId,
       bumpSelected,
     );
-    if (typeof window !== "undefined" && (window as any).fbq) {
-      (window as any).fbq("track", "AddToCart", {
-        content_name: selectedVariant.title,
-        content_ids: [selectedVariant.variantId],
-        content_type: "product",
-        value: totalValue,
-        currency: "EUR",
-      });
-      (window as any).fbq("track", "InitiateCheckout", {
-        content_name: selectedVariant.title,
-        currency: "EUR",
-        value: totalValue,
-      });
-    }
+    trackCheckoutEvents({
+      title: selectedVariant.title,
+      variantId: selectedVariant.variantId,
+      value: totalValue,
+    });
     setTimeout(() => {
       window.location.href = checkoutUrl;
     }, 350);
