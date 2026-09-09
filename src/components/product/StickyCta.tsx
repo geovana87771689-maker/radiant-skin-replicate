@@ -13,6 +13,31 @@ export function StickyCta({
   const variant = variants.find((v) => v.id === selectedVariantId) ?? variants[0];
   if (!variant) return null;
 
+  const handleCheckout = () => {
+    toast.success(`${variant.title} — redirection vers le paiement`);
+    const checkoutUrl = appendTrackingParams(
+      `https://vittacore.us/cart/${variant.variantId}:1?checkout`,
+    );
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("track", "AddToCart", {
+        content_name: variant.title,
+        content_ids: [variant.variantId],
+        content_type: "product",
+        value: variant.price,
+        currency: "EUR",
+      });
+      (window as any).fbq("track", "InitiateCheckout", {
+        content_name: variant.title,
+        currency: "EUR",
+        value: variant.price,
+      });
+    }
+    setTimeout(() => {
+      window.location.href = checkoutUrl;
+    }, 350);
+  };
+
+
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 px-3 py-2.5 backdrop-blur lg:hidden">
       <div className="flex items-center gap-3">
