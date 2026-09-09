@@ -100,7 +100,7 @@ export function ReviewsSection() {
                 <img
                   src={r.image}
                   alt={`Photo partagée par ${r.name}`}
-                  className="mt-4 h-auto w-full max-w-xs rounded-sm object-contain"
+                  className="mt-3 h-auto w-full max-w-[140px] rounded-sm object-contain sm:max-w-[160px]"
                   loading="lazy"
                 />
               )}
