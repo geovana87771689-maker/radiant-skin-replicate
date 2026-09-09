@@ -195,18 +195,18 @@ export function BuyBox({
       {/* 6 — CTA (rounded-full, flex layout) */}
       <Button
         onClick={handleCheckout}
-        className="h-14 w-full rounded-full bg-primary text-primary-foreground shadow-lg"
+        className="h-16 w-full rounded-full bg-primary text-primary-foreground shadow-lg"
       >
-        <span className="flex w-full items-center justify-between gap-3 px-5">
-          <span className="text-sm font-extrabold uppercase tracking-tight">
+        <span className="flex w-full items-center justify-between gap-4 px-6">
+          <span className="text-xs font-extrabold uppercase tracking-tight sm:text-sm">
             Commander maintenant
           </span>
-          <span className="flex shrink-0 items-baseline gap-1.5">
-            <span className="text-sm font-extrabold">
+          <span className="flex shrink-0 items-baseline gap-2">
+            <span className="text-sm font-extrabold sm:text-base">
               {formatPrice(selectedVariant.price)}
             </span>
             {selectedVariant.compareAt && (
-              <span className="text-xs font-medium opacity-70 line-through">
+              <span className="text-[11px] font-medium opacity-70 line-through">
                 {formatPrice(selectedVariant.compareAt)}
               </span>
             )}
