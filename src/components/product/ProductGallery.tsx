@@ -47,20 +47,20 @@ export function ProductGallery({
           loading="eager"
           referrerPolicy="no-referrer"
           onError={handleImageError}
-          className="aspect-square w-full object-cover"
+          className="aspect-[4/3] w-full object-contain sm:aspect-square"
         />
         <span className="absolute bottom-3 left-3 max-w-[85%] rounded-md bg-background/95 px-3 py-2 text-xs font-bold text-foreground shadow-sm backdrop-blur">
           {galleryItems[active]?.label}
         </span>
       </div>
-      <div className="grid grid-cols-4 gap-2 sm:grid-cols-7">
+      <div className="flex gap-2 overflow-x-auto pb-1 sm:grid sm:grid-cols-7 sm:overflow-visible">
         {galleryItems.map((item, i) => (
           <button
             key={`${item.src}-${i}`}
             type="button"
             onClick={() => setActive(i)}
             aria-label={item.label}
-            className={`overflow-hidden rounded-sm border transition-colors ${
+            className={`w-[72px] shrink-0 overflow-hidden rounded-sm border transition-colors sm:w-auto ${
               i === active ? "border-primary ring-1 ring-primary" : "border-border hover:border-muted-foreground"
             }`}
           >
@@ -75,7 +75,7 @@ export function ProductGallery({
           </button>
         ))}
       </div>
-      <div className="grid grid-cols-2 gap-2 text-[11px] font-bold text-foreground">
+      <div className="grid grid-cols-2 gap-2 text-[10px] font-bold text-foreground sm:text-[11px]">
         <div className="rounded-md border border-border bg-background px-3 py-2">Étape 1 · Corps & zones rugueuses</div>
         <div className="rounded-md border border-border bg-background px-3 py-2">Étape 2 · Visage & teint net</div>
       </div>

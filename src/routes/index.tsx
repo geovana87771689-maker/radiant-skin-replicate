@@ -59,7 +59,7 @@ export const Route = createFileRoute("/")({
 
 function ProductPage() {
   const [selectedVariantId, setSelectedVariantId] = useState<"1kit" | "2kits">(
-    "2kits",
+    "1kit",
   );
   useEffect(() => {
     captureTrackingParams();
