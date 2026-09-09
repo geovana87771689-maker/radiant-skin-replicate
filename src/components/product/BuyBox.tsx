@@ -198,8 +198,6 @@ export function BuyBox({
         </div>
       </div>
 
-      {/* 5b — Order bump */}
-      <OrderBump selected={bumpSelected} onToggle={onToggleBump} />
 
       {/* 6 — CTA (rounded-full, flex layout) */}
       <Button
@@ -257,6 +255,9 @@ export function BuyBox({
 
       {/* Card brands */}
       <CardBrands />
+
+      {/* 5b — Order bump */}
+      <OrderBump selected={bumpSelected} onToggle={onToggleBump} />
 
       {/* Spec table */}
       <dl className="divide-y divide-border border-y border-border text-xs sm:text-sm">
