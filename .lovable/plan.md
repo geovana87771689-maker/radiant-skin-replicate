@@ -1,7 +1,7 @@
 # Otimização CRO e mobile da página de produto
 
 ## Alterações
-- Compactar o cabeçalho mobile, integrando o aviso de frete à área da logo e reduzindo a altura ocupada no topo.
+- Manter o cabeçalho e as barras de aviso existentes sem alterações.
 - Reduzir espaços da galeria no mobile e manter a foto principal inteira com enquadramento `contain`.
 - Enxugar a primeira dobra para antecipar título, avaliações e preço.
 - Remover a linha redundante de comparação “Env. vendu séparément…”.
