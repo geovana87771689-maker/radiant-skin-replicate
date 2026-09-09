@@ -199,27 +199,18 @@ export function BuyBox({
       </div>
 
 
-      {/* 6 — CTA (rounded-full, flex layout) */}
+      {/* 6 — CTA (rounded-full) */}
       <Button
         onClick={handleCheckout}
         className="h-16 w-full rounded-full bg-primary text-primary-foreground shadow-lg"
       >
-        <span className="flex w-full items-center justify-between gap-4 px-6">
-          <span className="text-xs font-extrabold uppercase tracking-tight sm:text-sm">
-            Commander maintenant
-          </span>
-          <span className="flex shrink-0 items-baseline gap-2">
-            <span className="text-sm font-extrabold sm:text-base">
-              {formatPrice(totalValue)}
-            </span>
-            {totalCompareAt && (
-              <span className="text-[11px] font-medium opacity-70 line-through">
-                {formatPrice(totalCompareAt)}
-              </span>
-            )}
-          </span>
+        <span className="text-sm font-extrabold uppercase tracking-tight sm:text-base">
+          Commander maintenant
         </span>
       </Button>
+
+      {/* Card brands */}
+      <CardBrands />
 
       {/* 7 — Guarantees */}
       <div className="flex flex-col items-center gap-0.5">
@@ -253,8 +244,6 @@ export function BuyBox({
         </span>
       </div>
 
-      {/* Card brands */}
-      <CardBrands />
 
       {/* 5b — Order bump */}
       <OrderBump selected={bumpSelected} onToggle={onToggleBump} />
