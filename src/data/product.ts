@@ -10,6 +10,9 @@ export const productImages = [
   "https://medicube.us/cdn/shop/files/06_8d70c34b-cad2-4e03-ad3d-6f941daf9ff9.jpg?v=1770188425&width=1200",
 ];
 
+export const BUMP_PRICE = 19.9;
+export const BUMP_VARIANT_ID = "54756508008814";
+
 export const formatPrice = (value: number) =>
   new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" }).format(value);
 
