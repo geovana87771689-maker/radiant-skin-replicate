@@ -1,3 +1,6 @@
+import reviewImageOne from "@/assets/reviews/avis-client-1.webp.asset.json";
+import reviewImageTwo from "@/assets/reviews/avis-client-2.webp.asset.json";
+
 export const productImages = [
   "/images/duo-rice-peel-shot-v2.jpg",
   "https://medicube.us/cdn/shop/files/00_43ae12cc-101f-477e-a4c8-6944dce6f4e2.jpg?v=1770188425&width=1200",
@@ -120,9 +123,18 @@ export const product = {
     "WATER, ALCOHOL DENAT., CARBOMER, QUATERNIUM-60, PROPYLENE GLYCOL, 1,2-HEXANEDIOL, DIPROPYLENE GLYCOL, CETRIMONIUM METHOSULFATE, CAPRYLYL METHICONE, CAPRYLYL GLYCOL, POLYGLYCERYL-10 OLEATE, ETHYLHEXYLGLYCERIN, CHARCOAL POWDER, HYPOCHLOROUS ACID(20PPM), GLUCOSE, CHLORELLA VULGARIS EXTRACT, BUTYLENE GLYCOL, FRUCTOSE, FRUCTOOLIGOSACCHARIDES, TOCOPHEROL, SODIUM HYALURONATE CROSSPOLYMER, CYNANCHUM ATRATUM EXTRACT, XYLOSE, POLYGLUTAMIC ACID, ALTHAEA ROSEA FLOWER EXTRACT, CERAMIDE NP, SODIUM CHLORIDE, ALLANTOIN, PANTHENOL, ORYZA SATIVA (RICE) BRAN WATER, MELALEUCA ALTERNIFOLIA (TEA TREE) LEAF EXTRACT, PROTEASE, ORYZA SATIVA (RICE) EXTRACT, CENTELLA ASIATICA EXTRACT, HYDROLYZED HYALURONIC ACID",
 };
 
-export const reviews = [
-  { name: "Summer", date: "30/08/2026", rating: 5, text: "Livraison très rapide et produit conforme à la description.", verified: true },
-  { name: "Amber", date: "01/08/2026", rating: 5, text: "Ça fonctionne, j'en rachèterai !", verified: true },
+export type Review = {
+  name: string;
+  date: string;
+  rating: number;
+  text: string;
+  verified: boolean;
+  image?: string;
+};
+
+export const reviews: Review[] = [
+  { name: "Summer", date: "30/08/2026", rating: 5, text: "Livraison très rapide et produit conforme à la description.", verified: true, image: reviewImageOne.url },
+  { name: "Amber", date: "01/08/2026", rating: 5, text: "Ça fonctionne, j'en rachèterai !", verified: true, image: reviewImageTwo.url },
   { name: "IRINA", date: "21/07/2026", rating: 5, text: "Super produit ! Ma peau a l'air en pleine santé !", verified: true },
   { name: "Camille", date: "12/07/2026", rating: 4, text: "Bon résultat sur le grain de peau, mais il faut être régulière. Au bout de 3 semaines la différence est nette.", verified: true },
   { name: "Adam", date: "24/06/2026", rating: 5, text: "J'adore vraiment ce produit, il m'aide à avoir une belle peau à plus de quarante ans.", verified: true },
