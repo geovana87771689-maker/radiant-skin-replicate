@@ -212,15 +212,6 @@ export function BuyBox({
       {/* Card brands */}
       <CardBrands />
 
-      {/* 7 — Guarantees */}
-      <div className="flex flex-col items-center gap-0.5">
-        <p className="text-[11px] font-medium text-muted-foreground">
-          Livraison suivie offerte sur toutes les commandes
-        </p>
-        <p className="text-[11px] font-medium text-muted-foreground">
-          Expédié sous 24/48h · Garantie 30 jours
-        </p>
-      </div>
 
       {/* Stock scarcity */}
       <div className="flex items-center gap-2" aria-hidden="true">
