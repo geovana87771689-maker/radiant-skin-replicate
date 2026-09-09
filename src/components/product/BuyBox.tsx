@@ -60,25 +60,24 @@ export function BuyBox({
           {variants.map((v) => {
             const isSelected = v.id === selectedVariantId;
             return (
-              <Button
+              <button
                 key={v.id}
-                variant="outline"
                 type="button"
                 onClick={() => onSelectVariant(v.id)}
-                className={`relative h-auto w-full whitespace-normal rounded-md border-2 px-3 py-4 text-left shadow-none transition-colors sm:px-4 ${
+                className={`relative block w-full rounded-md border-2 px-3 py-4 text-left transition-colors sm:px-4 ${
                   isSelected
-                    ? "border-primary bg-accent ring-1 ring-primary hover:bg-accent"
-                    : "border-border bg-background hover:border-muted-foreground hover:bg-background"
+                    ? "border-primary bg-accent ring-1 ring-primary"
+                    : "border-border bg-background hover:border-muted-foreground"
                 }`}
               >
                 {v.badge && (
-                  <span className="absolute -top-2.5 right-3 rounded-sm bg-primary px-2 py-1 text-[9px] font-extrabold text-primary-foreground uppercase">
+                  <span className="absolute -top-2.5 right-3 max-w-[70%] truncate rounded-sm bg-primary px-2 py-1 text-[9px] font-extrabold text-primary-foreground uppercase">
                     {v.badge}
                   </span>
                 )}
-                <div className="grid w-full grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3">
+                <div className="flex min-w-0 items-start gap-3">
                   <span
-                    className={`flex size-5 shrink-0 items-center justify-center rounded-full border ${
+                    className={`mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border ${
                       isSelected
                         ? "border-primary bg-primary text-primary-foreground"
                         : "border-border"
@@ -86,42 +85,43 @@ export function BuyBox({
                   >
                     {isSelected && <Check className="size-3" />}
                   </span>
-                  <span className="flex min-w-0 flex-col">
-                    <span className="text-sm leading-tight font-extrabold">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm leading-snug font-extrabold">
                       {v.qtyLabel}
-                    </span>
-                    <span className="text-xs leading-tight text-muted-foreground">
+                    </p>
+                    <p className="mt-0.5 text-xs leading-snug text-muted-foreground">
                       {v.shortSupport}
-                    </span>
-                  </span>
-                  <span className="flex shrink-0 flex-col items-end leading-tight">
-                    {v.compareAt && (
-                      <span className="text-[11px] text-muted-foreground line-through">
-                        {formatPrice(v.compareAt)}
+                    </p>
+                    <div className="mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                      <span className="text-lg leading-none font-extrabold">
+                        {formatPrice(v.price)}
                       </span>
-                    )}
-                    <span className="text-base font-extrabold sm:text-lg">
-                      {formatPrice(v.price)}
-                    </span>
-                  </span>
-                </div>
-                {(v.unitPriceNote || v.compareAt || v.urgency) && (
-                  <div className="mt-2 flex w-full flex-wrap items-center gap-x-2 gap-y-1 pl-8 text-[11px] font-bold text-primary">
-                    {v.unitPriceNote ? (
-                      <span>{v.unitPriceNote}</span>
-                    ) : (
-                      v.compareAt && (
-                        <span>
-                          Économisez {formatPrice(v.compareAt - v.price)}
+                      {v.compareAt && (
+                        <span className="text-[11px] leading-none text-muted-foreground line-through">
+                          {formatPrice(v.compareAt)}
                         </span>
-                      )
+                      )}
+                    </div>
+                    {(v.unitPriceNote || v.compareAt || v.urgency) && (
+                      <div className="mt-1.5 flex flex-col gap-0.5 text-[11px] leading-snug font-bold text-primary">
+                        {v.unitPriceNote ? (
+                          <span>{v.unitPriceNote}</span>
+                        ) : (
+                          v.compareAt && (
+                            <span>
+                              Économisez {formatPrice(v.compareAt - v.price)}
+                            </span>
+                          )
+                        )}
+                        {v.urgency && <span>{v.urgency}</span>}
+                      </div>
                     )}
-                    {v.urgency && <span>{v.urgency}</span>}
                   </div>
-                )}
-              </Button>
+                </div>
+              </button>
             );
           })}
+
         </div>
       </div>
 
