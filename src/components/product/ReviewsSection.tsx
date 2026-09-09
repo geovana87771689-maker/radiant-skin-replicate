@@ -61,9 +61,6 @@ export function ReviewsSection() {
                 <span className="w-10 text-right text-muted-foreground">
                   {row.pct}%
                 </span>
-                <span className="w-6 text-right text-muted-foreground">
-                  {row.count}
-                </span>
               </div>
             ))}
             <p className="pt-4 text-xs text-muted-foreground">
