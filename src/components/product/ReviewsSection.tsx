@@ -4,11 +4,11 @@ import { Stars } from "./Stars";
 import { ReviewFormModal } from "./ReviewFormModal";
 
 const distribution = [
-  { stars: 5, pct: 85, count: 82 },
-  { stars: 4, pct: 12, count: 12 },
-  { stars: 3, pct: 3, count: 3 },
-  { stars: 2, pct: 0, count: 0 },
-  { stars: 1, pct: 0, count: 0 },
+  { stars: 5, pct: 85 },
+  { stars: 4, pct: 12 },
+  { stars: 3, pct: 3 },
+  { stars: 2, pct: 0 },
+  { stars: 1, pct: 0 },
 ];
 
 const PAGE_SIZE = 4;
@@ -60,9 +60,6 @@ export function ReviewsSection() {
                 </div>
                 <span className="w-10 text-right text-muted-foreground">
                   {row.pct}%
-                </span>
-                <span className="w-6 text-right text-muted-foreground">
-                  {row.count}
                 </span>
               </div>
             ))}
