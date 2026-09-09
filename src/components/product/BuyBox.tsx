@@ -243,9 +243,6 @@ export function BuyBox({
         </span>
       </div>
 
-      {/* Card brands */}
-      <CardBrands />
-
       {/* Trust badges */}
       <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] font-medium text-muted-foreground">
         <span className="flex items-center gap-1.5">
@@ -257,6 +254,9 @@ export function BuyBox({
           Livraison suivie
         </span>
       </div>
+
+      {/* Card brands */}
+      <CardBrands />
 
       {/* Spec table */}
       <dl className="divide-y divide-border border-y border-border text-xs sm:text-sm">
