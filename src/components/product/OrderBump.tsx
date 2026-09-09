@@ -44,7 +44,7 @@ export function OrderBump({
 
         <div className="min-w-0 flex-1">
           <p className="text-sm font-extrabold leading-snug text-foreground">
-            Sérum Raffermissant EGF + NAD+ (Anti-Âge &amp; Éclat)
+            Sérum Raffermissant EGF + NAD+ (Anti-Âge & Éclat)
           </p>
           <div className="mt-1 flex flex-wrap items-baseline gap-2">
             <span className="text-base font-extrabold text-primary">
@@ -54,10 +54,6 @@ export function OrderBump({
               {formatPrice(39)}
             </span>
           </div>
-          <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
-            Formule avancée aux peptides EGF, NAD+ et collagène pour lisser les
-            rides, raffermir et restaurer l&apos;élasticité de la peau.
-          </p>
           <ul className="mt-2 space-y-1">
             {[
               "Testé non comédogène & non irritant",
