@@ -1,5 +1,3 @@
-import reviewImageOne from "@/assets/reviews/avis-client-1.webp.asset.json";
-import reviewImageTwo from "@/assets/reviews/avis-client-2.webp.asset.json";
 
 export const productImages = [
   "/images/duo-rice-peel-shot-v2.jpg",
@@ -133,8 +131,8 @@ export type Review = {
 };
 
 export const reviews: Review[] = [
-  { name: "Summer", date: "30/08/2026", rating: 5, text: "Livraison très rapide et produit conforme à la description.", verified: true, image: reviewImageOne.url },
-  { name: "Amber", date: "01/08/2026", rating: 5, text: "Ça fonctionne, j'en rachèterai !", verified: true, image: reviewImageTwo.url },
+  { name: "Summer", date: "30/08/2026", rating: 5, text: "Livraison très rapide et produit conforme à la description.", verified: true, image: "/images/avis-client-1.webp" },
+  { name: "Amber", date: "01/08/2026", rating: 5, text: "Ça fonctionne, j'en rachèterai !", verified: true, image: "/images/avis-client-2.webp" },
   { name: "IRINA", date: "21/07/2026", rating: 5, text: "Super produit ! Ma peau a l'air en pleine santé !", verified: true },
   { name: "Camille", date: "12/07/2026", rating: 4, text: "Bon résultat sur le grain de peau, mais il faut être régulière. Au bout de 3 semaines la différence est nette.", verified: true },
   { name: "Adam", date: "24/06/2026", rating: 5, text: "J'adore vraiment ce produit, il m'aide à avoir une belle peau à plus de quarante ans.", verified: true },
