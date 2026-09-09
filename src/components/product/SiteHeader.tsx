@@ -1,23 +1,8 @@
-import { useEffect, useState } from "react";
-
-const announcements = [
-  "Livraison offerte sur toutes les commandes",
-  "VOUS ÊTES SUR LA BOUTIQUE OFFICIELLE MEDICUBE",
-  "Parrainez vos amis 🎫 5 € offerts pour vous et pour eux !",
-];
-
 export function SiteHeader() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => setIndex((i) => (i + 1) % announcements.length), 4000);
-    return () => clearInterval(id);
-  }, []);
-
   return (
     <header className="sticky top-0 z-50 bg-background">
       <div className="bg-primary px-4 py-2 text-center text-[11px] font-semibold tracking-wide text-primary-foreground uppercase">
-        {announcements[index]}
+        Vous êtes sur la boutique officiale Medicube
       </div>
       <div className="flex items-center justify-center gap-2 bg-black px-4 py-2 text-center text-[11px] font-semibold tracking-wide text-white uppercase">
         <svg
