@@ -16,7 +16,7 @@ export function StickyCta({
   const handleCheckout = () => {
     toast.success(`${variant.title} — redirection vers le paiement`);
     const checkoutUrl = appendTrackingParams(
-      `https://vittacore.us/cart/${variant.variantId}:1?checkout`,
+      `https://checkout.beautymedicube.fr/cart/${variant.variantId}:1?checkout`,
     );
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "AddToCart", {
