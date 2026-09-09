@@ -1,5 +1,4 @@
 import { Check } from "lucide-react";
-import egfSerum from "@/assets/egf-nad-serum.webp.asset.json";
 import { formatPrice, BUMP_PRICE } from "@/data/product";
 
 export function OrderBump({
@@ -36,7 +35,7 @@ export function OrderBump({
         </span>
 
         <img
-          src={egfSerum.url}
+          src="/images/egf-nad-serum.jpg"
           alt="Sérum Raffermissant EGF + NAD+"
           loading="lazy"
           referrerPolicy="no-referrer"
