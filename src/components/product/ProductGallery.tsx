@@ -29,6 +29,7 @@ export function ProductGallery({
     { src: productImages[1] ?? FALLBACK_IMAGE, label: "Étape 1 : Corps & Zones Rugueuses" },
     { src: productImages[2] ?? FALLBACK_IMAGE, label: "Étape 2 : Visage & Teint Net" },
     { src: "/images/gant-exfoliant-offert.jpg", label: "Gant Exfoliant Offert" },
+    { src: egfSerum.url, label: "Sérum Raffermissant EGF + NAD+" },
     ...productImages.slice(3).map((src) => ({ src, label: "Voir le résultat" })),
   ];
 
