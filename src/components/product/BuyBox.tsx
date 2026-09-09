@@ -23,7 +23,7 @@ export function BuyBox({
   const totalValue = unitPrice * qty;
 
   return (
-    <div id="acheter" className="flex flex-col gap-5 scroll-mt-24 rounded-lg border border-border bg-background p-5 shadow-sm sm:p-7">
+    <div id="acheter" className="min-w-0 flex flex-col gap-5 scroll-mt-24 rounded-lg border border-border bg-background p-5 shadow-sm sm:p-7">
       <div>
         <div className="mb-3 flex flex-wrap items-center gap-2">
           <Stars rating={5} size={15} />

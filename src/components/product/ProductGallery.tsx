@@ -37,7 +37,7 @@ export function ProductGallery({
   }, [variant.image]);
 
   return (
-    <div className="flex flex-col gap-4 lg:sticky lg:top-28">
+    <div className="min-w-0 flex flex-col gap-4 lg:sticky lg:top-28">
       <div className="relative overflow-hidden rounded-lg border border-border bg-background shadow-sm">
         <img
           src={galleryItems[active]?.src || FALLBACK_IMAGE}
