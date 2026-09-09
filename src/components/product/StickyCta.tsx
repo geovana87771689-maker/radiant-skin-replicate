@@ -1,5 +1,7 @@
+import { toast } from "sonner";
 import { product, variants, formatPrice } from "@/data/product";
 import { Button } from "@/components/ui/button";
+import { appendTrackingParams } from "@/lib/tracking";
 
 type VariantId = "1kit" | "2kits";
 
@@ -31,11 +33,7 @@ export function StickyCta({
         </div>
         <Button
           type="button"
-          onClick={() =>
-            document
-              .getElementById("acheter")
-              ?.scrollIntoView({ behavior: "smooth", block: "start" })
-          }
+          onClick={handleCheckout}
           className="h-11 shrink-0 rounded-full px-5 text-xs font-extrabold uppercase shadow-lg"
         >
           Commander
