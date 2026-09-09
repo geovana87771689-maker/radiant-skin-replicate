@@ -67,7 +67,7 @@ export const product = {
   subtitle:
     "Traitement complet anti-rugosités, kératose pilaire & boutons — 100% sans grains agressifs.",
   price: 34.9,
-  reviewCount: 112,
+  reviewCount: 1842,
   rating: 4.8,
   skinType: "Tous types (mixtes, grasses, sensibles, acnéiques)",
   skinConcerns:
