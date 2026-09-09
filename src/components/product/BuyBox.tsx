@@ -256,6 +256,9 @@ export function BuyBox({
       {/* Card brands */}
       <CardBrands />
 
+      {/* 5b — Order bump */}
+      <OrderBump selected={bumpSelected} onToggle={onToggleBump} />
+
       {/* Spec table */}
       <dl className="divide-y divide-border border-y border-border text-xs sm:text-sm">
         <div className="grid grid-cols-[115px_1fr] gap-3 py-3">
