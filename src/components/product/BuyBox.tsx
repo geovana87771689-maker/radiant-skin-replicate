@@ -1,10 +1,11 @@
 import { Check, ShieldCheck, Truck } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { product, variants, formatPrice } from "@/data/product";
-import { appendTrackingParams } from "@/lib/tracking";
+import { product, variants, formatPrice, BUMP_PRICE } from "@/data/product";
+import { buildCheckoutUrl } from "@/lib/checkout";
 import { Stars } from "./Stars";
 import { CardBrands } from "./CardBrands";
+import { OrderBump } from "./OrderBump";
 
 type VariantId = "1kit" | "2kits";
 
