@@ -35,9 +35,9 @@ export function OrderBump({
         </span>
 
         <img
-          src="/images/egf-nad-serum.jpg"
+          src="/images/egf-nad-serum.jpg?v=2"
           alt="Sérum Raffermissant EGF + NAD+"
-          loading="lazy"
+          loading="eager"
           referrerPolicy="no-referrer"
           className="size-16 shrink-0 rounded-md bg-background object-contain sm:size-20"
         />
