@@ -96,6 +96,14 @@ export function ReviewsSection() {
                 </div>
               </div>
               <p className="mt-4 text-sm leading-relaxed">{r.text}</p>
+              {r.image && (
+                <img
+                  src={r.image}
+                  alt={`Photo partagée par ${r.name}`}
+                  className="mt-4 h-auto w-full max-w-xs rounded-sm object-contain"
+                  loading="lazy"
+                />
+              )}
               <p className="mt-3 text-[11px] text-muted-foreground">
                 Cet avis vous a-t-il été utile ? 0 · 0
               </p>
