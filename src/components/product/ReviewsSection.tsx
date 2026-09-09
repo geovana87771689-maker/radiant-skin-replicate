@@ -19,6 +19,7 @@ export function ReviewsSection() {
 
   const shown = reviews.slice(0, visible);
   const remaining = reviews.length - shown.length;
+  const formattedReviewCount = new Intl.NumberFormat("fr-FR").format(product.reviewCount);
 
   return (
     <section className="bg-muted py-16">
@@ -37,7 +38,7 @@ export function ReviewsSection() {
               <Stars rating={product.rating} size={16} />
             </div>
             <p className="mt-2 text-xs text-muted-foreground">
-              Basé sur {product.reviewCount} avis
+              Basé sur {formattedReviewCount} avis vérifiés
             </p>
             <button
               onClick={() => setReviewOpen(true)}
@@ -115,7 +116,7 @@ export function ReviewsSection() {
               onClick={() => setVisible((v) => v + PAGE_SIZE)}
               className="rounded-sm border border-primary px-6 py-3 text-xs font-semibold tracking-wide text-primary uppercase transition-colors hover:bg-primary hover:text-primary-foreground"
             >
-              Voir plus d'avis ({remaining})
+              Voir plus d'avis
             </button>
           </div>
         )}

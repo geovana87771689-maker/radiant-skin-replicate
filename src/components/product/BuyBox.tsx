@@ -27,7 +27,9 @@ export function BuyBox({
       <div>
         <div className="mb-3 flex flex-wrap items-center gap-2">
           <Stars rating={5} size={15} />
-          <span className="text-xs font-bold text-foreground">4.8 · 1,420 avis clients vérifiés</span>
+          <span className="text-xs font-bold text-foreground">
+            4.8 · {new Intl.NumberFormat("fr-FR").format(product.reviewCount)} avis clients vérifiés
+          </span>
         </div>
         <h1 className="text-2xl leading-tight font-extrabold sm:text-3xl">
           {product.title}
