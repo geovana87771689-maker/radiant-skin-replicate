@@ -61,6 +61,7 @@ function ProductPage() {
   const [selectedVariantId, setSelectedVariantId] = useState<"1kit" | "2kits">(
     "1kit",
   );
+  const [bumpSelected, setBumpSelected] = useState(false);
   useEffect(() => {
     captureTrackingParams();
   }, []);

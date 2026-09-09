@@ -1,42 +1,46 @@
 import { toast } from "sonner";
-import { product, variants, formatPrice } from "@/data/product";
+import { product, variants, formatPrice, BUMP_PRICE } from "@/data/product";
 import { Button } from "@/components/ui/button";
-import { appendTrackingParams } from "@/lib/tracking";
+import { buildCheckoutUrl } from "@/lib/checkout";
 
 type VariantId = "1kit" | "2kits";
 
 export function StickyCta({
   selectedVariantId,
+  bumpSelected,
 }: {
   selectedVariantId: VariantId;
+  bumpSelected: boolean;
 }) {
   const variant = variants.find((v) => v.id === selectedVariantId) ?? variants[0];
   if (!variant) return null;
 
+  const totalValue = variant.price + (bumpSelected ? BUMP_PRICE : 0);
+  const totalCompareAt = variant.compareAt
+    ? variant.compareAt + (bumpSelected ? 39 : 0)
+    : undefined;
+
   const handleCheckout = () => {
     toast.success(`${variant.title} — redirection vers le paiement`);
-    const checkoutUrl = appendTrackingParams(
-      `https://checkout.beautymedicube.fr/cart/${variant.variantId}:1?checkout`,
-    );
+    const checkoutUrl = buildCheckoutUrl(variant.variantId, bumpSelected);
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "AddToCart", {
         content_name: variant.title,
         content_ids: [variant.variantId],
         content_type: "product",
-        value: variant.price,
+        value: totalValue,
         currency: "EUR",
       });
       (window as any).fbq("track", "InitiateCheckout", {
         content_name: variant.title,
         currency: "EUR",
-        value: variant.price,
+        value: totalValue,
       });
     }
     setTimeout(() => {
       window.location.href = checkoutUrl;
     }, 350);
   };
-
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 px-3 py-2.5 backdrop-blur lg:hidden">
@@ -47,11 +51,11 @@ export function StickyCta({
           </p>
           <div className="flex items-baseline gap-1.5">
             <span className="text-sm font-extrabold text-primary">
-              {formatPrice(variant.price)}
+              {formatPrice(totalValue)}
             </span>
-            {variant.compareAt && (
+            {totalCompareAt && (
               <span className="text-[10px] text-muted-foreground line-through">
-                {formatPrice(variant.compareAt)}
+                {formatPrice(totalCompareAt)}
               </span>
             )}
           </div>
