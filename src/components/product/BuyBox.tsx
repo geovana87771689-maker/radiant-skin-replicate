@@ -28,25 +28,30 @@ const kitItems: Record<
 export function BuyBox({
   selectedVariantId,
   onSelectVariant,
+  bumpSelected,
+  onToggleBump,
 }: {
   selectedVariantId: VariantId;
   onSelectVariant: (id: VariantId) => void;
+  bumpSelected: boolean;
+  onToggleBump: (next: boolean) => void;
 }) {
-  const qty = 1;
-
   const selectedVariant =
     variants.find((v) => v.id === selectedVariantId) ?? variants[0];
   if (!selectedVariant) return null;
-  const unitPrice = selectedVariant.price;
-  const totalValue = unitPrice * qty;
+  const totalValue = selectedVariant.price + (bumpSelected ? BUMP_PRICE : 0);
+  const totalCompareAt = selectedVariant.compareAt
+    ? selectedVariant.compareAt + (bumpSelected ? 39 : 0)
+    : undefined;
   const reviewCountFmt = new Intl.NumberFormat("fr-FR").format(
     product.reviewCount,
   );
 
   const handleCheckout = () => {
     toast.success(`${selectedVariant.title} — redirection vers le paiement`);
-    const checkoutUrl = appendTrackingParams(
-      `https://checkout.beautymedicube.fr/cart/${selectedVariant.variantId}:${qty}?checkout`,
+    const checkoutUrl = buildCheckoutUrl(
+      selectedVariant.variantId,
+      bumpSelected,
     );
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", "AddToCart", {
