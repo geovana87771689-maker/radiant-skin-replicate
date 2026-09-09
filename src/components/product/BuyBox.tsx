@@ -98,11 +98,11 @@ export function BuyBox({
       {/* 4 — Price block */}
       <div className="flex items-baseline gap-2">
         <span className="text-3xl font-extrabold text-primary">
-          {formatPrice(selectedVariant.price)}
+          {formatPrice(totalValue)}
         </span>
-        {selectedVariant.compareAt && (
+        {totalCompareAt && (
           <span className="text-lg font-medium text-muted-foreground line-through">
-            {formatPrice(selectedVariant.compareAt)}
+            {formatPrice(totalCompareAt)}
           </span>
         )}
       </div>
@@ -198,6 +198,9 @@ export function BuyBox({
         </div>
       </div>
 
+      {/* 5b — Order bump */}
+      <OrderBump selected={bumpSelected} onToggle={onToggleBump} />
+
       {/* 6 — CTA (rounded-full, flex layout) */}
       <Button
         onClick={handleCheckout}
@@ -209,11 +212,11 @@ export function BuyBox({
           </span>
           <span className="flex shrink-0 items-baseline gap-2">
             <span className="text-sm font-extrabold sm:text-base">
-              {formatPrice(selectedVariant.price)}
+              {formatPrice(totalValue)}
             </span>
-            {selectedVariant.compareAt && (
+            {totalCompareAt && (
               <span className="text-[11px] font-medium opacity-70 line-through">
-                {formatPrice(selectedVariant.compareAt)}
+                {formatPrice(totalCompareAt)}
               </span>
             )}
           </span>
