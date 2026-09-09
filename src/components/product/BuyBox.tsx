@@ -178,11 +178,6 @@ export function BuyBox({
                         </li>
                       ))}
                     </ul>
-                    {v.urgency && (
-                      <p className="mt-2 text-[11px] font-bold text-primary">
-                        {v.urgency}
-                      </p>
-                    )}
                   </div>
                 </div>
               </button>
