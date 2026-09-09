@@ -171,11 +171,6 @@ export function BuyBox({
                           />
                           <span className="min-w-0">
                             <span className="block">{item.name}</span>
-                            {item.free && (
-                              <span className="mt-0.5 block font-bold text-primary">
-                                — GANT OFFERT
-                              </span>
-                            )}
                           </span>
                         </li>
                       ))}
