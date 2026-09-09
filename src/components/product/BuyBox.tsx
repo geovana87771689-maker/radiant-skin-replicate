@@ -244,8 +244,6 @@ export function BuyBox({
         </span>
       </div>
 
-      {/* Card brands */}
-      <CardBrands />
 
       {/* 5b — Order bump */}
       <OrderBump selected={bumpSelected} onToggle={onToggleBump} />
