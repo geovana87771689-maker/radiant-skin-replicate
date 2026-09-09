@@ -75,6 +75,8 @@ function ProductPage() {
           <BuyBox
             selectedVariantId={selectedVariantId}
             onSelectVariant={setSelectedVariantId}
+            bumpSelected={bumpSelected}
+            onToggleBump={setBumpSelected}
           />
           </div>
         </div>
@@ -83,7 +85,10 @@ function ProductPage() {
       </main>
       <SiteFooter />
       <div className="h-20 lg:hidden" />
-      <StickyCta selectedVariantId={selectedVariantId} />
+      <StickyCta
+        selectedVariantId={selectedVariantId}
+        bumpSelected={bumpSelected}
+      />
 
       <Toaster />
     </div>
