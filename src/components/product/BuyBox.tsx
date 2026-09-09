@@ -108,50 +108,8 @@ export function BuyBox({
         — coffret {formatPrice(selectedVariant.price)}
       </p>
 
-      {/* 5 — CTA (rounded-full, flex layout) */}
-      <Button
-        onClick={handleCheckout}
-        className="h-14 w-full rounded-full bg-primary text-primary-foreground shadow-lg"
-      >
-        <span className="flex w-full items-center justify-between px-3">
-          <span className="text-sm font-extrabold uppercase tracking-tight">
-            Commander maintenant
-          </span>
-          <span className="flex items-baseline gap-1.5">
-            <span className="text-sm font-extrabold">
-              {formatPrice(selectedVariant.price)}
-            </span>
-            {selectedVariant.compareAt && (
-              <span className="text-xs font-medium opacity-70 line-through">
-                {formatPrice(selectedVariant.compareAt)}
-              </span>
-            )}
-          </span>
-        </span>
-      </Button>
-
-      {/* 6 — Guarantees */}
-      <div className="flex flex-col items-center gap-0.5">
-        <p className="text-[11px] font-medium text-muted-foreground">
-          Livraison suivie offerte sur toutes les commandes
-        </p>
-        <p className="text-[11px] font-medium text-muted-foreground">
-          Expédié sous 24/48h · Garantie 30 jours
-        </p>
-      </div>
-
-      {/* Stock scarcity */}
-      <div className="flex items-center gap-2" aria-hidden="true">
-        <div className="h-1 flex-1 overflow-hidden rounded-full bg-muted">
-          <div className="h-full w-[18%] rounded-full bg-primary" />
-        </div>
-        <span className="text-[10px] font-medium text-muted-foreground">
-          7 restants
-        </span>
-      </div>
-
-      {/* 7 — CE QUE CONTIENT LE COFFRET */}
-      <div className="mt-2">
+      {/* 5 — CE QUE CONTIENT LE COFFRET */}
+      <div>
         <h2 className="mb-3 text-xs font-bold tracking-wide text-foreground uppercase">
           CE QUE CONTIENT LE COFFRET
         </h2>
@@ -232,6 +190,48 @@ export function BuyBox({
             );
           })}
         </div>
+      </div>
+
+      {/* 6 — CTA (rounded-full, flex layout) */}
+      <Button
+        onClick={handleCheckout}
+        className="h-14 w-full rounded-full bg-primary text-primary-foreground shadow-lg"
+      >
+        <span className="flex w-full items-center justify-between gap-3 px-5">
+          <span className="text-sm font-extrabold uppercase tracking-tight">
+            Commander maintenant
+          </span>
+          <span className="flex shrink-0 items-baseline gap-1.5">
+            <span className="text-sm font-extrabold">
+              {formatPrice(selectedVariant.price)}
+            </span>
+            {selectedVariant.compareAt && (
+              <span className="text-xs font-medium opacity-70 line-through">
+                {formatPrice(selectedVariant.compareAt)}
+              </span>
+            )}
+          </span>
+        </span>
+      </Button>
+
+      {/* 7 — Guarantees */}
+      <div className="flex flex-col items-center gap-0.5">
+        <p className="text-[11px] font-medium text-muted-foreground">
+          Livraison suivie offerte sur toutes les commandes
+        </p>
+        <p className="text-[11px] font-medium text-muted-foreground">
+          Expédié sous 24/48h · Garantie 30 jours
+        </p>
+      </div>
+
+      {/* Stock scarcity */}
+      <div className="flex items-center gap-2" aria-hidden="true">
+        <div className="h-1 flex-1 overflow-hidden rounded-full bg-muted">
+          <div className="h-full w-[18%] rounded-full bg-primary" />
+        </div>
+        <span className="text-[10px] font-medium text-muted-foreground">
+          7 restants
+        </span>
       </div>
 
       {/* Card brands */}
