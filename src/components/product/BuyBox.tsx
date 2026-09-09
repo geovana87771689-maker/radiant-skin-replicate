@@ -75,10 +75,10 @@ export function BuyBox({
   return (
     <div
       id="acheter"
-      className="min-w-0 flex flex-col gap-3 scroll-mt-24 bg-background px-4 py-5 sm:gap-4 sm:px-6 lg:rounded-lg lg:border lg:border-border lg:p-7 lg:shadow-sm"
+      className="min-w-0 flex flex-col gap-2 scroll-mt-24 bg-background px-4 py-3 sm:gap-4 sm:px-6 lg:rounded-lg lg:border lg:border-border lg:p-7 lg:shadow-sm"
     >
       {/* 1 — Title (clean, no card) */}
-      <h1 className="text-xl font-bold leading-tight text-foreground sm:text-2xl">
+      <h1 className="text-lg font-bold leading-tight text-foreground sm:text-2xl">
         Duo Rice Peel Shot + Gant Exfoliant Offert
       </h1>
 
@@ -106,13 +106,6 @@ export function BuyBox({
           </span>
         )}
       </div>
-      <p className="text-xs font-medium text-muted-foreground">
-        Env. vendu séparément ≈{" "}
-        {selectedVariant.compareAt
-          ? formatPrice(selectedVariant.compareAt)
-          : ""}{" "}
-        — coffret {formatPrice(selectedVariant.price)}
-      </p>
 
       {/* 5 — CE QUE CONTIENT LE COFFRET */}
       <div>
@@ -198,8 +191,10 @@ export function BuyBox({
         </div>
       </div>
 
+      {/* 6 — Order bump (above CTA) */}
+      <OrderBump selected={bumpSelected} onToggle={onToggleBump} />
 
-      {/* 6 — CTA (rounded-full) */}
+      {/* 7 — CTA (rounded-full) */}
       <Button
         onClick={handleCheckout}
         className="h-16 w-full rounded-full bg-primary text-primary-foreground shadow-lg"
@@ -209,21 +204,10 @@ export function BuyBox({
         </span>
       </Button>
 
-      {/* Card brands */}
+      {/* 8 — Card brands */}
       <CardBrands />
 
-
-      {/* Stock scarcity */}
-      <div className="flex items-center gap-2" aria-hidden="true">
-        <div className="h-1 flex-1 overflow-hidden rounded-full bg-muted">
-          <div className="h-full w-[18%] rounded-full bg-primary" />
-        </div>
-        <span className="text-[10px] font-medium text-muted-foreground">
-          7 restants
-        </span>
-      </div>
-
-      {/* Trust badges */}
+      {/* 9 — Trust badges */}
       <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] font-medium text-muted-foreground">
         <span className="flex items-center gap-1.5">
           <ShieldCheck className="size-4 text-primary" />
@@ -235,9 +219,15 @@ export function BuyBox({
         </span>
       </div>
 
-
-      {/* 5b — Order bump */}
-      <OrderBump selected={bumpSelected} onToggle={onToggleBump} />
+      {/* Stock scarcity */}
+      <div className="flex items-center gap-2" aria-hidden="true">
+        <div className="h-1 flex-1 overflow-hidden rounded-full bg-muted">
+          <div className="h-full w-[18%] rounded-full bg-primary" />
+        </div>
+        <span className="text-[10px] font-medium text-muted-foreground">
+          7 restants
+        </span>
+      </div>
 
       {/* Spec table */}
       <dl className="divide-y divide-border border-y border-border text-xs sm:text-sm">

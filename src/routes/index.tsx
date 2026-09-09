@@ -70,7 +70,7 @@ function ProductPage() {
       <SiteHeader />
       <main>
         <div className="border-b border-border bg-background">
-          <div className="mx-auto grid max-w-[1280px] gap-6 px-4 py-4 sm:gap-8 sm:py-8 lg:grid-cols-[1.04fr_.96fr] lg:gap-12 lg:px-8 lg:py-10">
+          <div className="mx-auto grid max-w-[1280px] gap-3 px-4 py-2 sm:gap-8 sm:py-8 lg:grid-cols-[1.04fr_.96fr] lg:gap-12 lg:px-8 lg:py-10">
           <ProductGallery selectedVariantId={selectedVariantId} />
           <BuyBox
             selectedVariantId={selectedVariantId}
