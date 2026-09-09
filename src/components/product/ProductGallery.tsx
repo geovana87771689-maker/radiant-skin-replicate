@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { productImages, product, variants } from "@/data/product";
+import egfSerum from "@/assets/egf-nad-serum.webp.asset.json";
 
 const FALLBACK_IMAGE = productImages[0] ?? "";
 
