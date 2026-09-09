@@ -37,8 +37,8 @@ export function ProductGallery({
   }, [variant.image]);
 
   return (
-    <div className="min-w-0 flex flex-col gap-4 lg:sticky lg:top-28">
-      <div className="relative overflow-hidden rounded-lg border border-border bg-background shadow-sm">
+    <div className="min-w-0 flex flex-col gap-3 lg:sticky lg:top-28">
+      <div className="relative -mx-4 overflow-hidden bg-background sm:mx-0 sm:rounded-lg sm:border sm:border-border sm:shadow-sm">
         <img
           src={galleryItems[active]?.src || FALLBACK_IMAGE}
           alt={product.title || "Photo du produit"}
@@ -47,20 +47,20 @@ export function ProductGallery({
           loading="eager"
           referrerPolicy="no-referrer"
           onError={handleImageError}
-          className="aspect-[4/3] w-full object-contain sm:aspect-square"
+          className="aspect-square w-full object-contain"
         />
         <span className="absolute bottom-3 left-3 max-w-[85%] rounded-md bg-background/95 px-3 py-2 text-xs font-bold text-foreground shadow-sm backdrop-blur">
           {galleryItems[active]?.label}
         </span>
       </div>
-      <div className="flex gap-2 overflow-x-auto pb-1 sm:grid sm:grid-cols-7 sm:overflow-visible">
+      <div className="scrollbar-none -mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:grid-cols-7 sm:overflow-visible sm:px-0">
         {galleryItems.map((item, i) => (
           <button
             key={`${item.src}-${i}`}
             type="button"
             onClick={() => setActive(i)}
             aria-label={item.label}
-            className={`w-[72px] shrink-0 overflow-hidden rounded-sm border transition-colors sm:w-auto ${
+            className={`w-16 shrink-0 overflow-hidden rounded-sm border bg-background transition-colors sm:w-auto ${
               i === active ? "border-primary ring-1 ring-primary" : "border-border hover:border-muted-foreground"
             }`}
           >
@@ -70,7 +70,7 @@ export function ProductGallery({
               loading="lazy"
               referrerPolicy="no-referrer"
               onError={handleImageError}
-              className="aspect-square w-full object-cover"
+              className="aspect-square w-full object-contain p-1"
             />
           </button>
         ))}
