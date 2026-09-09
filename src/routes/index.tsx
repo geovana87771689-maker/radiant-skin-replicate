@@ -11,7 +11,7 @@ import { StickyCta } from "@/components/product/StickyCta";
 import { product, productImages } from "@/data/product";
 import { captureTrackingParams } from "@/lib/tracking";
 
-const title = "Duo Rice Peel Shot à l'Acide Hypochloreux | MEDICUBE";
+const title = "Duo Rice Peel Shot Corps & Visage | MEDICUBE";
 const description =
   "Sérum exfoliant corps à l'acide hypochloreux et à l'extrait de riz : élimine les cellules mortes, les impuretés et lisse le grain de peau.";
 
@@ -59,7 +59,7 @@ export const Route = createFileRoute("/")({
 
 function ProductPage() {
   const [selectedVariantId, setSelectedVariantId] = useState<"1kit" | "2kits">(
-    "2kits",
+    "1kit",
   );
   useEffect(() => {
     captureTrackingParams();
@@ -68,12 +68,14 @@ function ProductPage() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
       <main>
-        <div className="mx-auto grid max-w-[1280px] gap-10 px-4 py-10 lg:grid-cols-2 lg:gap-16">
+        <div className="border-b border-border bg-muted/60">
+          <div className="mx-auto grid max-w-[1280px] gap-8 px-4 py-6 sm:py-10 lg:grid-cols-[1.04fr_.96fr] lg:gap-12 lg:px-8">
           <ProductGallery selectedVariantId={selectedVariantId} />
           <BuyBox
             selectedVariantId={selectedVariantId}
             onSelectVariant={setSelectedVariantId}
           />
+          </div>
         </div>
         <ProductInfoSections />
         <ReviewsSection />
