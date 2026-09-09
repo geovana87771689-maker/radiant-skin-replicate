@@ -162,19 +162,21 @@ export function BuyBox({
                       {items.map((item, i) => (
                         <li
                           key={i}
-                          className="flex items-center gap-1.5 text-xs text-muted-foreground"
+                          className="flex items-start gap-1.5 text-xs text-muted-foreground"
                         >
                           <span
-                            className={`size-1.5 shrink-0 rounded-full ${
+                            className={`mt-1 size-1.5 shrink-0 rounded-full ${
                               item.free ? "bg-primary" : "bg-foreground/30"
                             }`}
                           />
-                          <span>{item.name}</span>
-                          {item.free && (
-                            <span className="font-bold text-primary">
-                              — GANT OFFERT
-                            </span>
-                          )}
+                          <span className="min-w-0">
+                            <span className="block">{item.name}</span>
+                            {item.free && (
+                              <span className="mt-0.5 block font-bold text-primary">
+                                — GANT OFFERT
+                              </span>
+                            )}
+                          </span>
                         </li>
                       ))}
                     </ul>
