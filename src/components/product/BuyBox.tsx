@@ -209,7 +209,7 @@ export function BuyBox({
           <div className="h-full w-[18%] rounded-full bg-primary" />
         </div>
         <span className="text-[10px] font-medium text-muted-foreground">
-          7 restants
+          Plus que 6 unités disponibles en stock
         </span>
       </div>
 
