@@ -188,6 +188,11 @@ export function BuyBox({
         </span>
       </Button>
 
+      {/* Scarcity notice below CTA */}
+      <p className="text-center text-xs font-semibold text-primary">
+        ⚠️ Forte demande : Plus que 6 unités disponibles en stock pour cette offre.
+      </p>
+
       {/* 8 — Card brands */}
       <CardBrands />
 
