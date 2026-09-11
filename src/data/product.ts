@@ -42,7 +42,6 @@ export const variants: Variant[] = [
     shortSupport: "1 Coffret complet + Gant Offert",
     price: 36.9,
     compareAt: 54.9,
-    badge: undefined,
     support: "Le protocole complet pour découvrir les premiers résultats.",
     unitPriceNote: "Économisez 18,00 €",
     image: productImages[0]!,
