@@ -69,7 +69,7 @@ export const product = {
   title: "Duo Rice Peel Shot Corps & Visage + Gant Exfoliant Offert",
   subtitle:
     "Traitement complet anti-rugosités, kératose pilaire & boutons — 100% sans grains agressifs.",
-  price: 39.9,
+  price: 36.9,
   reviewCount: 1842,
   rating: 4.8,
   skinType: "Tous types (mixtes, grasses, sensibles, acnéiques)",
