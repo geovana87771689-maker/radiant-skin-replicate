@@ -203,15 +203,6 @@ export function BuyBox({
         </span>
       </div>
 
-      {/* Stock scarcity */}
-      <div className="flex items-center gap-2" aria-hidden="true">
-        <div className="h-1 flex-1 overflow-hidden rounded-full bg-muted">
-          <div className="h-full w-[18%] rounded-full bg-primary" />
-        </div>
-        <span className="text-[10px] font-medium text-muted-foreground">
-          Plus que 6 unités disponibles en stock
-        </span>
-      </div>
 
       {/* Spec table */}
       <dl className="divide-y divide-border border-y border-border text-xs sm:text-sm">
