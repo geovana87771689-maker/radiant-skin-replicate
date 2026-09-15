@@ -132,9 +132,11 @@ export const COMPARE_AT = 129.9;
 export const product = {
   title: "Housse de Canapé Elastic Touch — Ajustement Universel",
   headline:
-    "Transformez votre vieux canapé en canapé neuf en moins de 2 minutes — sans dépenser des milliers d'euros en tapisserie.",
+    "Votre salon en ordre, même dans le chaos du quotidien.",
   subheadline:
-    "Le tissu à technologie Spandex UltraFit s'adapte parfaitement à tous les modèles, protège des poils d'animaux et des taches, et donne une nouvelle allure à votre salon instantanément.",
+    "Vous ressentez une véritable angoisse chaque fois qu'une boisson se renverse, que des miettes s'accumulent ou que votre animal monte sur le canapé les pattes sales. La tranquillité de votre foyer est écrasée par la crainte constante de voir votre mobilier onéreux abîmé en un instant.",
+  intro:
+    "La Housse en Chenille de Luxo crée une barrière matérielle d'ingénierie avancée qui neutralise les impuretés avant qu'elles n'atteignent le tissu. La trame technique protège des taches et des mauvaises odeurs, pour profiter de vos proches et de vos animaux sans devenir prisonnier du ménage.",
   price: PRICE,
   compareAt: COMPARE_AT,
   rating: 4.9,
