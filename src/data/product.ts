@@ -15,6 +15,11 @@ const housseLavage = "/images/product/housse-lavage.png";
 const housseAntiOdeur = "/images/product/housse-anti-odeur.png";
 const housseUsageQuotidien = "/images/product/housse-usage-quotidien.png";
 const housseNettoyage = "/images/product/housse-nettoyage.png";
+const avis1 = "/images/product/avis-1.jpg";
+const avis2 = "/images/product/avis-2.jpg";
+const avis3 = "/images/product/avis-3.jpg";
+const avis4 = "/images/product/avis-4.jpg";
+const avis5 = "/images/product/avis-5.jpg";
 const housseAvant = housseAvantAsset.url;
 
 export const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
@@ -277,7 +282,7 @@ export const reviews: Review[] = [
     rating: 5,
     text: "Mon canapé avait 11 ans et était griffé par le chat. En 2 minutes il a l'air neuf. Le tissu est épais et doux, rien à voir avec les housses bas de gamme.",
     verified: true,
-    image: housseNoir,
+    image: avis1,
   },
   {
     name: "Karim B.",
@@ -285,14 +290,15 @@ export const reviews: Review[] = [
     rating: 5,
     text: "Les bâtons fixateurs changent tout : aucune ride, la housse ne bouge pas même avec les enfants qui sautent dessus.",
     verified: true,
-    image: fixateurs,
+    image: avis2,
   },
   {
     name: "Élodie R.",
     date: "21/08/2026",
     rating: 5,
-    text: "Couleur verte magnifique, très fidèle aux photos. Livraison en 5 jours avec suivi.",
+    text: "Couleur magnifique, très fidèle aux photos. Livraison en 5 jours avec suivi.",
     verified: true,
+    image: avis3,
   },
   {
     name: "Patrick L.",
@@ -300,6 +306,7 @@ export const reviews: Review[] = [
     rating: 4,
     text: "Très bon produit. J'ai pris la taille au-dessus comme conseillé, c'est parfait. Un peu de patience pour bien tendre la première fois.",
     verified: true,
+    image: avis4,
   },
   {
     name: "Nadia F.",
@@ -307,6 +314,7 @@ export const reviews: Review[] = [
     rating: 5,
     text: "Lavée en machine deux fois, aucune déformation ni décoloration. Je recommande vraiment.",
     verified: true,
+    image: avis5,
   },
   {
     name: "Julien T.",
