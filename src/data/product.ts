@@ -72,6 +72,7 @@ export const formatPrice = (value: number) =>
 export type SizeOption = {
   id: "2p" | "3p" | "4p";
   label: string;
+  qualifier: string;
   dims: string;
   hint: string;
 };
@@ -80,18 +81,21 @@ export const sizes: SizeOption[] = [
   {
     id: "2p",
     label: "Canapé 2 Places",
+    qualifier: "Moyen",
     dims: "180 x 230 cm",
     hint: "Assise de 145 à 185 cm",
   },
   {
     id: "3p",
     label: "Canapé 3 Places",
+    qualifier: "Grand",
     dims: "180 x 300 cm",
     hint: "Assise de 185 à 230 cm",
   },
   {
     id: "4p",
     label: "Canapé 4 Places",
+    qualifier: "Famille / XXL",
     dims: "180 x 340 cm",
     hint: "Assise de 230 à 300 cm",
   },
