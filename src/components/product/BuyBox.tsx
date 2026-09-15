@@ -128,10 +128,10 @@ export function BuyBox({
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="block text-sm font-extrabold leading-snug">
-                      {s.label}
-                    </span>
-                    <span className="block text-[11px] text-muted-foreground">
-                      {s.dims} · {s.hint}
+                      {s.label}{" "}
+                      <span className="font-bold text-muted-foreground">
+                        · {s.qualifier}
+                      </span>
                     </span>
                   </span>
                 </button>
