@@ -51,17 +51,6 @@ export function FormuleSelector({
                 {isSelected && <Check className="size-3" />}
               </span>
 
-              {isPack && (
-                <div className="size-16 shrink-0 overflow-hidden rounded-xl sm:size-20">
-                  <ProductImage
-                    src={PACK_IMAGE}
-                    alt="Sangles anti-glisse et plateaux accoudoir"
-                    width={240}
-                    height={240}
-                  />
-                </div>
-              )}
-
               <div className="min-w-0 flex-1">
                 <div className="flex items-baseline justify-between gap-2">
                   <p className="text-sm font-extrabold leading-snug">{f.label}</p>
