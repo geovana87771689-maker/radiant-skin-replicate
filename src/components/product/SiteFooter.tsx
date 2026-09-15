@@ -30,16 +30,6 @@ export function SiteFooter() {
             Des housses extensibles premium pour redonner vie à votre salon en
             quelques minutes.
           </p>
-          <div className="mt-5 space-y-1 text-xs text-muted-foreground">
-            <p>Vittacore SAS · SIRET 000 000 000 00000</p>
-            <p>TVA intracommunautaire : FR00000000000</p>
-            <p>
-              Support :{" "}
-              <a href="mailto:support@elastictouch.fr" className="underline">
-                support@elastictouch.fr
-              </a>
-            </p>
-          </div>
           <div className="mt-5 max-w-xs">
             <CardBrands />
           </div>
