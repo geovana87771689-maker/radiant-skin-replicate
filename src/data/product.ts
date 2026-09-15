@@ -65,7 +65,7 @@ export const formules: Formule[] = [
   },
   {
     id: "complet",
-    label: "Kit 2 Housses + Pack Complet",
+    label: "Kit 2 Housses + 4 attaches pour housses",
     price: 99.8,
     detail: "4 sangles anti-glisse + 2 plateaux accoudoir",
     note: "Valeur 32,80 € — inclus pour 29,90 €",
