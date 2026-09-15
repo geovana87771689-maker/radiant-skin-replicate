@@ -1,31 +1,31 @@
 /**
  * Housse de canapé "Elastic Touch" — données produit.
  *
- * Toutes les images produit sont conservées dans @/assets/product via le
- * stockage permanent Lovable Assets, afin de fonctionner en aperçu et publié.
+ * Toutes les images produit sont servies avec la page depuis /public/images/product.
+ * Ajoutez les prochaines images dans ce même dossier et référencez leur chemin ici.
  */
 
-import housseNoir from "@/assets/product/housse-noir.png.asset.json";
-import housseVert from "@/assets/product/housse-vert.png.asset.json";
-import housseGris from "@/assets/product/housse-gris.jpg.asset.json";
-import fixateurs from "@/assets/product/fixateurs.png.asset.json";
-import housseLavage from "@/assets/product/housse-lavage.png.asset.json";
-import housseAntiOdeur from "@/assets/product/housse-anti-odeur.png.asset.json";
+const housseNoir = "/images/product/housse-noir.jpg";
+const housseVert = "/images/product/housse-vert.webp";
+const housseGris = "/images/product/housse-gris.webp";
+const fixateurs = "/images/product/fixateurs.png";
+const housseLavage = "/images/product/housse-lavage.png";
+const housseAntiOdeur = "/images/product/housse-anti-odeur.png";
 
 export const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
 
 /** Visuels réellement disponibles (CDN) — aucun chemin fantôme. */
 export const productImages = [
-  housseNoir.url,
-  housseVert.url,
-  housseGris.url,
-  housseLavage.url,
-  housseAntiOdeur.url,
+  housseNoir,
+  housseVert,
+  housseGris,
+  housseLavage,
+  housseAntiOdeur,
 ];
 
 export const beforeAfterImages = {
-  before: housseGris.url,
-  after: housseVert.url,
+  before: housseGris,
+  after: housseVert,
 };
 
 /** Domaine du checkout Shopify (panier permanent). */
@@ -36,7 +36,7 @@ export const PACK_PRICE = 29.9;
 export const PACK_VALUE = 32.8;
 /** À remplacer par l'ID de variante réel du Pack Complet. */
 export const PACK_VARIANT_ID = "00000000000000";
-export const PACK_IMAGE = fixateurs.url;
+export const PACK_IMAGE = fixateurs;
 
 export type Formule = {
   id: "simple" | "complet";
@@ -105,9 +105,9 @@ export type ColorOption = {
 };
 
 export const colors: ColorOption[] = [
-  { id: "noir", label: "Noir", swatch: "#1f1d1b", image: housseNoir.url },
-  { id: "vert", label: "Vert", swatch: "#39584a", image: housseVert.url },
-  { id: "gris", label: "Gris", swatch: "#9a968f", image: housseGris.url },
+  { id: "noir", label: "Noir", swatch: "#1f1d1b", image: housseNoir },
+  { id: "vert", label: "Vert", swatch: "#39584a", image: housseVert },
+  { id: "gris", label: "Gris", swatch: "#9a968f", image: housseGris },
 ];
 
 /** Matrice taille + couleur -> ID de variante Shopify. */
@@ -178,25 +178,25 @@ export const features = [
     eyebrow: "Protection olfactive",
     title: "Système anti-odeur unique",
     text: "Il est gênant de recevoir un invité et de lire sur son visage que votre pièce principale sent cet « air confiné » incrusté dans le tissu. Vous nettoyez, vous vaporisez des parfums d'ambiance, mais la mauvaise odeur semble faire partie intégrante du mobilier. À l'inverse des housses ordinaires, le Chenille de Luxo bénéficie d'un revêtement protecteur qui empêche la sueur et les micro-organismes responsables des odeurs de s'installer dans les fibres. Vous éliminez les résidus rapidement et conservez chez vous ce parfum d'hygiène totale.",
-    image: housseAntiOdeur.url,
+    image: housseAntiOdeur,
   },
   {
     eyebrow: "Entretien",
     title: "Nettoyage facile",
     text: "Vous avez peut-être renoncé à avoir un beau salon car nettoyer le canapé est un travail irréalisable et coûteux. Voir les marques accumulées depuis des mois vous donne une sensation continue de négligence et de lassitude. La Housse Jasmin crée une surface isolante et très fonctionnelle où la saleté ne parvient pas à « s'accrocher ». C'est une défense de haut niveau, revêtue d'un ornement premium, conçue pour supporter un usage intensif sans sacrifier votre sérénité.",
-    image: housseLavage.url,
+    image: housseLavage,
   },
   {
     eyebrow: "Lavage en machine",
     title: "Du canapé, direct à la machine",
     text: "Le malheur de voir une marque de nourriture ou une tache sur un canapé neuf est cruel, car vous savez que le nettoyage professionnel coûte cher. L'entretien à domicile prend du temps et retrouve rarement l'aspect d'origine. Notre trame en Chenille résiste parfaitement aux lavages intensifs en machine. Une tache ? Direction la machine et, en quelques instants, votre canapé est comme neuf pour recevoir vos invités avec l'aspect d'un article sorti du magasin.",
-    image: housseLavage.url,
+    image: housseLavage,
   },
   {
     eyebrow: "Esthétique durable",
     title: "Une qualité qui masque l'usage quotidien",
     text: "Les tissus ordinaires montrent le moindre signe d'utilisation et donnent à la pièce un air chaotique en un instant. Vous vous retrouvez prisonnier d'un rangement perpétuel pour préserver un minimum d'harmonie. Le motif Jasmin masque les légères saletés et les traces d'usage entre deux nettoyages. Votre pièce garde son aspect de catalogue plus longtemps et reste toujours accueillante.",
-    image: housseNoir.url,
+    image: housseNoir,
   },
 ];
 
@@ -209,17 +209,17 @@ export const installSteps = [
   {
     title: "Emboîtez les coins",
     text: "Placez la housse sur le dossier et emboîtez chaque coin élastiqué.",
-    image: housseNoir.url,
+    image: housseNoir,
   },
   {
     title: "Tendez sur l'assise",
     text: "Tirez le tissu vers l'avant pour couvrir l'assise et les accoudoirs.",
-    image: housseVert.url,
+    image: housseVert,
   },
   {
     title: "Bloquez avec les bâtons",
     text: "Enfoncez les bâtons mousse dans les interstices pour un rendu lisse.",
-    image: fixateurs.url,
+    image: fixateurs,
   },
 ];
 
