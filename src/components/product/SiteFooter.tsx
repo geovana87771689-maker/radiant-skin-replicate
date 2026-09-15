@@ -1,53 +1,47 @@
-import { toast } from "sonner";
+import { CardBrands } from "./CardBrands";
 
 const columns = [
   {
     title: "Aide",
-    links: ["Nous contacter", "Livraison", "Retours & remboursements", "Suivre ma commande"],
+    links: ["Nous contacter", "Livraison & suivi", "Retours & remboursements", "Guide des tailles"],
   },
-  { title: "À propos", links: ["Notre histoire", "AGE-R", "Ingrédients", "Blog"] },
+  {
+    title: "Boutique",
+    links: ["Housses de canapé", "Bâtons fixateurs", "Housses de fauteuil", "Avis clients"],
+  },
   {
     title: "Mentions légales",
     links: [
       "Politique de confidentialité",
       "Conditions générales de vente",
-      "Reconnaître un faux produit",
+      "Politique de cookies",
+      "Mentions légales",
     ],
   },
 ];
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-background py-14">
+    <footer className="border-t border-border bg-card py-14">
       <div className="mx-auto grid max-w-[1280px] gap-10 px-4 md:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
-          <p className="text-xl font-extrabold tracking-[0.2em] uppercase">medicube</p>
+          <p className="text-xl font-extrabold tracking-[0.2em] uppercase">Elastic Touch</p>
           <p className="mt-3 max-w-xs text-sm text-muted-foreground">
-            Soins coréens inspirés par la dermatologie, pour une peau visiblement plus nette et plus
-            saine.
+            Des housses extensibles premium pour redonner vie à votre salon en
+            quelques minutes.
           </p>
-          <form
-            className="mt-5 flex max-w-sm gap-2"
-            onSubmit={(e) => {
-              e.preventDefault();
-              toast.success("Merci pour votre inscription !");
-            }}
-          >
-            <input
-              type="email"
-              required
-              placeholder="Adresse e-mail"
-              className="w-full rounded-sm border border-border bg-background px-3 py-2 text-sm outline-none focus:border-foreground"
-            />
-            <button className="rounded-sm bg-primary px-4 text-xs font-semibold tracking-wide text-primary-foreground uppercase">
-              S'inscrire
-            </button>
-          </form>
-          <div className="mt-5 flex gap-4 text-xs text-muted-foreground">
-            <a href="/">Instagram</a>
-            <a href="/">TikTok</a>
-            <a href="/">YouTube</a>
-            <a href="/">Facebook</a>
+          <div className="mt-5 space-y-1 text-xs text-muted-foreground">
+            <p>Vittacore SAS · SIRET 000 000 000 00000</p>
+            <p>TVA intracommunautaire : FR00000000000</p>
+            <p>
+              Support :{" "}
+              <a href="mailto:support@elastictouch.fr" className="underline">
+                support@elastictouch.fr
+              </a>
+            </p>
+          </div>
+          <div className="mt-5 max-w-xs">
+            <CardBrands />
           </div>
         </div>
         {columns.map((col) => (
@@ -66,7 +60,8 @@ export function SiteFooter() {
         ))}
       </div>
       <p className="mx-auto mt-12 max-w-[1280px] px-4 text-[11px] text-muted-foreground">
-        © {new Date().getFullYear()} MEDICUBE. Tous droits réservés.
+        © {new Date().getFullYear()} Elastic Touch. Tous droits réservés. Paiement
+        sécurisé SSL.
       </p>
     </footer>
   );
