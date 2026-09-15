@@ -152,21 +152,58 @@ export const trustBadges = [
 
 export const benefits = [
   {
-    emoji: "🛋️",
-    title: "Masquez les imperfections",
-    text: "Accrocs, tissu délavé et taches disparaissent instantanément sous la housse.",
+    emoji: "✨",
+    title: "Hygiène express",
+    text: "Structure en fibre pratique qui permet de retirer les saletés en quelques instants.",
   },
   {
-    emoji: "🐾",
-    title: "L'amie des animaux",
-    text: "Protège le canapé des griffes, des poils et des salissures du quotidien.",
+    emoji: "🛡️",
+    title: "Bouclier anti-odeurs",
+    text: "Ingénierie qui empêche les odeurs biologiques de s'incruster et préserve la fraîcheur de la pièce.",
   },
   {
     emoji: "💧",
-    title: "Lavage facile",
-    text: "Une tache ? Retirez la housse et lavez-la directement en machine.",
+    title: "Barrière imperméabilisante",
+    text: "Des filaments qui repoussent les liquides et évitent que les salissures laissent des marques définitives.",
+  },
+  {
+    emoji: "🔁",
+    title: "Résistance durable",
+    text: "Conçue pour supporter des lavages répétés sans compromettre la couleur ni le toucher.",
   },
 ];
+
+export const features = [
+  {
+    eyebrow: "Protection olfactive",
+    title: "Système anti-odeur unique",
+    text: "Il est gênant de recevoir un invité et de lire sur son visage que votre pièce principale sent cet « air confiné » incrusté dans le tissu. Vous nettoyez, vous vaporisez des parfums d'ambiance, mais la mauvaise odeur semble faire partie intégrante du mobilier. À l'inverse des housses ordinaires, le Chenille de Luxo bénéficie d'un revêtement protecteur qui empêche la sueur et les micro-organismes responsables des odeurs de s'installer dans les fibres. Vous éliminez les résidus rapidement et conservez chez vous ce parfum d'hygiène totale.",
+    image: housseAntiOdeur.url,
+  },
+  {
+    eyebrow: "Entretien",
+    title: "Nettoyage facile",
+    text: "Vous avez peut-être renoncé à avoir un beau salon car nettoyer le canapé est un travail irréalisable et coûteux. Voir les marques accumulées depuis des mois vous donne une sensation continue de négligence et de lassitude. La Housse Jasmin crée une surface isolante et très fonctionnelle où la saleté ne parvient pas à « s'accrocher ». C'est une défense de haut niveau, revêtue d'un ornement premium, conçue pour supporter un usage intensif sans sacrifier votre sérénité.",
+    image: housseLavage.url,
+  },
+  {
+    eyebrow: "Lavage en machine",
+    title: "Du canapé, direct à la machine",
+    text: "Le malheur de voir une marque de nourriture ou une tache sur un canapé neuf est cruel, car vous savez que le nettoyage professionnel coûte cher. L'entretien à domicile prend du temps et retrouve rarement l'aspect d'origine. Notre trame en Chenille résiste parfaitement aux lavages intensifs en machine. Une tache ? Direction la machine et, en quelques instants, votre canapé est comme neuf pour recevoir vos invités avec l'aspect d'un article sorti du magasin.",
+    image: housseLavage.url,
+  },
+  {
+    eyebrow: "Esthétique durable",
+    title: "Une qualité qui masque l'usage quotidien",
+    text: "Les tissus ordinaires montrent le moindre signe d'utilisation et donnent à la pièce un air chaotique en un instant. Vous vous retrouvez prisonnier d'un rangement perpétuel pour préserver un minimum d'harmonie. Le motif Jasmin masque les légères saletés et les traces d'usage entre deux nettoyages. Votre pièce garde son aspect de catalogue plus longtemps et reste toujours accueillante.",
+    image: housseNoir.url,
+  },
+];
+
+export const stockPromo = {
+  title: "Promo renouvellement de stock",
+  text: "Nous proposons un lot de qualité supérieure en quantité limitée pour le marché national. Ce n'est pas tous les jours que l'on trouve un article qui combine défense réelle contre les taches, technologie anti-odeur et un style valorisant votre intérieur. La demande est très élevée et les coloris faciles à assortir partent rapidement de l'entrepôt. Si vous voulez gagner la bataille contre la saleté et garder un canapé impeccable, c'est le moment. Assurez votre Kit PAYEZ 1, RECEVEZ 2 et rejoignez ceux qui profitent d'un intérieur parfait sans effort.",
+};
 
 export const installSteps = [
   {
