@@ -14,6 +14,7 @@ const fixateurs = "/images/product/fixateurs.png";
 const housseLavage = "/images/product/housse-lavage.png";
 const housseAntiOdeur = "/images/product/housse-anti-odeur.png";
 const housseUsageQuotidien = "/images/product/housse-usage-quotidien.png";
+const housseNettoyage = "/images/product/housse-nettoyage.png";
 const housseAvant = housseAvantAsset.url;
 
 export const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
@@ -192,7 +193,7 @@ export const features = [
     eyebrow: "Entretien",
     title: "Nettoyage facile",
     text: "Vous avez peut-être renoncé à avoir un beau salon car nettoyer le canapé est un travail irréalisable et coûteux. Voir les marques accumulées depuis des mois vous donne une sensation continue de négligence et de lassitude. La Housse Jasmin crée une surface isolante et très fonctionnelle où la saleté ne parvient pas à « s'accrocher ». C'est une défense de haut niveau, revêtue d'un ornement premium, conçue pour supporter un usage intensif sans sacrifier votre sérénité.",
-    image: housseLavage,
+    image: housseNettoyage,
   },
   {
     eyebrow: "Lavage en machine",
