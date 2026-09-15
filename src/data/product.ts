@@ -68,7 +68,7 @@ export const formules: Formule[] = [
     label: "Kit 2 Housses + 4 attaches pour housses",
     price: 74.9,
     detail: "4 sangles anti-glisse + 2 plateaux accoudoir",
-    note: "Valeur 32,80 € — inclus pour 29,90 €",
+    note: "",
     badge: "⚡ Choisi par 98% des clients",
   },
 ];
