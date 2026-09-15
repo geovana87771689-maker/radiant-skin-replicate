@@ -1,6 +1,5 @@
 import { Check } from "lucide-react";
-import { PACK_IMAGE, formatPrice, formules } from "@/data/product";
-import { ProductImage } from "./ProductImage";
+import { formatPrice, formules } from "@/data/product";
 
 type FormuleId = "simple" | "complet";
 
