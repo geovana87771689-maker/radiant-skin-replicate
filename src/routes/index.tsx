@@ -7,8 +7,10 @@ import { HeroSection } from "@/components/product/HeroSection";
 import {
   BenefitsSection,
   FaqSection,
+  FeaturesSection,
   GuaranteeSection,
   InstallGuide,
+  StockPromoSection,
   TrustBar,
 } from "@/components/product/PageSections";
 import { ProductGallery } from "@/components/product/ProductGallery";
@@ -111,8 +113,10 @@ function LandingPage() {
         </div>
 
         <BenefitsSection />
+        <FeaturesSection />
         <InstallGuide />
         <ReviewsSection />
+        <StockPromoSection />
         <GuaranteeSection />
         <FaqSection />
       </main>
