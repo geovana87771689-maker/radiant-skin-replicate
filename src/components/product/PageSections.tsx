@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { benefits, faq, features, installSteps, product, sizeGuide, stockPromo } from "@/data/product";
 import { ProductImage } from "./ProductImage";
+import demoChenilleAsset from "@/assets/demo-chenille.gif.asset.json";
 
 export function TrustBar() {
   const items = [
@@ -41,6 +42,16 @@ export function BenefitsSection() {
         <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-relaxed text-muted-foreground">
           {product.intro}
         </p>
+        <div className="mx-auto mt-6 max-w-md overflow-hidden rounded-2xl border border-border bg-card">
+          <img
+            src={demoChenilleAsset.url}
+            alt="Démonstration : pose de la housse de canapé"
+            loading="lazy"
+            decoding="async"
+            referrerPolicy="no-referrer"
+            className="aspect-square w-full object-cover"
+          />
+        </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.map((b) => (
             <article
