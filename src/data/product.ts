@@ -1,16 +1,16 @@
 /**
  * Housse de canapé "Elastic Touch" — données produit.
  *
- * Les chemins d'images sont des placeholders : déposez les visuels officiels
- * dans /public/images/ avec exactement ces noms pour qu'ils s'affichent.
+ * Toutes les images produit sont conservées dans @/assets/product via le
+ * stockage permanent Lovable Assets, afin de fonctionner en aperçu et publié.
  */
 
-import housseNoir from "@/assets/housse-noir.png.asset.json";
-import housseVert from "@/assets/housse-vert.png.asset.json";
-import housseGris from "@/assets/housse-gris.jpg.asset.json";
-import fixateurs from "@/assets/fixateurs.png.asset.json";
-import housseLavage from "@/assets/housse-lavage.png.asset.json";
-import housseAntiOdeur from "@/assets/housse-anti-odeur.png.asset.json";
+import housseNoir from "@/assets/product/housse-noir.png.asset.json";
+import housseVert from "@/assets/product/housse-vert.png.asset.json";
+import housseGris from "@/assets/product/housse-gris.jpg.asset.json";
+import fixateurs from "@/assets/product/fixateurs.png.asset.json";
+import housseLavage from "@/assets/product/housse-lavage.png.asset.json";
+import housseAntiOdeur from "@/assets/product/housse-anti-odeur.png.asset.json";
 
 export const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
 
