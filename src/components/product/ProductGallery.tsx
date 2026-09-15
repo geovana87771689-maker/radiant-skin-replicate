@@ -10,7 +10,9 @@ export function ProductGallery({ selectedColorId }: { selectedColorId: ColorId }
 
   const items = [
     { src: color.image, label: `Housse ${color.label}` },
-    ...productImages.map((src, i) => ({ src, label: `Vue ${i + 1}` })),
+    ...productImages
+      .filter((src) => src !== color.image)
+      .map((src, i) => ({ src, label: `Vue ${i + 1}` })),
   ];
 
   useEffect(() => {
@@ -44,7 +46,7 @@ export function ProductGallery({ selectedColorId }: { selectedColorId: ColorId }
                 : "border-border hover:border-muted-foreground"
             }`}
           >
-            <ProductImage src={item.src} alt="" width={200} height={200} />
+            <ProductImage src={item.src} alt="" width={200} height={200} eager />
           </button>
         ))}
       </div>
