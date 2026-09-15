@@ -1,17 +1,7 @@
-import { Button } from "@/components/ui/button";
 import { beforeAfterImages, product } from "@/data/product";
-import { trackEvent } from "@/lib/pixel";
 import { ProductImage } from "./ProductImage";
-import { Stars } from "./Stars";
 
 export function HeroSection() {
-  const reviewCountFmt = new Intl.NumberFormat("fr-FR").format(product.reviewCount);
-
-  const scrollToBuy = () => {
-    trackEvent("HeroCtaClick", { cta_source: "hero" });
-    document.getElementById("acheter")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <section className="border-b border-border bg-secondary">
       <div className="mx-auto grid max-w-[1280px] items-center gap-8 px-4 py-10 lg:grid-cols-2 lg:px-8 lg:py-16">
