@@ -1,3 +1,5 @@
+import logoAsset from "@/assets/logo-lepure-maison.png.asset.json";
+
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 bg-card">
