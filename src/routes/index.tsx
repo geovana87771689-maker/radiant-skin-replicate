@@ -77,9 +77,9 @@ export const Route = createFileRoute("/")({
 });
 
 function LandingPage() {
-  const [sizeId, setSizeId] = useState<"2p" | "3p" | "4p">("3p");
+  const [sizeId, setSizeId] = useState<"2p" | "3p" | "4p">("2p");
   const [colorId, setColorId] = useState<"noir" | "vert" | "gris">("noir");
-  const [formuleId, setFormuleId] = useState<"simple" | "complet">("complet");
+  const [formuleId, setFormuleId] = useState<"simple" | "complet">("simple");
 
   useEffect(() => {
     captureTrackingParams();

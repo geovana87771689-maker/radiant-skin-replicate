@@ -80,19 +80,19 @@ export const sizes: SizeOption[] = [
   {
     id: "2p",
     label: "Canapé 2 Places",
-    dims: "Moyen — 180 x 230 cm",
+    dims: "180 x 230 cm",
     hint: "Assise de 145 à 185 cm",
   },
   {
     id: "3p",
     label: "Canapé 3 Places",
-    dims: "Grand — 180 x 300 cm",
+    dims: "180 x 300 cm",
     hint: "Assise de 185 à 230 cm",
   },
   {
     id: "4p",
     label: "Canapé 4 Places",
-    dims: "Famille / XXL — 180 x 340 cm",
+    dims: "180 x 340 cm",
     hint: "Assise de 230 à 300 cm",
   },
 ];
@@ -224,9 +224,9 @@ export const installSteps = [
 ];
 
 export const sizeGuide = [
-  { size: "2 Places (Moyen)", seat: "145 – 185 cm", dims: "180 x 230 cm" },
-  { size: "3 Places (Grand)", seat: "185 – 230 cm", dims: "180 x 300 cm" },
-  { size: "4 Places (Famille / XXL)", seat: "230 – 300 cm", dims: "180 x 340 cm" },
+  { size: "2 Places", seat: "145 – 185 cm", dims: "180 x 230 cm" },
+  { size: "3 Places", seat: "185 – 230 cm", dims: "180 x 300 cm" },
+  { size: "4 Places", seat: "230 – 300 cm", dims: "180 x 340 cm" },
 ];
 
 export const faq = [
