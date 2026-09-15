@@ -13,6 +13,7 @@ const housseGris = "/images/product/housse-gris.webp";
 const fixateurs = "/images/product/fixateurs.png";
 const housseLavage = "/images/product/housse-lavage.png";
 const housseAntiOdeur = "/images/product/housse-anti-odeur.png";
+const housseUsageQuotidien = "/images/product/housse-usage-quotidien.png";
 const housseAvant = housseAvantAsset.url;
 
 export const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
@@ -203,7 +204,7 @@ export const features = [
     eyebrow: "Esthétique durable",
     title: "Une qualité qui masque l'usage quotidien",
     text: "Les tissus ordinaires montrent le moindre signe d'utilisation et donnent à la pièce un air chaotique en un instant. Vous vous retrouvez prisonnier d'un rangement perpétuel pour préserver un minimum d'harmonie. Le motif Jasmin masque les légères saletés et les traces d'usage entre deux nettoyages. Votre pièce garde son aspect de catalogue plus longtemps et reste toujours accueillante.",
-    image: housseNoir,
+    image: housseUsageQuotidien,
   },
 ];
 
