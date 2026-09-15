@@ -2,8 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { PLACEHOLDER_IMAGE } from "@/data/product";
 
 /**
- * <img> sémantique avec ratio défini et repli automatique sur le placeholder
- * tant que la photo officielle n'a pas été déposée dans /public/images.
+ * Image produit issue du stockage permanent, avec ratio défini et repli local.
  */
 export function ProductImage({
   src,
