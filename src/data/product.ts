@@ -12,17 +12,17 @@ import fixateurs from "@/assets/fixateurs.png.asset.json";
 
 export const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
 
+/** Visuels réellement disponibles (CDN) — aucun chemin fantôme. */
 export const productImages = [
-  "/images/housse-hero-1.jpg",
-  "/images/housse-hero-2.jpg",
-  "/images/housse-hero-3.jpg",
-  "/images/housse-hero-4.jpg",
-  "/images/housse-installation.jpg",
+  housseNoir.url,
+  housseVert.url,
+  housseGris.url,
+  fixateurs.url,
 ];
 
 export const beforeAfterImages = {
-  before: "/images/housse-avant.jpg",
-  after: "/images/housse-apres.jpg",
+  before: housseGris.url,
+  after: housseVert.url,
 };
 
 /** Domaine du checkout Shopify (panier permanent). */
