@@ -30,7 +30,7 @@ export function SiteHeader() {
             <img
               src={logoAsset.url}
               alt="L'ÉPURE MAISON"
-              className="h-9 w-auto rounded-[4px]"
+              className="h-12 w-auto rounded-[4px] sm:h-9"
               loading="eager"
             />
           </a>
