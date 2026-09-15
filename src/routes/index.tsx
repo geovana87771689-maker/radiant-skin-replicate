@@ -77,7 +77,7 @@ export const Route = createFileRoute("/")({
 function LandingPage() {
   const [sizeId, setSizeId] = useState<"2p" | "3p" | "4p">("3p");
   const [colorId, setColorId] = useState<"noir" | "vert" | "gris">("noir");
-  const [bumpSelected, setBumpSelected] = useState(false);
+  const [formuleId, setFormuleId] = useState<"simple" | "complet">("complet");
 
   useEffect(() => {
     captureTrackingParams();
@@ -104,7 +104,7 @@ function LandingPage() {
               onSelectSize={setSizeId}
               selectedColorId={colorId}
               onSelectColor={setColorId}
-              bumpSelected={bumpSelected}
+              selectedFormuleId={formuleId}
               onToggleBump={setBumpSelected}
             />
           </div>
@@ -121,7 +121,7 @@ function LandingPage() {
       <StickyCta
         selectedSizeId={sizeId}
         selectedColorId={colorId}
-        bumpSelected={bumpSelected}
+        selectedFormuleId={formuleId}
       />
       <Toaster />
     </div>
