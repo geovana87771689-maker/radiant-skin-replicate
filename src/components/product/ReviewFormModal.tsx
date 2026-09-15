@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import { Star, X } from "lucide-react";
 import { toast } from "sonner";
 
-const skinTones = ["Claire à très claire", "Moyenne à mate", "Foncée à très foncée"];
-const skinTypes = ["Mixte", "Sèche", "Normale", "Grasse"];
+const sofaSizes = ["2 places", "3 places", "4 places / XXL"];
+const colorChoices = ["Noir", "Vert", "Gris"];
 const ages = ["18-25", "26-35", "36-45", "46-55", "56-65", "Plus de 66"];
 
 export function ReviewFormModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
-  const [skinTone, setSkinTone] = useState<string | null>(null);
-  const [skinType, setSkinType] = useState<string | null>(null);
+  const [sofaSize, setSofaSize] = useState<string | null>(null);
+  const [colorChoice, setColorChoice] = useState<string | null>(null);
   const [age, setAge] = useState<string | null>(null);
 
   useEffect(() => {
@@ -29,8 +29,8 @@ export function ReviewFormModal({ open, onClose }: { open: boolean; onClose: () 
   const reset = () => {
     setRating(0);
     setHover(0);
-    setSkinTone(null);
-    setSkinType(null);
+    setSofaSize(null);
+    setColorChoice(null);
     setAge(null);
   };
 
@@ -129,17 +129,17 @@ export function ReviewFormModal({ open, onClose }: { open: boolean; onClose: () 
             />
           </div>
 
-          {/* Skin Tone */}
+          {/* Taille du canapé */}
           <div>
-            <p className="mb-2 text-sm font-medium text-foreground">Carnation</p>
+            <p className="mb-2 text-sm font-medium text-foreground">Taille de votre canapé</p>
             <div className="space-y-2">
-              {skinTones.map((t) => (
+              {sofaSizes.map((t) => (
                 <label key={t} className="flex cursor-pointer items-center gap-2 text-sm">
                   <input
                     type="checkbox"
-                    checked={skinTone === t}
-                    onChange={() => setSkinTone(skinTone === t ? null : t)}
-                    className="size-4 accent-[#EF193F]"
+                    checked={sofaSize === t}
+                    onChange={() => setSofaSize(sofaSize === t ? null : t)}
+                    className="size-4 accent-primary"
                   />
                   {t}
                 </label>
@@ -147,17 +147,17 @@ export function ReviewFormModal({ open, onClose }: { open: boolean; onClose: () 
             </div>
           </div>
 
-          {/* Skin Type */}
+          {/* Couleur */}
           <div>
-            <p className="mb-2 text-sm font-medium text-foreground">Type de peau</p>
+            <p className="mb-2 text-sm font-medium text-foreground">Couleur choisie</p>
             <div className="space-y-2">
-              {skinTypes.map((t) => (
+              {colorChoices.map((t) => (
                 <label key={t} className="flex cursor-pointer items-center gap-2 text-sm">
                   <input
                     type="checkbox"
-                    checked={skinType === t}
-                    onChange={() => setSkinType(skinType === t ? null : t)}
-                    className="size-4 accent-[#EF193F]"
+                    checked={colorChoice === t}
+                    onChange={() => setColorChoice(colorChoice === t ? null : t)}
+                    className="size-4 accent-primary"
                   />
                   {t}
                 </label>
@@ -175,7 +175,7 @@ export function ReviewFormModal({ open, onClose }: { open: boolean; onClose: () 
                     type="checkbox"
                     checked={age === a}
                     onChange={() => setAge(age === a ? null : a)}
-                    className="size-4 accent-[#EF193F]"
+                    className="size-4 accent-primary"
                   />
                   {a}
                 </label>
