@@ -105,7 +105,7 @@ function LandingPage() {
               selectedColorId={colorId}
               onSelectColor={setColorId}
               selectedFormuleId={formuleId}
-              onToggleBump={setBumpSelected}
+              onSelectFormule={setFormuleId}
             />
           </div>
         </div>
