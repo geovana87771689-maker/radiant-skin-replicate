@@ -199,7 +199,7 @@ export function BuyBox({
       {/* 3 — FORMULE, collée au bouton */}
       <div>
         <h2 className="mb-2 text-xs font-bold tracking-wide text-foreground uppercase">
-          3. Choisissez votre formule
+          3. CHOISISSEZ VOTRE KIT
         </h2>
         <FormuleSelector selected={selectedFormuleId} onSelect={handleSelectFormule} />
       </div>
