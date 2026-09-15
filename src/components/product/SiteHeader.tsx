@@ -1,10 +1,10 @@
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 bg-background">
-      <div className="bg-primary px-4 py-2 text-center text-[11px] font-semibold tracking-wide text-primary-foreground uppercase">
-        Vous êtes sur la boutique officiale Medicube
+    <header className="sticky top-0 z-50 bg-card">
+      <div className="animate-pulse-soft bg-primary px-4 py-2 text-center text-[11px] font-extrabold tracking-wide text-primary-foreground uppercase">
+        🔥 Déstockage + livraison offerte partout en France — aujourd'hui seulement !
       </div>
-      <div className="flex items-center justify-center gap-2 bg-black px-4 py-2 text-center text-[11px] font-semibold tracking-wide text-white uppercase">
+      <div className="flex items-center justify-center gap-2 bg-foreground px-4 py-2 text-center text-[11px] font-semibold tracking-wide text-background uppercase">
         <svg
           aria-hidden="true"
           viewBox="0 0 24 24"
@@ -20,20 +20,16 @@ export function SiteHeader() {
           <circle cx="5.5" cy="18.5" r="2.5" />
           <circle cx="18.5" cy="18.5" r="2.5" />
         </svg>
-        <span>Livraison offerte sur toutes les commandes</span>
+        <span>Livraison offerte & suivie sur toutes les commandes</span>
       </div>
       <div className="border-b border-border">
-        <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-center px-4">
-          <a href="/" className="flex items-center" aria-label="medicube">
-            <img
-              src="/images/logotipo.png"
-              alt="medicube K-Beauty Tech"
-              className="h-9 w-auto"
-              width={120}
-              height={40}
-              loading="eager"
-              referrerPolicy="no-referrer"
-            />
+        <div className="mx-auto flex h-14 max-w-[1280px] items-center justify-center px-4">
+          <a
+            href="/"
+            className="text-lg font-extrabold tracking-[0.25em] uppercase"
+            aria-label="Elastic Touch — accueil"
+          >
+            Elastic&nbsp;Touch
           </a>
         </div>
       </div>
