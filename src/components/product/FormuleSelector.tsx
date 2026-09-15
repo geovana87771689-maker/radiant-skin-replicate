@@ -65,6 +65,16 @@ export function FormuleSelector({
                   <p className="mt-1 text-[11px] font-bold text-primary">{f.note}</p>
                 )}
               </div>
+
+              {isPack && (
+                <img
+                  src={PACK_IMAGE}
+                  alt="Pack Complet — sangles anti-glisse et plateaux accoudoir"
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                  className="ml-1 h-16 w-16 shrink-0 rounded-lg border border-border object-cover"
+                />
+              )}
             </div>
           </button>
         );
