@@ -1,4 +1,4 @@
-import { BUMP_VARIANT_ID, CHECKOUT_BASE } from "@/data/product";
+import { CHECKOUT_BASE, PACK_VARIANT_ID } from "@/data/product";
 import { appendTrackingParams } from "@/lib/tracking";
 
 /**
@@ -6,9 +6,9 @@ import { appendTrackingParams } from "@/lib/tracking";
  * (+ éventuel order bump), puis y ajoute TOUS les paramètres de la page
  * courante (UTM, fbclid, gclid, sck...) pour préserver l'attribution.
  */
-export function buildCheckoutUrl(variantId: string, withBump: boolean): string {
-  const items = withBump
-    ? `${variantId}:1,${BUMP_VARIANT_ID}:1`
+export function buildCheckoutUrl(variantId: string, withPack: boolean): string {
+  const items = withPack
+    ? `${variantId}:1,${PACK_VARIANT_ID}:1`
     : `${variantId}:1`;
 
   const base = appendTrackingParams(`${CHECKOUT_BASE}/cart/${items}?checkout`);

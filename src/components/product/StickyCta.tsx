@@ -1,8 +1,7 @@
 import { toast } from "sonner";
 import {
-  BUMP_PRICE,
   COMPARE_AT,
-  PRICE,
+  formules,
   colors,
   formatPrice,
   getVariantId,
@@ -15,28 +14,30 @@ import { trackCheckoutEvents } from "@/lib/pixel";
 
 type SizeId = "2p" | "3p" | "4p";
 type ColorId = "noir" | "vert" | "gris";
+type FormuleId = "simple" | "complet";
 
 export function StickyCta({
   selectedSizeId,
   selectedColorId,
-  bumpSelected,
+  selectedFormuleId,
 }: {
   selectedSizeId: SizeId;
   selectedColorId: ColorId;
-  bumpSelected: boolean;
+  selectedFormuleId: FormuleId;
 }) {
   const size = sizes.find((s) => s.id === selectedSizeId) ?? sizes[0]!;
   const color = colors.find((c) => c.id === selectedColorId) ?? colors[0]!;
   const variantId = getVariantId(size.id, color.id);
 
-  const total = PRICE + (bumpSelected ? BUMP_PRICE : 0);
-  const totalCompareAt = COMPARE_AT + (bumpSelected ? 49.9 : 0);
+  const formule = formules.find((f) => f.id === selectedFormuleId) ?? formules[0]!;
+  const total = formule.price;
+  const totalCompareAt = formule.id === "complet" ? COMPARE_AT + 32.8 : COMPARE_AT;
 
   const handleCheckout = () => {
     toast.success(`${size.label} · ${color.label} — redirection vers le paiement`);
-    const checkoutUrl = buildCheckoutUrl(variantId, bumpSelected);
+    const checkoutUrl = buildCheckoutUrl(variantId, formule.id === "complet");
     trackCheckoutEvents({
-      title: `${product.title} — ${size.label} / ${color.label}`,
+      title: `${product.title} — ${size.label} / ${color.label} / ${formule.label}`,
       variantId,
       value: total,
       source: "sticky_cta",

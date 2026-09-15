@@ -1,58 +1,65 @@
-import { Check, ShieldCheck, Truck } from "lucide-react";
+import { Check, Ruler, ShieldCheck, Truck } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
-  BUMP_PRICE,
   COMPARE_AT,
-  PRICE,
   colors,
   formatPrice,
+  formules,
   getVariantId,
   product,
+  sizeGuide,
   sizes,
 } from "@/data/product";
 import { buildCheckoutUrl } from "@/lib/checkout";
 import { trackCheckoutEvents, trackEvent } from "@/lib/pixel";
 import { Stars } from "./Stars";
 import { CardBrands } from "./CardBrands";
-import { OrderBump } from "./OrderBump";
+import { FormuleSelector } from "./FormuleSelector";
 
 type SizeId = "2p" | "3p" | "4p";
 type ColorId = "noir" | "vert" | "gris";
+type FormuleId = "simple" | "complet";
 
 export function BuyBox({
   selectedSizeId,
   onSelectSize,
   selectedColorId,
   onSelectColor,
-  bumpSelected,
-  onToggleBump,
+  selectedFormuleId,
+  onSelectFormule,
 }: {
   selectedSizeId: SizeId;
   onSelectSize: (id: SizeId) => void;
   selectedColorId: ColorId;
   onSelectColor: (id: ColorId) => void;
-  bumpSelected: boolean;
-  onToggleBump: (next: boolean) => void;
+  selectedFormuleId: FormuleId;
+  onSelectFormule: (id: FormuleId) => void;
 }) {
   const size = sizes.find((s) => s.id === selectedSizeId) ?? sizes[0]!;
   const color = colors.find((c) => c.id === selectedColorId) ?? colors[0]!;
+  const formule = formules.find((f) => f.id === selectedFormuleId) ?? formules[0]!;
   const variantId = getVariantId(size.id, color.id);
 
-  const total = PRICE + (bumpSelected ? BUMP_PRICE : 0);
-  const totalCompareAt = COMPARE_AT + (bumpSelected ? 49.9 : 0);
+  const total = formule.price;
+  const totalCompareAt =
+    formule.id === "complet" ? COMPARE_AT + 32.8 : COMPARE_AT;
   const reviewCountFmt = new Intl.NumberFormat("fr-FR").format(product.reviewCount);
 
-  const handleToggleBump = (next: boolean) => {
-    onToggleBump(next);
-    trackEvent("OrderBumpToggle", { selected: next, value: BUMP_PRICE, currency: "EUR" });
+  const handleSelectFormule = (id: FormuleId) => {
+    onSelectFormule(id);
+    trackEvent("FormuleSelect", {
+      formule: id,
+      value: formules.find((f) => f.id === id)?.price,
+      currency: "EUR",
+    });
   };
 
   const handleCheckout = () => {
     toast.success(`${size.label} · ${color.label} — redirection vers le paiement`);
-    const checkoutUrl = buildCheckoutUrl(variantId, bumpSelected);
+    const checkoutUrl = buildCheckoutUrl(variantId, formule.id === "complet");
     trackCheckoutEvents({
-      title: `${product.title} — ${size.label} / ${color.label}`,
+      title: `${product.title} — ${size.label} / ${color.label} / ${formule.label}`,
       variantId,
       value: total,
       source: "buybox",
@@ -90,49 +97,75 @@ export function BuyBox({
         </span>
       </div>
 
-      {/* Taille */}
+      {/* 1 — TAILLE, avec le guide de mesure à côté */}
       <div>
         <h2 className="mb-2 text-xs font-bold tracking-wide text-foreground uppercase">
           1. Choisissez la taille
         </h2>
-        <div className="flex flex-col gap-2">
-          {sizes.map((s) => {
-            const isSelected = s.id === selectedSizeId;
-            return (
-              <button
-                key={s.id}
-                type="button"
-                onClick={() => onSelectSize(s.id)}
-                className={`flex w-full items-start gap-3 rounded-xl border px-4 py-3 text-left transition-colors ${
-                  isSelected
-                    ? "border-primary bg-accent ring-1 ring-primary"
-                    : "border-border hover:border-primary/50"
-                }`}
-              >
-                <span
-                  className={`mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border ${
+        <div className="grid gap-3 sm:grid-cols-[1fr_auto] sm:items-start">
+          <div className="flex flex-col gap-2">
+            {sizes.map((s) => {
+              const isSelected = s.id === selectedSizeId;
+              return (
+                <button
+                  key={s.id}
+                  type="button"
+                  onClick={() => onSelectSize(s.id)}
+                  className={`flex w-full items-start gap-3 rounded-xl border px-4 py-3 text-left transition-colors ${
                     isSelected
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border"
+                      ? "border-primary bg-accent ring-1 ring-primary"
+                      : "border-border hover:border-primary/50"
                   }`}
                 >
-                  {isSelected && <Check className="size-3" />}
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-sm font-extrabold leading-snug">
-                    {s.label}
+                  <span
+                    className={`mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border ${
+                      isSelected
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "border-border"
+                    }`}
+                  >
+                    {isSelected && <Check className="size-3" />}
                   </span>
-                  <span className="block text-[11px] text-muted-foreground">
-                    {s.dims} · {s.hint}
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm font-extrabold leading-snug">
+                      {s.label}
+                    </span>
+                    <span className="block text-[11px] text-muted-foreground">
+                      {s.dims} · {s.hint}
+                    </span>
                   </span>
-                </span>
-              </button>
-            );
-          })}
+                </button>
+              );
+            })}
+          </div>
+
+          <aside className="rounded-xl border border-border bg-secondary p-3 sm:w-52">
+            <p className="flex items-center gap-1.5 text-[11px] font-extrabold uppercase">
+              <Ruler className="size-3.5 text-primary" />
+              Guide de mesure
+            </p>
+            <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">
+              Mesurez l'assise d'un accoudoir à l'autre, sans les coussins.
+            </p>
+            <ul className="mt-2 space-y-1">
+              {sizeGuide.map((row) => (
+                <li
+                  key={row.size}
+                  className="flex items-baseline justify-between gap-2 text-[11px]"
+                >
+                  <span className="font-semibold">{row.size.split(" (")[0]}</span>
+                  <span className="text-muted-foreground">{row.seat}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-2 text-[10px] text-muted-foreground">
+              Entre deux tailles ? Prenez la taille au-dessus.
+            </p>
+          </aside>
         </div>
       </div>
 
-      {/* Couleur */}
+      {/* 2 — COULEUR (change la photo principale) */}
       <div>
         <h2 className="mb-2 text-xs font-bold tracking-wide text-foreground uppercase">
           2. Choisissez la couleur : <span className="text-primary">{color.label}</span>
@@ -163,8 +196,13 @@ export function BuyBox({
         </div>
       </div>
 
-      {/* Order bump */}
-      <OrderBump selected={bumpSelected} onToggle={handleToggleBump} />
+      {/* 3 — FORMULE, collée au bouton */}
+      <div>
+        <h2 className="mb-2 text-xs font-bold tracking-wide text-foreground uppercase">
+          3. Choisissez votre formule
+        </h2>
+        <FormuleSelector selected={selectedFormuleId} onSelect={handleSelectFormule} />
+      </div>
 
       <Button
         onClick={handleCheckout}
@@ -176,7 +214,7 @@ export function BuyBox({
       </Button>
 
       <p className="text-center text-xs font-semibold text-primary">
-        🔥 Stock limité : plus que 6 housses disponibles à ce prix.
+        🔥 Stock limité : plus que 6 kits disponibles à ce prix.
       </p>
 
       <CardBrands />
