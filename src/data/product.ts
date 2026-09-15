@@ -5,12 +5,15 @@
  * Ajoutez les prochaines images dans ce même dossier et référencez leur chemin ici.
  */
 
+import housseAvantAsset from "@/assets/housse-avant.png.asset.json";
+
 const housseNoir = "/images/product/housse-noir.jpg";
 const housseVert = "/images/product/housse-vert.webp";
 const housseGris = "/images/product/housse-gris.webp";
 const fixateurs = "/images/product/fixateurs.png";
 const housseLavage = "/images/product/housse-lavage.png";
 const housseAntiOdeur = "/images/product/housse-anti-odeur.png";
+const housseAvant = housseAvantAsset.url;
 
 export const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
 
@@ -24,7 +27,7 @@ export const productImages = [
 ];
 
 export const beforeAfterImages = {
-  before: housseGris,
+  before: housseAvant,
   after: housseVert,
 };
 
