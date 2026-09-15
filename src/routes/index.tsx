@@ -95,9 +95,6 @@ function LandingPage() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
       <main>
-        <HeroSection />
-        <TrustBar />
-
         <div className="border-b border-border bg-background">
           <div className="mx-auto grid max-w-[1280px] gap-4 px-4 py-4 sm:gap-8 sm:py-10 lg:grid-cols-[1.04fr_.96fr] lg:gap-12 lg:px-8">
             <ProductGallery selectedColorId={colorId} />
@@ -112,6 +109,8 @@ function LandingPage() {
           </div>
         </div>
 
+        <HeroSection />
+        <TrustBar />
         <BenefitsSection />
         <FeaturesSection />
         <InstallGuide />
