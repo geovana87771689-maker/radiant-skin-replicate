@@ -1,127 +1,183 @@
+/**
+ * Housse de canapé "Elastic Touch" — données produit.
+ *
+ * Les chemins d'images sont des placeholders : déposez les visuels officiels
+ * dans /public/images/ avec exactement ces noms pour qu'ils s'affichent.
+ */
+
+export const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
 
 export const productImages = [
-  "/images/duo-rice-peel-shot-v2.jpg",
-  "https://medicube.us/cdn/shop/files/00_43ae12cc-101f-477e-a4c8-6944dce6f4e2.jpg?v=1770188425&width=1200",
-  "https://medicube.us/cdn/shop/files/01_802e4e48-5987-4965-b4f8-f1a76265607a.jpg?v=1770188425&width=1200",
-  "https://medicube.us/cdn/shop/files/02_721e6205-5b24-432a-bec8-3b57415e15c4.jpg?v=1770188425&width=1200",
-  "https://medicube.us/cdn/shop/files/03_9fa1bde0-550e-45d0-9b7c-61dea16aff76.jpg?v=1770188425&width=1200",
-  "https://medicube.us/cdn/shop/files/04_8c133ad0-6a1d-4627-8003-e798e575c2b5.jpg?v=1770188425&width=1200",
-  "https://medicube.us/cdn/shop/files/05_b6c1cb94-5a1b-4317-8a2e-747e1c6889d0.jpg?v=1770188425&width=1200",
-  "https://medicube.us/cdn/shop/files/06_8d70c34b-cad2-4e03-ad3d-6f941daf9ff9.jpg?v=1770188425&width=1200",
+  "/images/housse-hero-1.jpg",
+  "/images/housse-hero-2.jpg",
+  "/images/housse-hero-3.jpg",
+  "/images/housse-hero-4.jpg",
+  "/images/housse-installation.jpg",
 ];
 
-export const BUMP_PRICE = 19.9;
-export const BUMP_VARIANT_ID = "54756508008814";
+export const beforeAfterImages = {
+  before: "/images/housse-avant.jpg",
+  after: "/images/housse-apres.jpg",
+};
+
+/** Domaine du checkout Shopify (panier permanent). */
+export const CHECKOUT_BASE = "https://checkout.vittacore.fr";
+
+export const BUMP_PRICE = 29.9;
+export const BUMP_COMPARE_AT = 49.9;
+/** À remplacer par l'ID de variante réel du kit de bâtons fixateurs. */
+export const BUMP_VARIANT_ID = "00000000000000";
+export const BUMP_IMAGE = "/images/bump-batons-fixateurs.jpg";
 
 export const formatPrice = (value: number) =>
-  new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" }).format(value);
+  new Intl.NumberFormat("fr-FR", {
+    style: "currency",
+    currency: "EUR",
+  }).format(value);
 
-export type Variant = {
-  id: "1kit" | "2kits";
-  variantId: string;
-  title: string;
-  qtyLabel: string;
-  shortSupport: string;
-  price: number;
-  compareAt?: number;
-  badge?: string;
-  bestSeller?: string;
-  support: string;
-  urgency?: string;
-  popular?: boolean;
-  image: string;
-  unitPriceNote?: string;
+export type SizeOption = {
+  id: "2p" | "3p" | "4p";
+  label: string;
+  dims: string;
+  hint: string;
 };
 
-export const variants: Variant[] = [
+export const sizes: SizeOption[] = [
   {
-    id: "1kit",
-    variantId: "54701770703214",
-    title: "Cure Découverte — 1 Coffret complet + Gant Offert",
-    qtyLabel: "Cure Découverte",
-    shortSupport: "1 Coffret complet + Gant Offert",
-    price: 36.9,
-    compareAt: 54.9,
-    support: "Le protocole complet pour découvrir les premiers résultats.",
-    unitPriceNote: "Économisez 18,00 €",
-    image: productImages[0]!,
+    id: "2p",
+    label: "Canapé 2 Places",
+    dims: "Moyen — 180 x 230 cm",
+    hint: "Assise de 145 à 185 cm",
   },
   {
-    id: "2kits",
-    variantId: "54713347244398",
-    title: "Cure Intensive 2 Mois — 2 Coffrets complets + 2 Gants Offerts",
-    qtyLabel: "Cure Intensive 2 Mois",
-    shortSupport: "2 Coffrets complets + 2 Gants Offerts",
-    price: 49.9,
-    compareAt: 109.9,
-    badge: "MEILLEURE OFFRE — -55%",
-    bestSeller: "MEILLEURE VENTE",
-    support: "Recommandé pour des résultats durables (2 à 3 mois).",
-    urgency: "Livraison Gratuite Prioritaire",
-    popular: true,
-    unitPriceNote: "Économisez 60,00 €",
-    image: "/images/duo-rice-peel-shot-2kits.png",
+    id: "3p",
+    label: "Canapé 3 Places",
+    dims: "Grand — 180 x 300 cm",
+    hint: "Assise de 185 à 230 cm",
+  },
+  {
+    id: "4p",
+    label: "Canapé 4 Places",
+    dims: "Famille / XXL — 180 x 340 cm",
+    hint: "Assise de 230 à 300 cm",
   },
 ];
 
-export const product = {
-  title: "Duo Rice Peel Shot Corps & Visage + Gant Exfoliant Offert",
-  subtitle:
-    "Traitement complet anti-rugosités, kératose pilaire & boutons — 100% sans grains agressifs.",
-  price: 36.9,
-  reviewCount: 1842,
-  rating: 4.8,
-  skinType: "Tous types (mixtes, grasses, sensibles, acnéiques)",
-  skinConcerns:
-    "Kératose pilaire, boutons de dos/corps, pores dilatés, texture granuleuse",
-  keyIngredients: "Acide Hypochloreux, Extrait de Riz Fermenté, AHA/BHA doux",
-  overview: [
-    "Ce sérum à l'acide hypochloreux et à l'extrait de riz élimine en douceur les cellules mortes et les impuretés tout en apaisant et rafraîchissant les peaux à imperfections.",
-    "L'HOCl est reconnu pour ses propriétés apaisantes et purifiantes : il apaise les peaux stressées tout en agissant sur l'excès de sébum et les impuretés des pores, pour un teint plus net et plus sain en apparence.",
-    "Spécialement formulé avec une concentration deux fois plus élevée en acide hypochloreux pour améliorer l'aspect des peaux rugueuses et granuleuses.",
-    "Sa texture aqueuse et rafraîchissante s'étale facilement sur les grandes zones du corps et pénètre rapidement.",
-  ],
-  clinical: [
-    { value: "-88,98 %", label: "de cellules mortes sur les coudes" },
-    { value: "-81,13 %", label: "de cellules mortes sur les jambes" },
-    { value: "-94,85 %", label: "d'impuretés dans les pores" },
-  ],
-  clinicalNote:
-    "*Test clinique réalisé par le « Global Institute of Dermatological Sciences ». Les résultats peuvent varier selon les types de peau.",
-  howToUse: [
-    "Appliquer sur peau sèche et masser délicatement les zones rugueuses ou irrégulières.",
-    "Lorsque les impuretés et les cellules mortes se décollent, rincer abondamment à l'eau tiède.",
-    "Après utilisation, appliquer une crème ou un lait corporel pour un résultat optimal.",
-  ],
-  howToUseNotes: [
-    "*Utiliser 2 fois par semaine pour des résultats optimaux.",
-    "*Un léger résidu peut se former autour de l'embout : cela n'altère en rien la qualité du produit.",
-  ],
-  faq: [
-    {
-      q: "Quels sont les principaux bienfaits du Body Peel Shot à l'acide hypochloreux ?",
-      a: "Il exfolie en douceur les cellules mortes et élimine les impuretés tout en aidant à apaiser les peaux à imperfections, à affiner le grain de peau irrégulier et à maintenir l'hydratation pour une peau visiblement plus lisse et plus nette.",
-    },
-    {
-      q: "Que fait l'acide hypochloreux (HOCl) ?",
-      a: "L'HOCl est reconnu pour ses propriétés apaisantes et purifiantes : il aide à calmer les peaux stressées tout en prenant soin de l'excès de sébum et des impuretés. *Les informations ci-dessus concernent uniquement les caractéristiques de la matière première.",
-    },
-    {
-      q: "Aide-t-il à lisser le grain de peau du corps ?",
-      a: "Oui. Il élimine délicatement les cellules mortes et les accumulations pour affiner le grain de peau irrégulier et laisser la peau du corps plus douce et plus lisse.",
-    },
-    {
-      q: "Agit-il sur les imperfections corporelles ?",
-      a: "Il est conçu pour prendre soin des peaux du corps à imperfections en aidant à éliminer l'excès de sébum et les impuretés des pores, tout en apportant une action apaisante pour un aspect plus net.",
-    },
-    {
-      q: "Où puis-je utiliser le Body Peel Shot ?",
-      a: "Il peut s'utiliser sur les zones du corps sujettes aux rugosités, à l'accumulation de cellules mortes, à l'excès de sébum ou aux imperfections, comme le dos, le torse, les bras et les jambes.",
-    },
-  ],
-  ingredients:
-    "WATER, ALCOHOL DENAT., CARBOMER, QUATERNIUM-60, PROPYLENE GLYCOL, 1,2-HEXANEDIOL, DIPROPYLENE GLYCOL, CETRIMONIUM METHOSULFATE, CAPRYLYL METHICONE, CAPRYLYL GLYCOL, POLYGLYCERYL-10 OLEATE, ETHYLHEXYLGLYCERIN, CHARCOAL POWDER, HYPOCHLOROUS ACID(20PPM), GLUCOSE, CHLORELLA VULGARIS EXTRACT, BUTYLENE GLYCOL, FRUCTOSE, FRUCTOOLIGOSACCHARIDES, TOCOPHEROL, SODIUM HYALURONATE CROSSPOLYMER, CYNANCHUM ATRATUM EXTRACT, XYLOSE, POLYGLUTAMIC ACID, ALTHAEA ROSEA FLOWER EXTRACT, CERAMIDE NP, SODIUM CHLORIDE, ALLANTOIN, PANTHENOL, ORYZA SATIVA (RICE) BRAN WATER, MELALEUCA ALTERNIFOLIA (TEA TREE) LEAF EXTRACT, PROTEASE, ORYZA SATIVA (RICE) EXTRACT, CENTELLA ASIATICA EXTRACT, HYDROLYZED HYALURONIC ACID",
+export type ColorOption = {
+  id: "noir" | "vert" | "gris";
+  label: string;
+  swatch: string;
+  image: string;
 };
+
+export const colors: ColorOption[] = [
+  { id: "noir", label: "Noir", swatch: "#1f1d1b", image: "/images/housse-noir.jpg" },
+  { id: "vert", label: "Vert", swatch: "#39584a", image: "/images/housse-vert.jpg" },
+  { id: "gris", label: "Gris", swatch: "#9a968f", image: "/images/housse-gris.jpg" },
+];
+
+/** Matrice taille + couleur -> ID de variante Shopify. */
+export const variantMatrix: Record<string, string> = {
+  "2p-noir": "55025988567406",
+  "2p-vert": "55025988600174",
+  "2p-gris": "55025988632942",
+  "3p-noir": "55025988665710",
+  "3p-vert": "55025988698478",
+  "3p-gris": "55025988731246",
+  "4p-noir": "55025988764014",
+  "4p-vert": "55025988796782",
+  "4p-gris": "55025988829550",
+};
+
+export const getVariantId = (sizeId: string, colorId: string) =>
+  variantMatrix[`${sizeId}-${colorId}`] ?? variantMatrix["2p-noir"]!;
+
+export const PRICE = 69.9;
+export const COMPARE_AT = 129.9;
+
+export const product = {
+  title: "Housse de Canapé Elastic Touch — Ajustement Universel",
+  headline:
+    "Transformez votre vieux canapé en canapé neuf en moins de 2 minutes — sans dépenser des milliers d'euros en tapisserie.",
+  subheadline:
+    "Le tissu à technologie Spandex UltraFit s'adapte parfaitement à tous les modèles, protège des poils d'animaux et des taches, et donne une nouvelle allure à votre salon instantanément.",
+  price: PRICE,
+  compareAt: COMPARE_AT,
+  rating: 4.9,
+  reviewCount: 3480,
+};
+
+export const trustBadges = [
+  { icon: "truck", label: "Envoi avec numéro de suivi" },
+  { icon: "lock", label: "Paiement 100% sécurisé et crypté" },
+  { icon: "refresh", label: "30 jours satisfait ou remboursé" },
+  { icon: "zap", label: "Installation rapide, sans outil" },
+];
+
+export const benefits = [
+  {
+    emoji: "🛋️",
+    title: "Masquez les imperfections",
+    text: "Accrocs, tissu délavé et taches disparaissent instantanément sous la housse.",
+  },
+  {
+    emoji: "🐾",
+    title: "L'amie des animaux",
+    text: "Protège le canapé des griffes, des poils et des salissures du quotidien.",
+  },
+  {
+    emoji: "💧",
+    title: "Lavage facile",
+    text: "Une tache ? Retirez la housse et lavez-la directement en machine.",
+  },
+];
+
+export const installSteps = [
+  {
+    title: "Emboîtez les coins",
+    text: "Placez la housse sur le dossier et emboîtez chaque coin élastiqué.",
+    image: "/images/etape-1.jpg",
+  },
+  {
+    title: "Tendez sur l'assise",
+    text: "Tirez le tissu vers l'avant pour couvrir l'assise et les accoudoirs.",
+    image: "/images/etape-2.jpg",
+  },
+  {
+    title: "Bloquez avec les bâtons",
+    text: "Enfoncez les bâtons mousse dans les interstices pour un rendu lisse.",
+    image: "/images/etape-3.jpg",
+  },
+];
+
+export const sizeGuide = [
+  { size: "2 Places (Moyen)", seat: "145 – 185 cm", dims: "180 x 230 cm" },
+  { size: "3 Places (Grand)", seat: "185 – 230 cm", dims: "180 x 300 cm" },
+  { size: "4 Places (Famille / XXL)", seat: "230 – 300 cm", dims: "180 x 340 cm" },
+];
+
+export const faq = [
+  {
+    q: "Est-ce que ça convient à un canapé d'angle ou convertible ?",
+    a: "Oui. Le tissu extensible épouse les canapés droits, convertibles et relax. Pour un canapé d'angle, comptez une housse par section (méridienne incluse) et choisissez la taille selon la longueur d'assise de chaque partie.",
+  },
+  {
+    q: "Comment savoir quelle taille choisir ?",
+    a: "Mesurez la longueur de l'assise d'un accoudoir à l'autre. Jusqu'à 185 cm : 2 places. De 185 à 230 cm : 3 places. De 230 à 300 cm : 4 places (Famille / XXL).",
+  },
+  {
+    q: "Le tissu glisse-t-il quand on s'assoit ?",
+    a: "Les élastiques maintiennent la housse en place. Pour un rendu totalement lisse et sans plis, les bâtons fixateurs antidérapants bloquent le tissu au fond des interstices : la housse ne bouge plus de la journée.",
+  },
+  {
+    q: "Peut-on la laver en machine ?",
+    a: "Oui, en machine à 30°C, cycle délicat, sans javel. Séchage à l'air libre. Le tissu chenille garde sa tenue et sa couleur lavage après lavage.",
+  },
+  {
+    q: "Quel est le délai de livraison et comment suivre ma commande ?",
+    a: "Expédition sous 24/48h et livraison en 4 à 8 jours ouvrés en France. Un numéro de suivi vous est envoyé par e-mail dès l'expédition.",
+  },
+];
 
 export type Review = {
   name: string;
@@ -133,28 +189,70 @@ export type Review = {
 };
 
 export const reviews: Review[] = [
-  { name: "Summer", date: "30/08/2026", rating: 5, text: "Livraison très rapide et produit conforme à la description.", verified: true, image: "/images/avis-client-1.webp" },
-  { name: "Amber", date: "01/08/2026", rating: 5, text: "Ça fonctionne, j'en rachèterai !", verified: true, image: "/images/avis-client-2.webp" },
-  { name: "IRINA", date: "21/07/2026", rating: 5, text: "Super produit ! Ma peau a l'air en pleine santé !", verified: true },
-  { name: "Camille", date: "12/07/2026", rating: 4, text: "Bon résultat sur le grain de peau, mais il faut être régulière. Au bout de 3 semaines la différence est nette.", verified: true },
-  { name: "Adam", date: "24/06/2026", rating: 5, text: "J'adore vraiment ce produit, il m'aide à avoir une belle peau à plus de quarante ans.", verified: true },
-  { name: "Laura", date: "13/06/2026", rating: 5, text: "J'adore la façon dont ce peel shot élimine les peaux mortes sur tout mon corps !", verified: true },
-  { name: "Nadia", date: "02/06/2026", rating: 5, text: "Les pores de mon nez sont visiblement moins marqués. Texture fraîche et agréable.", verified: true },
-  { name: "Sophie", date: "27/05/2026", rating: 4, text: "Très bien pour les bras et les cuisses. J'aurais aimé un flacon un peu plus grand.", verified: true },
-  { name: "Laura", date: "19/04/2026", rating: 5, text: "J'adore absolument ce produit. Il aide à éliminer l'accumulation de sébum sur le nez ainsi que les cellules mortes, et laisse le visage tout lisse.", verified: true },
-  { name: "Sethrina", date: "10/04/2026", rating: 5, text: "Je me sens bien plus propre après l'avoir utilisé.", verified: false },
-  { name: "Ananna", date: "01/04/2026", rating: 5, text: "Rend la peau du corps soyeuse et lumineuse.", verified: true },
-  { name: "Élodie", date: "24/03/2026", rating: 5, text: "Ma peau est beaucoup plus douce dès la première utilisation. Le coffret de 2 est le meilleur rapport qualité-prix.", verified: true },
-  { name: "Sethrina", date: "15/03/2026", rating: 5, text: "J'adore son efficacité pour exfolier les impuretés sur le corps ! Je le recommande.", verified: true },
-  { name: "Marine", date: "08/03/2026", rating: 5, text: "Peau sensible ici : aucune irritation, juste un vrai effet lissant. Je suis conquise.", verified: true },
-  { name: "Julie", date: "26/02/2026", rating: 4, text: "Efficace sur les petits boutons dans le dos. L'odeur est neutre, c'est un plus.", verified: true },
-  { name: "Chloé", date: "17/02/2026", rating: 5, text: "Résultat visible sur les coudes et les genoux après deux semaines. Je recommande vivement.", verified: true },
-  { name: "Inès", date: "05/02/2026", rating: 5, text: "Application rapide, ça pénètre bien et ça ne colle pas. Parfait avant une crème hydratante.", verified: true },
-  { name: "Manon", date: "21/01/2026", rating: 3, text: "Bon produit mais les résultats sont progressifs, il faut être patiente. La livraison a été rapide.", verified: true },
-  { name: "Aurélie", date: "09/01/2026", rating: 5, text: "Enfin un exfoliant qui n'agresse pas. Mon teint est plus uniforme.", verified: true },
-  { name: "Fatou", date: "28/12/2025", rating: 5, text: "Je l'utilise 2 fois par semaine, la peau est nette et lumineuse. J'ai repris la cure complète.", verified: true },
-  { name: "Léa", date: "14/12/2025", rating: 5, text: "Très satisfaite, colis bien emballé et effet immédiat de fraîcheur.", verified: true },
-  { name: "Sarah", date: "02/12/2025", rating: 4, text: "Bonne exfoliation sans picotements. Je le garde dans ma routine.", verified: true },
-  { name: "Hélène", date: "19/11/2025", rating: 5, text: "Ma fille et moi partageons le coffret, on adore toutes les deux.", verified: true },
-  { name: "Noémie", date: "05/11/2025", rating: 5, text: "Les rougeurs du corps se sont beaucoup atténuées. Produit vraiment efficace.", verified: true },
+  {
+    name: "Sandrine M.",
+    date: "02/09/2026",
+    rating: 5,
+    text: "Mon canapé avait 11 ans et était griffé par le chat. En 2 minutes il a l'air neuf. Le tissu est épais et doux, rien à voir avec les housses bas de gamme.",
+    verified: true,
+    image: "/images/avis-1.jpg",
+  },
+  {
+    name: "Karim B.",
+    date: "28/08/2026",
+    rating: 5,
+    text: "Les bâtons fixateurs changent tout : aucune ride, la housse ne bouge pas même avec les enfants qui sautent dessus.",
+    verified: true,
+    image: "/images/avis-2.jpg",
+  },
+  {
+    name: "Élodie R.",
+    date: "21/08/2026",
+    rating: 5,
+    text: "Couleur verte magnifique, très fidèle aux photos. Livraison en 5 jours avec suivi.",
+    verified: true,
+  },
+  {
+    name: "Patrick L.",
+    date: "14/08/2026",
+    rating: 4,
+    text: "Très bon produit. J'ai pris la taille au-dessus comme conseillé, c'est parfait. Un peu de patience pour bien tendre la première fois.",
+    verified: true,
+  },
+  {
+    name: "Nadia F.",
+    date: "05/08/2026",
+    rating: 5,
+    text: "Lavée en machine deux fois, aucune déformation ni décoloration. Je recommande vraiment.",
+    verified: true,
+  },
+  {
+    name: "Julien T.",
+    date: "27/07/2026",
+    rating: 5,
+    text: "Salon transformé pour moins de 70 €. Mes invités pensent que j'ai racheté un canapé.",
+    verified: true,
+  },
+  {
+    name: "Marie-Claire D.",
+    date: "18/07/2026",
+    rating: 5,
+    text: "Le gris est très élégant et le tissu ne peluche pas. Installation faite seule, sans difficulté.",
+    verified: true,
+  },
+  {
+    name: "Hugo P.",
+    date: "09/07/2026",
+    rating: 4,
+    text: "Bonne qualité pour le prix. J'ai ajouté le kit de bâtons, c'est indispensable sur un canapé profond.",
+    verified: true,
+  },
+];
+
+export const reviewDistribution = [
+  { stars: 5, pct: 88 },
+  { stars: 4, pct: 9 },
+  { stars: 3, pct: 3 },
+  { stars: 2, pct: 0 },
+  { stars: 1, pct: 0 },
 ];

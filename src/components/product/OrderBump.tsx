@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
-import { formatPrice, BUMP_PRICE } from "@/data/product";
+import { BUMP_COMPARE_AT, BUMP_IMAGE, BUMP_PRICE, formatPrice } from "@/data/product";
+import { ProductImage } from "./ProductImage";
 
 export function OrderBump({
   selected,
@@ -13,60 +14,61 @@ export function OrderBump({
       type="button"
       aria-pressed={selected}
       onClick={() => onToggle(!selected)}
-      className={`block w-full rounded-lg border-2 border-dashed p-3 text-left transition-colors sm:p-4 ${
+      className={`block w-full rounded-2xl border-2 border-dashed p-3 text-left transition-all sm:p-4 ${
         selected
-          ? "border-primary bg-accent"
+          ? "border-primary bg-accent shadow-sm"
           : "border-primary/40 bg-accent/40 hover:border-primary"
       }`}
     >
-      <span className="mb-2 block text-[10px] font-extrabold uppercase tracking-wide text-primary">
-        Offre spéciale · Complétez votre routine
+      <span className="mb-2 block text-[10px] font-extrabold tracking-wide text-primary uppercase">
+        ⚡ Recommandé par 98% des clients
       </span>
 
       <div className="flex items-start gap-3">
         <span
-          className={`mt-0.5 flex size-5 shrink-0 items-center justify-center rounded border-2 ${
+          className={`mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-md border-2 transition-transform ${
             selected
-              ? "border-primary bg-primary text-primary-foreground"
-              : "border-muted-foreground/40 bg-background"
+              ? "scale-110 border-primary bg-primary text-primary-foreground"
+              : "border-muted-foreground/40 bg-card"
           }`}
         >
           {selected && <Check className="size-3.5" />}
         </span>
 
-        <img
-          src="/images/egf-nad-serum.jpg?v=2"
-          alt="Sérum Raffermissant EGF + NAD+"
-          loading="eager"
-          referrerPolicy="no-referrer"
-          className="size-16 shrink-0 rounded-md bg-background object-contain sm:size-20"
-        />
+        <div className="size-16 shrink-0 overflow-hidden rounded-xl sm:size-20">
+          <ProductImage
+            src={BUMP_IMAGE}
+            alt="Kit de bâtons fixateurs antidérapants"
+            width={200}
+            height={200}
+          />
+        </div>
 
         <div className="min-w-0 flex-1">
           <p className="text-sm font-extrabold leading-snug text-foreground">
-            Sérum Raffermissant EGF + NAD+ (Anti-Âge & Éclat)
+            OUI ! Ajouter le Kit de Bâtons Fixateurs Antidérapants pour seulement{" "}
+            <span className="text-primary">+{formatPrice(BUMP_PRICE)}</span>{" "}
+            <span className="text-xs font-medium text-muted-foreground line-through">
+              {formatPrice(BUMP_COMPARE_AT)}
+            </span>
           </p>
-          <div className="mt-1 flex flex-wrap items-baseline gap-2">
-            <span className="text-base font-extrabold text-primary">
-              +{formatPrice(BUMP_PRICE)}
-            </span>
-            <span className="text-xs text-muted-foreground line-through">
-              {formatPrice(39)}
-            </span>
-          </div>
-          <ul className="mt-2 space-y-1">
-            {[
-              "Testé non comédogène & non irritant",
-              "Cible rides du front, contour des yeux et cou",
-            ].map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-1.5 text-[11px] font-medium text-muted-foreground"
-              >
-                <Check className="mt-0.5 size-3 shrink-0 text-emerald-600" />
-                <span>{item}</span>
-              </li>
-            ))}
+          <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">
+            Évitez que la housse ne bouge quand on s'assoit. Ces bâtons haute
+            densité bloquent le tissu au fond des interstices pour un effet lisse
+            et sur-mesure toute la journée.
+          </p>
+          <ul className="mt-2 flex flex-wrap gap-x-3 gap-y-1">
+            {["Finition sans plis", "Ne se déforme pas", "Fixation ultra ferme"].map(
+              (item) => (
+                <li
+                  key={item}
+                  className="flex items-center gap-1 text-[11px] font-semibold text-muted-foreground"
+                >
+                  <Check className="size-3 shrink-0 text-primary" />
+                  {item}
+                </li>
+              ),
+            )}
           </ul>
         </div>
       </div>
