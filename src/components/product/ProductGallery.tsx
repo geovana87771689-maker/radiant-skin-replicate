@@ -46,7 +46,7 @@ export function ProductGallery({ selectedColorId }: { selectedColorId: ColorId }
                 : "border-border hover:border-muted-foreground"
             }`}
           >
-            <ProductImage src={item.src} alt="" width={200} height={200} />
+            <ProductImage src={item.src} alt="" width={200} height={200} eager />
           </button>
         ))}
       </div>
