@@ -268,7 +268,7 @@ export const reviews: Review[] = [
     rating: 5,
     text: "Mon canapé avait 11 ans et était griffé par le chat. En 2 minutes il a l'air neuf. Le tissu est épais et doux, rien à voir avec les housses bas de gamme.",
     verified: true,
-    image: housseNoir.url,
+    image: housseNoir,
   },
   {
     name: "Karim B.",
@@ -276,7 +276,7 @@ export const reviews: Review[] = [
     rating: 5,
     text: "Les bâtons fixateurs changent tout : aucune ride, la housse ne bouge pas même avec les enfants qui sautent dessus.",
     verified: true,
-    image: fixateurs.url,
+    image: fixateurs,
   },
   {
     name: "Élodie R.",
