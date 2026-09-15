@@ -60,7 +60,7 @@ export type Formule = {
 export const formules: Formule[] = [
   {
     id: "simple",
-    label: "Kit 2 Housses",
+    label: "Kit 1 Housses",
     price: 69.9,
   },
   {
