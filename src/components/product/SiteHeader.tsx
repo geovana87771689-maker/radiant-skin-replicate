@@ -24,12 +24,13 @@ export function SiteHeader() {
       </div>
       <div className="border-b border-border">
         <div className="mx-auto flex h-14 max-w-[1280px] items-center justify-center px-4">
-          <a
-            href="/"
-            className="text-lg font-extrabold tracking-[0.25em] uppercase"
-            aria-label="Elastic Touch — accueil"
-          >
-            Elastic&nbsp;Touch
+      <a href="/" aria-label="L'ÉPURE MAISON — accueil" className="flex items-center">
+            <img
+              src={logoAsset.url}
+              alt="L'ÉPURE MAISON"
+              className="h-9 w-auto rounded-[4px]"
+              loading="eager"
+            />
           </a>
         </div>
       </div>
