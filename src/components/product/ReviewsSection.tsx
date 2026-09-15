@@ -1,15 +1,8 @@
 import { useState } from "react";
-import { product, reviews } from "@/data/product";
+import { product, reviewDistribution, reviews } from "@/data/product";
 import { Stars } from "./Stars";
 import { ReviewFormModal } from "./ReviewFormModal";
-
-const distribution = [
-  { stars: 5, pct: 85 },
-  { stars: 4, pct: 12 },
-  { stars: 3, pct: 3 },
-  { stars: 2, pct: 0 },
-  { stars: 1, pct: 0 },
-];
+import { ProductImage } from "./ProductImage";
 
 const PAGE_SIZE = 4;
 
@@ -22,18 +15,16 @@ export function ReviewsSection() {
   const formattedReviewCount = new Intl.NumberFormat("fr-FR").format(product.reviewCount);
 
   return (
-    <section className="bg-muted py-16">
+    <section className="bg-secondary py-14">
       <div className="mx-auto max-w-4xl px-4">
         <p className="text-center text-xs tracking-[0.25em] text-muted-foreground uppercase">
-          Les avis authentiques de la communauté
+          Ils ont transformé leur salon
         </p>
-        <h2 className="mt-3 text-center text-2xl font-bold">Avis clients</h2>
+        <h2 className="mt-3 text-center text-2xl font-extrabold">Avis clients</h2>
 
-        <div className="mt-10 grid gap-8 rounded-sm bg-background p-8 sm:grid-cols-[200px_1fr]">
+        <div className="mt-8 grid gap-8 rounded-2xl border border-border bg-card p-8 sm:grid-cols-[200px_1fr]">
           <div className="text-center">
-            <div className="text-4xl font-extrabold">
-              {product.rating.toFixed(1)}
-            </div>
+            <div className="text-4xl font-extrabold">{product.rating.toFixed(1)}</div>
             <div className="mt-2 flex justify-center">
               <Stars rating={product.rating} size={16} />
             </div>
@@ -42,47 +33,43 @@ export function ReviewsSection() {
             </p>
             <button
               onClick={() => setReviewOpen(true)}
-              className="mt-4 w-full rounded-sm bg-primary py-2.5 text-xs font-semibold tracking-wide text-primary-foreground uppercase"
+              className="mt-4 w-full rounded-full bg-primary py-2.5 text-xs font-semibold tracking-wide text-primary-foreground uppercase"
             >
               Rédiger un avis
             </button>
           </div>
           <div className="space-y-2">
-            {distribution.map((row) => (
+            {reviewDistribution.map((row) => (
               <div key={row.stars} className="flex items-center gap-3 text-xs">
-                <span className="w-12 text-muted-foreground">
-                  {row.stars} étoiles
-                </span>
-                <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
-                  <div
-                    className="h-full bg-primary"
-                    style={{ width: `${row.pct}%` }}
-                  />
+                <span className="w-14 text-muted-foreground">{row.stars} étoiles</span>
+                <div className="h-2 flex-1 overflow-hidden rounded-full bg-secondary">
+                  <div className="h-full bg-primary" style={{ width: `${row.pct}%` }} />
                 </div>
-                <span className="w-10 text-right text-muted-foreground">
-                  {row.pct}%
-                </span>
+                <span className="w-10 text-right text-muted-foreground">{row.pct}%</span>
               </div>
             ))}
             <p className="pt-4 text-xs text-muted-foreground">
-              <strong className="text-foreground">97%</strong> des clients
-              recommandent ce produit
+              <strong className="text-foreground">97%</strong> des clients recommandent ce
+              produit
             </p>
           </div>
         </div>
 
         <ul className="mt-8 space-y-4">
           {shown.map((r, i) => (
-            <li key={`${r.name}-${i}`} className="rounded-sm bg-background p-6">
+            <li
+              key={`${r.name}-${i}`}
+              className="rounded-2xl border border-border bg-card p-6"
+            >
               <div className="flex items-center gap-3">
-                <span className="flex size-9 items-center justify-center rounded-full bg-muted text-sm font-bold">
+                <span className="flex size-9 items-center justify-center rounded-full bg-secondary text-sm font-bold">
                   {r.name.charAt(0)}
                 </span>
                 <div>
                   <div className="flex items-center gap-2 text-sm font-semibold">
                     {r.name}
                     {r.verified && (
-                      <span className="rounded-sm bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground">
+                      <span className="rounded-full bg-secondary px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
                         Achat vérifié
                       </span>
                     )}
@@ -95,16 +82,15 @@ export function ReviewsSection() {
               </div>
               <p className="mt-4 text-sm leading-relaxed">{r.text}</p>
               {r.image && (
-                <img
-                  src={r.image}
-                  alt={`Photo partagée par ${r.name}`}
-                  className="mt-3 h-auto w-full max-w-[140px] rounded-sm object-contain sm:max-w-[160px]"
-                  loading="lazy"
-                />
+                <div className="mt-3 w-full max-w-[160px] overflow-hidden rounded-xl">
+                  <ProductImage
+                    src={r.image}
+                    alt={`Photo partagée par ${r.name}`}
+                    width={320}
+                    height={320}
+                  />
+                </div>
               )}
-              <p className="mt-3 text-[11px] text-muted-foreground">
-                Cet avis vous a-t-il été utile ? 0 · 0
-              </p>
             </li>
           ))}
         </ul>
@@ -114,7 +100,7 @@ export function ReviewsSection() {
             <button
               type="button"
               onClick={() => setVisible((v) => v + PAGE_SIZE)}
-              className="rounded-sm border border-primary px-6 py-3 text-xs font-semibold tracking-wide text-primary uppercase transition-colors hover:bg-primary hover:text-primary-foreground"
+              className="rounded-full border border-primary px-6 py-3 text-xs font-semibold tracking-wide text-primary uppercase transition-colors hover:bg-primary hover:text-primary-foreground"
             >
               Voir plus d'avis
             </button>
