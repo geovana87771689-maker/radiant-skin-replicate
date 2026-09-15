@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { benefits, faq, installSteps, sizeGuide } from "@/data/product";
+import { benefits, faq, features, installSteps, product, sizeGuide, stockPromo } from "@/data/product";
 import { ProductImage } from "./ProductImage";
 
 export function TrustBar() {
@@ -36,9 +36,12 @@ export function BenefitsSection() {
     <section className="bg-secondary py-14">
       <div className="mx-auto max-w-[1280px] px-4 lg:px-8">
         <h2 className="text-center text-2xl font-extrabold">
-          Un salon comme neuf, sans travaux ni tapissier
+          4 piliers de protection et d'exclusivité
         </h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-relaxed text-muted-foreground">
+          {product.intro}
+        </p>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.map((b) => (
             <article
               key={b.title}
@@ -51,6 +54,60 @@ export function BenefitsSection() {
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{b.text}</p>
             </article>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function FeaturesSection() {
+  return (
+    <section className="border-t border-border bg-card py-14">
+      <div className="mx-auto max-w-[1280px] px-4 lg:px-8">
+        <div className="flex flex-col gap-10">
+          {features.map((f, i) => (
+            <article
+              key={f.title}
+              className={`grid items-center gap-6 lg:grid-cols-2 lg:gap-12 ${
+                i % 2 === 1 ? "lg:[&>figure]:order-2" : ""
+              }`}
+            >
+              <figure className="overflow-hidden rounded-2xl border border-border bg-secondary">
+                <ProductImage
+                  src={f.image}
+                  alt={f.title}
+                  ratio="aspect-[4/3]"
+                  eager={i === 0}
+                />
+              </figure>
+              <div className="min-w-0">
+                <span className="text-[11px] font-extrabold tracking-wide text-primary uppercase">
+                  {f.eyebrow}
+                </span>
+                <h3 className="mt-2 text-xl font-extrabold sm:text-2xl">{f.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  {f.text}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function StockPromoSection() {
+  return (
+    <section className="bg-secondary py-14">
+      <div className="mx-auto max-w-3xl px-4">
+        <div className="rounded-2xl border-2 border-primary/30 bg-card p-8 text-center">
+          <span className="text-[11px] font-extrabold tracking-wide text-primary uppercase">
+            {stockPromo.title}
+          </span>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            {stockPromo.text}
+          </p>
         </div>
       </div>
     </section>
