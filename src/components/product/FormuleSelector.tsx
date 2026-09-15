@@ -1,6 +1,5 @@
 import { Check } from "lucide-react";
-import { PACK_IMAGE, formatPrice, formules } from "@/data/product";
-import { ProductImage } from "./ProductImage";
+import { formatPrice, formules } from "@/data/product";
 
 type FormuleId = "simple" | "complet";
 
@@ -51,17 +50,6 @@ export function FormuleSelector({
               >
                 {isSelected && <Check className="size-3" />}
               </span>
-
-              {isPack && (
-                <div className="size-16 shrink-0 overflow-hidden rounded-xl sm:size-20">
-                  <ProductImage
-                    src={PACK_IMAGE}
-                    alt="Sangles anti-glisse et plateaux accoudoir"
-                    width={240}
-                    height={240}
-                  />
-                </div>
-              )}
 
               <div className="min-w-0 flex-1">
                 <div className="flex items-baseline justify-between gap-2">
