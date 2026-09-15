@@ -144,7 +144,7 @@ export const PRICE = 69.9;
 export const COMPARE_AT = 129.9;
 
 export const product = {
-  title: "Housse de Canapé Elastic Touch — Ajustement Universel",
+  title: "Housse de Canapé Jasmin — Ajustement Universel",
   headline:
     "Votre salon en ordre, même dans le chaos du quotidien.",
   subheadline:
