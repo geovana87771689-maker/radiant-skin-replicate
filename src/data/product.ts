@@ -167,17 +167,17 @@ export const installSteps = [
   {
     title: "Emboîtez les coins",
     text: "Placez la housse sur le dossier et emboîtez chaque coin élastiqué.",
-    image: "/images/etape-1.jpg",
+    image: housseNoir.url,
   },
   {
     title: "Tendez sur l'assise",
     text: "Tirez le tissu vers l'avant pour couvrir l'assise et les accoudoirs.",
-    image: "/images/etape-2.jpg",
+    image: housseVert.url,
   },
   {
     title: "Bloquez avec les bâtons",
     text: "Enfoncez les bâtons mousse dans les interstices pour un rendu lisse.",
-    image: "/images/etape-3.jpg",
+    image: fixateurs.url,
   },
 ];
 
@@ -226,7 +226,7 @@ export const reviews: Review[] = [
     rating: 5,
     text: "Mon canapé avait 11 ans et était griffé par le chat. En 2 minutes il a l'air neuf. Le tissu est épais et doux, rien à voir avec les housses bas de gamme.",
     verified: true,
-    image: "/images/avis-1.jpg",
+    image: housseNoir.url,
   },
   {
     name: "Karim B.",
@@ -234,7 +234,7 @@ export const reviews: Review[] = [
     rating: 5,
     text: "Les bâtons fixateurs changent tout : aucune ride, la housse ne bouge pas même avec les enfants qui sautent dessus.",
     verified: true,
-    image: "/images/avis-2.jpg",
+    image: fixateurs.url,
   },
   {
     name: "Élodie R.",
