@@ -9,6 +9,8 @@ import housseNoir from "@/assets/housse-noir.png.asset.json";
 import housseVert from "@/assets/housse-vert.png.asset.json";
 import housseGris from "@/assets/housse-gris.jpg.asset.json";
 import fixateurs from "@/assets/fixateurs.png.asset.json";
+import housseLavage from "@/assets/housse-lavage.png.asset.json";
+import housseAntiOdeur from "@/assets/housse-anti-odeur.png.asset.json";
 
 export const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
 
@@ -17,7 +19,8 @@ export const productImages = [
   housseNoir.url,
   housseVert.url,
   housseGris.url,
-  fixateurs.url,
+  housseLavage.url,
+  housseAntiOdeur.url,
 ];
 
 export const beforeAfterImages = {
