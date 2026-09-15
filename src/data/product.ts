@@ -5,6 +5,11 @@
  * dans /public/images/ avec exactement ces noms pour qu'ils s'affichent.
  */
 
+import housseNoir from "@/assets/housse-noir.png.asset.json";
+import housseVert from "@/assets/housse-vert.png.asset.json";
+import housseGris from "@/assets/housse-gris.jpg.asset.json";
+import fixateurs from "@/assets/fixateurs.png.asset.json";
+
 export const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
 
 export const productImages = [
@@ -23,11 +28,37 @@ export const beforeAfterImages = {
 /** Domaine du checkout Shopify (panier permanent). */
 export const CHECKOUT_BASE = "https://checkout.vittacore.fr";
 
-export const BUMP_PRICE = 29.9;
-export const BUMP_COMPARE_AT = 49.9;
-/** À remplacer par l'ID de variante réel du kit de bâtons fixateurs. */
-export const BUMP_VARIANT_ID = "00000000000000";
-export const BUMP_IMAGE = "/images/bump-batons-fixateurs.jpg";
+/** Prix du Pack Complet ajouté à la formule 2. */
+export const PACK_PRICE = 29.9;
+export const PACK_VALUE = 32.8;
+/** À remplacer par l'ID de variante réel du Pack Complet. */
+export const PACK_VARIANT_ID = "00000000000000";
+export const PACK_IMAGE = fixateurs.url;
+
+export type Formule = {
+  id: "simple" | "complet";
+  label: string;
+  price: number;
+  detail?: string;
+  note?: string;
+  badge?: string;
+};
+
+export const formules: Formule[] = [
+  {
+    id: "simple",
+    label: "Kit 2 Housses",
+    price: 69.9,
+  },
+  {
+    id: "complet",
+    label: "Kit 2 Housses + Pack Complet",
+    price: 99.8,
+    detail: "4 sangles anti-glisse + 2 plateaux accoudoir",
+    note: "Valeur 32,80 € — inclus pour 29,90 €",
+    badge: "⚡ Choisi par 98% des clients",
+  },
+];
 
 export const formatPrice = (value: number) =>
   new Intl.NumberFormat("fr-FR", {
@@ -71,9 +102,9 @@ export type ColorOption = {
 };
 
 export const colors: ColorOption[] = [
-  { id: "noir", label: "Noir", swatch: "#1f1d1b", image: "/images/housse-noir.jpg" },
-  { id: "vert", label: "Vert", swatch: "#39584a", image: "/images/housse-vert.jpg" },
-  { id: "gris", label: "Gris", swatch: "#9a968f", image: "/images/housse-gris.jpg" },
+  { id: "noir", label: "Noir", swatch: "#1f1d1b", image: housseNoir.url },
+  { id: "vert", label: "Vert", swatch: "#39584a", image: housseVert.url },
+  { id: "gris", label: "Gris", swatch: "#9a968f", image: housseGris.url },
 ];
 
 /** Matrice taille + couleur -> ID de variante Shopify. */
