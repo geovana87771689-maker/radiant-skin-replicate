@@ -224,7 +224,7 @@ export const features = [
 
 export const stockPromo = {
   title: "Promo renouvellement de stock",
-  text: "Nous proposons un lot de qualité supérieure en quantité limitée pour le marché national. Ce n'est pas tous les jours que l'on trouve un article qui combine défense réelle contre les taches, technologie anti-odeur et un style valorisant votre intérieur. La demande est très élevée et les coloris faciles à assortir partent rapidement de l'entrepôt. Si vous voulez gagner la bataille contre la saleté et garder un canapé impeccable, c'est le moment. Assurez votre Kit PAYEZ 1, RECEVEZ 2 et rejoignez ceux qui profitent d'un intérieur parfait sans effort.",
+  text: "Nous proposons un lot de qualité supérieure en quantité limitée pour le marché national. Ce n'est pas tous les jours que l'on trouve un article qui combine défense réelle contre les taches, technologie anti-odeur et un style valorisant votre intérieur. La demande est très élevée et les coloris faciles à assortir partent rapidement de l'entrepôt. Si vous voulez gagner la bataille contre la saleté et garder un canapé impeccable, c'est le moment.",
 };
 
 export const installSteps = [
