@@ -1,6 +1,5 @@
 import { toast } from "sonner";
 import {
-  COMPARE_AT,
   formules,
   colors,
   formatPrice,

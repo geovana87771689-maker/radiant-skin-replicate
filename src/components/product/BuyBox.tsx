@@ -2,7 +2,6 @@ import { Check, Ruler, ShieldCheck, Truck } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
-  COMPARE_AT,
   colors,
   formatPrice,
   formules,
