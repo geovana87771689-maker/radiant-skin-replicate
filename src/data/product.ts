@@ -98,7 +98,7 @@ export const sizes: SizeOption[] = [
     qualifier: "Moyen",
     dims: "180 x 230 cm",
     hint: "Assise de 145 à 185 cm",
-    price: 77.9,
+    price: 79.9,
     compareAt: 139.9,
   },
   {
@@ -107,7 +107,7 @@ export const sizes: SizeOption[] = [
     qualifier: "Grand",
     dims: "180 x 300 cm",
     hint: "Assise de 185 à 230 cm",
-    price: 87.9,
+    price: 89.9,
     compareAt: 159.9,
   },
   {
@@ -116,7 +116,7 @@ export const sizes: SizeOption[] = [
     qualifier: "Famille / XXL",
     dims: "180 x 340 cm",
     hint: "Assise de 230 à 300 cm",
-    price: 97.9,
+    price: 99.9,
     compareAt: 179.9,
   },
 ];
