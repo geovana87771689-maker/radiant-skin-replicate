@@ -28,9 +28,8 @@ export function ProductGallery({ selectedColorId }: { selectedColorId: ColorId }
           eager
           className="object-cover"
         />
-        <span className="absolute bottom-3 left-3 rounded-full bg-card/95 px-3 py-1.5 text-[11px] font-bold text-foreground shadow-sm backdrop-blur">
-          {items[active]?.label}
-        </span>
+
+
       </div>
 
       <div className="scrollbar-none -mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:grid-cols-6 sm:overflow-visible sm:px-0">
