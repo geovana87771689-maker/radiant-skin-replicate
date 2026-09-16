@@ -21,7 +21,7 @@ import { PRICE, faq, product } from "@/data/product";
 import { captureTrackingParams } from "@/lib/tracking";
 import { trackEvent } from "@/lib/pixel";
 
-const title = "Housse de Canapé Elastic Touch | Ajustement Universel";
+const title = "Housse de Canapé Jasmin — Ajustement Universel + 4 Cadeaux";
 const description =
   "Housse de canapé extensible en chenille : transformez votre canapé en moins de 2 minutes. Anti-taches, anti-poils, lavable en machine. Livraison offerte en France.";
 
@@ -45,7 +45,7 @@ export const Route = createFileRoute("/")({
           "@type": "Product",
           name: product.title,
           description,
-          brand: { "@type": "Brand", name: "Elastic Touch" },
+          brand: { "@type": "Brand", name: "L'ÉPURE MAISON" },
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: product.rating,

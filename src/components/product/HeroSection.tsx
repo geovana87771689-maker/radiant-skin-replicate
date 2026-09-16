@@ -29,7 +29,7 @@ export function HeroSection() {
           <figure className="overflow-hidden rounded-2xl border border-primary bg-card ring-1 ring-primary">
             <ProductImage
               src={beforeAfterImages.after}
-              alt="Canapé après la pose de la housse Elastic Touch"
+              alt="Canapé après la pose de la housse Jasmin"
               ratio="aspect-[3/4]"
               eager
             />
