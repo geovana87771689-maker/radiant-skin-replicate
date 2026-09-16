@@ -4,7 +4,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 bg-card">
       <div className="animate-pulse-soft bg-primary px-4 py-2 text-center text-[11px] font-extrabold tracking-wide text-primary-foreground uppercase">
-        🔥 Déstockage + livraison offerte partout en France — aujourd'hui seulement !
+        🔥 Livraison offerte partout en France
       </div>
       <div className="flex items-center justify-center gap-2 bg-foreground px-4 py-2 text-center text-[11px] font-semibold tracking-wide text-background uppercase">
         <svg

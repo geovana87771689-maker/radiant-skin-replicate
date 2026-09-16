@@ -48,10 +48,6 @@ export function ReviewsSection() {
                 <span className="w-10 text-right text-muted-foreground">{row.pct}%</span>
               </div>
             ))}
-            <p className="pt-4 text-xs text-muted-foreground">
-              <strong className="text-foreground">97%</strong> des clients recommandent ce
-              produit
-            </p>
           </div>
         </div>
 

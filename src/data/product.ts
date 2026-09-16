@@ -162,7 +162,7 @@ export const product = {
   price: PRICE,
   compareAt: COMPARE_AT,
   rating: 4.9,
-  reviewCount: 3480,
+  reviewCount: 8,
 };
 
 export const trustBadges = [
@@ -312,7 +312,7 @@ export const reviews: Review[] = [
     name: "Patrick L.",
     date: "14/08/2026",
     rating: 4,
-    text: "Le terracotta donne un vrai coup de neuf au salon. J'ai pris la taille au-dessus comme conseillé, c'est parfait. Un peu de patience pour bien tendre la première fois.",
+    text: "Le gris donne un vrai coup de neuf au salon. J'ai pris la taille au-dessus comme conseillé, c'est parfait. Un peu de patience pour bien tendre la première fois.",
     verified: true,
     image: avis4,
   },
