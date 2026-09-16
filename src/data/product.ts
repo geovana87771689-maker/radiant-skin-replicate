@@ -87,6 +87,8 @@ export type SizeOption = {
   qualifier: string;
   dims: string;
   hint: string;
+  price: number;
+  compareAt: number;
 };
 
 export const sizes: SizeOption[] = [
@@ -96,6 +98,8 @@ export const sizes: SizeOption[] = [
     qualifier: "Moyen",
     dims: "180 x 230 cm",
     hint: "Assise de 145 à 185 cm",
+    price: 77.9,
+    compareAt: 139.9,
   },
   {
     id: "3p",
@@ -103,6 +107,8 @@ export const sizes: SizeOption[] = [
     qualifier: "Grand",
     dims: "180 x 300 cm",
     hint: "Assise de 185 à 230 cm",
+    price: 87.9,
+    compareAt: 159.9,
   },
   {
     id: "4p",
@@ -110,6 +116,8 @@ export const sizes: SizeOption[] = [
     qualifier: "Famille / XXL",
     dims: "180 x 340 cm",
     hint: "Assise de 230 à 300 cm",
+    price: 97.9,
+    compareAt: 179.9,
   },
 ];
 
@@ -142,8 +150,8 @@ export const variantMatrix: Record<string, string> = {
 export const getVariantId = (sizeId: string, colorId: string) =>
   variantMatrix[`${sizeId}-${colorId}`] ?? variantMatrix["2p-noir"]!;
 
-export const PRICE = 69.9;
-export const COMPARE_AT = 129.9;
+export const PRICE = 77.9;
+export const COMPARE_AT = 139.9;
 
 export const product = {
   title: "Housse de Canapé Jasmin — Ajustement Universel + 4 Cadeaux",

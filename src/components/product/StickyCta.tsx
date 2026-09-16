@@ -30,8 +30,8 @@ export function StickyCta({
   const variantId = getVariantId(size.id, color.id);
 
   const formule = formules.find((f) => f.id === selectedFormuleId) ?? formules[0]!;
-  const total = formule.price;
-  const totalCompareAt = formule.id === "complet" ? COMPARE_AT + 32.8 : COMPARE_AT;
+  const total = size.price;
+  const totalCompareAt = size.compareAt;
 
   const handleCheckout = () => {
     toast.success(`${size.label} · ${color.label} — redirection vers le paiement`);
