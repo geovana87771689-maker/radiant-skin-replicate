@@ -1,3 +1,4 @@
+import logoAsset from "@/assets/logo-lepure-maison.png.asset.json";
 import { CardBrands } from "./CardBrands";
 
 const columns = [
