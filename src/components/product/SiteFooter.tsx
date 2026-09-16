@@ -1,4 +1,4 @@
-import logoAsset from "@/assets/logo-lepure-maison.png.asset.json";
+const LOGO_URL = "/images/product/logo-lepure-maison.png";
 import { CardBrands } from "./CardBrands";
 
 const columns = [
@@ -27,7 +27,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-[1280px] gap-10 px-4 md:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
           <img
-            src={logoAsset.url}
+            src={LOGO_URL}
             alt="L'ÉPURE MAISON"
             width={280}
             height={80}

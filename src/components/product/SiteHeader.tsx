@@ -1,4 +1,4 @@
-import logoAsset from "@/assets/logo-lepure-maison.png.asset.json";
+const LOGO_URL = "/images/product/logo-lepure-maison.png";
 
 export function SiteHeader() {
   return (
@@ -28,7 +28,7 @@ export function SiteHeader() {
         <div className="mx-auto flex h-14 max-w-[1280px] items-center justify-center px-4">
       <a href="/" aria-label="L'ÉPURE MAISON — accueil" className="flex items-center">
             <img
-              src={logoAsset.url}
+              src={LOGO_URL}
               alt="L'ÉPURE MAISON"
               className="h-12 w-auto rounded-[4px] sm:h-9"
               loading="eager"
