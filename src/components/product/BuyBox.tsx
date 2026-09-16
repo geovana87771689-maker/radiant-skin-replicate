@@ -12,10 +12,10 @@ import {
   sizes,
 } from "@/data/product";
 import { buildCheckoutUrl } from "@/lib/checkout";
-import { trackCheckoutEvents, trackEvent } from "@/lib/pixel";
+import { trackCheckoutEvents } from "@/lib/pixel";
 import { Stars } from "./Stars";
 import { CardBrands } from "./CardBrands";
-import { FormuleSelector } from "./FormuleSelector";
+
 
 type SizeId = "2p" | "3p" | "4p";
 type ColorId = "noir" | "vert" | "gris";
@@ -45,15 +45,6 @@ export function BuyBox({
   const totalCompareAt =
     formule.id === "complet" ? COMPARE_AT + 32.8 : COMPARE_AT;
   const reviewCountFmt = new Intl.NumberFormat("fr-FR").format(product.reviewCount);
-
-  const handleSelectFormule = (id: FormuleId) => {
-    onSelectFormule(id);
-    trackEvent("FormuleSelect", {
-      formule: id,
-      value: formules.find((f) => f.id === id)?.price,
-      currency: "EUR",
-    });
-  };
 
   const handleCheckout = () => {
     toast.success(`${size.label} · ${color.label} — redirection vers le paiement`);
@@ -194,14 +185,6 @@ export function BuyBox({
             );
           })}
         </div>
-      </div>
-
-      {/* 3 — FORMULE, collée au bouton */}
-      <div>
-        <h2 className="mb-2 text-xs font-bold tracking-wide text-foreground uppercase">
-          3. CHOISISSEZ VOTRE KIT
-        </h2>
-        <FormuleSelector selected={selectedFormuleId} onSelect={handleSelectFormule} />
       </div>
 
       <Button
