@@ -11,7 +11,7 @@ import demoChenilleAsset from "@/assets/demo-chenille.gif.asset.json";
 
 export function TrustBar() {
   const items = [
-    { Icon: Truck, label: "Envoi avec numéro de suivi" },
+    { Icon: Truck, label: "Expédition sous 24 heures" },
     { Icon: Lock, label: "Paiement 100% sécurisé et crypté" },
     { Icon: RefreshCw, label: "30 jours satisfait ou remboursé" },
     { Icon: Zap, label: "Installation rapide, sans outil" },
