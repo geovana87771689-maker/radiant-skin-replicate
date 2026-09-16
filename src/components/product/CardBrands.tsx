@@ -37,23 +37,6 @@ export function CardBrands() {
         </svg>
       </span>
 
-      {/* American Express */}
-      <span className={wrap} title="American Express">
-        <svg viewBox="0 0 40 24" className="h-6 w-10" role="img" aria-label="American Express">
-          <rect width="40" height="24" fill="#006FCF" />
-          <text
-            x="20"
-            y="15"
-            textAnchor="middle"
-            fontFamily="Arial, Helvetica, sans-serif"
-            fontSize="7.5"
-            fontWeight="700"
-            fill="#FFFFFF"
-          >
-            AMEX
-          </text>
-        </svg>
-      </span>
 
       {/* Discover */}
       <span className={wrap} title="Discover">
