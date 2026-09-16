@@ -41,7 +41,7 @@ export const beforeAfterImages = {
 };
 
 /** Domaine du checkout Shopify (panier permanent). */
-export const CHECKOUT_BASE = "https://checkout.vittacore.fr";
+export const CHECKOUT_BASE = "https://checkout.lepuremaison.fr";
 
 /** Prix du Pack Complet ajouté à la formule 2. */
 export const PACK_PRICE = 29.9;
