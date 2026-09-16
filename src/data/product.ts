@@ -7,6 +7,7 @@
 
 import housseAvantAsset from "@/assets/housse-avant.png.asset.json";
 
+const houssePrincipale = "/images/product/housse-principale.png";
 const housseNoir = "/images/product/housse-noir.jpg";
 const housseVert = "/images/product/housse-vert.webp";
 const housseGris = "/images/product/housse-gris.webp";
@@ -26,6 +27,7 @@ export const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
 
 /** Visuels réellement disponibles (CDN) — aucun chemin fantôme. */
 export const productImages = [
+  houssePrincipale,
   housseNoir,
   housseVert,
   housseGris,
@@ -119,7 +121,7 @@ export type ColorOption = {
 };
 
 export const colors: ColorOption[] = [
-  { id: "noir", label: "Noir", swatch: "#1f1d1b", image: housseNoir },
+  { id: "noir", label: "Noir", swatch: "#1f1d1b", image: houssePrincipale },
   { id: "vert", label: "Vert", swatch: "#39584a", image: housseVert },
   { id: "gris", label: "Gris", swatch: "#9a968f", image: housseGris },
 ];
