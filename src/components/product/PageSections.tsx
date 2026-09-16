@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { benefits, faq, features, installSteps, product, sizeGuide, stockPromo } from "@/data/product";
 import { ProductImage } from "./ProductImage";
-import demoChenilleAsset from "@/assets/demo-chenille.gif.asset.json";
+const demoChenille = "/images/product/demo-chenille.mp4";
 
 export function TrustBar() {
   const items = [

@@ -5,8 +5,6 @@
  * Ajoutez les prochaines images dans ce même dossier et référencez leur chemin ici.
  */
 
-import housseAvantAsset from "@/assets/housse-avant.png.asset.json";
-
 const houssePrincipale = "/images/product/housse-principale.png";
 const housseNoir = "/images/product/housse-noir.jpg";
 const housseVert = "/images/product/housse-vert.webp";
