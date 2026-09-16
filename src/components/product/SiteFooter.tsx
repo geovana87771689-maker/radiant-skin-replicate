@@ -58,7 +58,7 @@ export function SiteFooter() {
         ))}
       </div>
       <p className="mx-auto mt-12 max-w-[1280px] px-4 text-[11px] text-muted-foreground">
-        © {new Date().getFullYear()} Elastic Touch. Tous droits réservés. Paiement
+        © {new Date().getFullYear()} L'ÉPURE MAISON. Tous droits réservés. Paiement
         sécurisé SSL.
       </p>
     </footer>
