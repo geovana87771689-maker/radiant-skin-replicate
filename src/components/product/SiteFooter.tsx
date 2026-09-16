@@ -1,3 +1,4 @@
+import logoAsset from "@/assets/logo-lepure-maison.png.asset.json";
 import { CardBrands } from "./CardBrands";
 
 const columns = [
@@ -25,7 +26,14 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-card py-14">
       <div className="mx-auto grid max-w-[1280px] gap-10 px-4 md:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
-          <p className="text-xl font-extrabold tracking-[0.2em] uppercase">Elastic Touch</p>
+          <img
+            src={logoAsset.url}
+            alt="L'ÉPURE MAISON"
+            width={280}
+            height={80}
+            className="h-12 w-auto rounded-[4px] sm:h-9"
+            loading="lazy"
+          />
           <p className="mt-3 max-w-xs text-sm text-muted-foreground">
             Des housses extensibles premium pour redonner vie à votre salon en
             quelques minutes.
@@ -50,7 +58,7 @@ export function SiteFooter() {
         ))}
       </div>
       <p className="mx-auto mt-12 max-w-[1280px] px-4 text-[11px] text-muted-foreground">
-        © {new Date().getFullYear()} Elastic Touch. Tous droits réservés. Paiement
+        © {new Date().getFullYear()} L'ÉPURE MAISON. Tous droits réservés. Paiement
         sécurisé SSL.
       </p>
     </footer>
