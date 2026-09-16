@@ -12,7 +12,7 @@ import {
   sizes,
 } from "@/data/product";
 import { buildCheckoutUrl } from "@/lib/checkout";
-import { trackCheckoutEvents, trackEvent } from "@/lib/pixel";
+import { trackCheckoutEvents } from "@/lib/pixel";
 import { Stars } from "./Stars";
 import { CardBrands } from "./CardBrands";
 
