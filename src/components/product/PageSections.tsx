@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { benefits, faq, features, installSteps, product, sizeGuide, stockPromo } from "@/data/product";
 import { ProductImage } from "./ProductImage";
-import demoChenilleAsset from "@/assets/demo-chenille.gif.asset.json";
+const demoChenille = "/images/product/demo-chenille.mp4";
 
 export function TrustBar() {
   const items = [
@@ -43,12 +43,14 @@ export function BenefitsSection() {
           {product.intro}
         </p>
         <div className="mx-auto mt-6 max-w-md overflow-hidden rounded-2xl border border-border bg-card">
-          <img
-            src={demoChenilleAsset.url}
-            alt="Démonstration : pose de la housse de canapé"
-            loading="lazy"
-            decoding="async"
-            referrerPolicy="no-referrer"
+          <video
+            src={demoChenille}
+            aria-label="Démonstration : pose de la housse de canapé"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
             className="aspect-square w-full object-cover"
           />
         </div>

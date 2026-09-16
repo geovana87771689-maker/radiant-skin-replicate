@@ -5,8 +5,6 @@
  * Ajoutez les prochaines images dans ce même dossier et référencez leur chemin ici.
  */
 
-import housseAvantAsset from "@/assets/housse-avant.png.asset.json";
-
 const houssePrincipale = "/images/product/housse-principale.png";
 const housseNoir = "/images/product/housse-noir.jpg";
 const housseVert = "/images/product/housse-vert.webp";
@@ -21,7 +19,7 @@ const avis2 = "/images/product/avis-2.jpg";
 const avis3 = "/images/product/avis-3.jpg";
 const avis4 = "/images/product/avis-4.jpg";
 const avis5 = "/images/product/avis-5.jpg";
-const housseAvant = housseAvantAsset.url;
+const housseAvant = "/images/product/housse-avant.png";
 
 export const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
 
