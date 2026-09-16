@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Elastic Touch — Housses de canapé extensibles" },
+      { title: "L'ÉPURE MAISON — Housses de canapé en chenille" },
       {
         name: "description",
         content:
           "Housses de canapé en chenille : anti-taches, anti-odeurs, lavables en machine. Livraison offerte en France.",
       },
-      { name: "author", content: "Elastic Touch" },
-      { property: "og:title", content: "Elastic Touch — Housses de canapé extensibles" },
+      { name: "author", content: "L'ÉPURE MAISON" },
+      { property: "og:title", content: "L'ÉPURE MAISON — Housses de canapé en chenille" },
       {
         property: "og:description",
         content:

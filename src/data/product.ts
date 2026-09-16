@@ -1,5 +1,5 @@
 /**
- * Housse de canapé "Elastic Touch" — données produit.
+ * Housse de canapé "Jasmin" — données produit.
  *
  * Toutes les images produit sont servies avec la page depuis /public/images/product.
  * Ajoutez les prochaines images dans ce même dossier et référencez leur chemin ici.
