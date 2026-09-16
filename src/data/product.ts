@@ -150,7 +150,7 @@ export const variantMatrix: Record<string, string> = {
 export const getVariantId = (sizeId: string, colorId: string) =>
   variantMatrix[`${sizeId}-${colorId}`] ?? variantMatrix["2p-noir"]!;
 
-export const PRICE = 77.9;
+export const PRICE = 79.9;
 export const COMPARE_AT = 139.9;
 
 export const product = {
