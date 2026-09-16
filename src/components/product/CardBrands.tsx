@@ -37,7 +37,6 @@ export function CardBrands() {
         </svg>
       </span>
 
-
       {/* Discover */}
       <span className={wrap} title="Discover">
         <svg viewBox="0 0 40 24" className="h-6 w-10" role="img" aria-label="Discover">
