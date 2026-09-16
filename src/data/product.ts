@@ -162,7 +162,7 @@ export const product = {
   price: PRICE,
   compareAt: COMPARE_AT,
   rating: 4.9,
-  reviewCount: reviews.length,
+  reviewCount: 8,
 };
 
 export const trustBadges = [
