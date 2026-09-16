@@ -2,7 +2,6 @@ import { Check, Ruler, ShieldCheck, Truck } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
-  COMPARE_AT,
   colors,
   formatPrice,
   formules,
@@ -41,9 +40,8 @@ export function BuyBox({
   const formule = formules.find((f) => f.id === selectedFormuleId) ?? formules[0]!;
   const variantId = getVariantId(size.id, color.id);
 
-  const total = formule.price;
-  const totalCompareAt =
-    formule.id === "complet" ? COMPARE_AT + 32.8 : COMPARE_AT;
+  const total = size.price;
+  const totalCompareAt = size.compareAt;
   const reviewCountFmt = new Intl.NumberFormat("fr-FR").format(product.reviewCount);
 
   const handleCheckout = () => {
@@ -123,6 +121,9 @@ export function BuyBox({
                       <span className="font-bold text-muted-foreground">
                         · {s.qualifier}
                       </span>
+                    </span>
+                    <span className="mt-0.5 block text-sm font-extrabold text-primary">
+                      {formatPrice(s.price)}
                     </span>
                   </span>
                 </button>
