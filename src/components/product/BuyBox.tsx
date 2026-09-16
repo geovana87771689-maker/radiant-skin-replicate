@@ -197,9 +197,6 @@ export function BuyBox({
         </span>
       </Button>
 
-      <p className="text-center text-xs font-semibold text-primary">
-        🔥 Stock limité : plus que 6 kits disponibles à ce prix.
-      </p>
 
       <CardBrands />
 
