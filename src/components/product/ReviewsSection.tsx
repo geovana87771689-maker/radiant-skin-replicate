@@ -10,6 +10,16 @@ import av6 from "@/assets/av6.jpg.asset.json";
 import av7 from "@/assets/av7.jpg.asset.json";
 import av8 from "@/assets/av8.jpg.asset.json";
 import av9 from "@/assets/av9.jpg.asset.json";
+import av10 from "@/assets/av10.jpg.asset.json";
+import av11 from "@/assets/av11.jpg.asset.json";
+import av12 from "@/assets/av12.jpg.asset.json";
+import av13 from "@/assets/av13.jpg.asset.json";
+import av14 from "@/assets/av14.jpg.asset.json";
+import av15 from "@/assets/av15.jpg.asset.json";
+import av16 from "@/assets/av16.jpg.asset.json";
+import av17 from "@/assets/av17.jpg.asset.json";
+import av18 from "@/assets/av18.jpg.asset.json";
+import av19 from "@/assets/av19.jpg.asset.json";
 
 type Review = {
   image: string;
@@ -86,6 +96,76 @@ const reviews: Review[] = [
     date: "12/07/2026",
     rating: 5,
     text: "J'adore ce bandeau. Il est confortable et de meilleure qualité que ceux d'autres marques que j'avais achetés auparavant.",
+  },
+  {
+    image: av10.url,
+    name: "Martine D.",
+    date: "03/04/2026",
+    rating: 5,
+    text: "Parfait pour mes podcasts du soir. Je le porte aussi avec mes lunettes sans aucun problème, il reste bien en place.",
+  },
+  {
+    image: av11.url,
+    name: "Jasmine R.",
+    date: "21/12/2025",
+    rating: 5,
+    text: "Je l'ai eu en cadeau et je ne m'en passe plus. Le son est clair et le bandeau est très doux, même porté plusieurs heures.",
+  },
+  {
+    image: av12.url,
+    name: "Léa M.",
+    date: "14/06/2026",
+    rating: 5,
+    text: "Je l'utilise pour mes séances de yoga et d'étirements. Il ne bouge pas, même la tête en bas, et la musique me suit partout.",
+  },
+  {
+    image: av13.url,
+    name: "Patrick L.",
+    date: "30/05/2026",
+    rating: 5,
+    text: "Les boutons sur le devant sont très pratiques, je change de piste sans sortir mon téléphone. Simple et efficace.",
+  },
+  {
+    image: av14.url,
+    name: "Sonia P.",
+    date: "09/01/2026",
+    rating: 5,
+    text: "Le tissu est vraiment doux et le module se retire facilement pour le lavage. Je le recommande à toutes les personnes qui écoutent quelque chose au calme.",
+  },
+  {
+    image: av15.url,
+    name: "Denise F.",
+    date: "25/02/2026",
+    rating: 5,
+    text: "Très confortable, je l'oublie complètement une fois en place. La batterie tient largement toute la soirée.",
+  },
+  {
+    image: av16.url,
+    name: "Chantal G.",
+    date: "11/08/2026",
+    rating: 5,
+    text: "Je m'en sers aussi comme masque pour les yeux avec ma méditation guidée. Un seul accessoire pour les deux usages, c'est parfait.",
+  },
+  {
+    image: av17.url,
+    name: "Évelyne T.",
+    date: "19/05/2026",
+    rating: 5,
+    text: "Je cours avec chaque semaine : il tient bien, les écouteurs ne tombent plus et je garde les oreilles au chaud. Excellent produit.",
+  },
+  {
+    image: av18.url,
+    name: "Karine B.",
+    date: "06/09/2026",
+    rating: 5,
+    text: "Discret et léger, je le porte dans la maison pour mes podcasts. Plus personne n'est dérangé et je suis libre de mes mouvements.",
+  },
+  {
+    image: av19.url,
+    name: "Marc A.",
+    date: "02/09/2026",
+    rating: 5,
+    text: "Compatible avec mes lunettes sans appuyer. Le tissu chiné est joli et le bandeau reste bien en place toute la nuit.",
   },
 ];
 
