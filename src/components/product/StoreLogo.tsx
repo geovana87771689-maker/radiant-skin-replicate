@@ -1,15 +1,20 @@
+import logoAsset from "@/assets/logo-lepuremaison.webp.asset.json";
+
 type StoreLogoProps = {
   imageSrc?: string;
 };
 
 /**
- * Pour utiliser le futur fichier logo en une seule ligne :
- * import logo from "@/assets/logo-lepuremaison.png.asset.json";
- * puis remplacez `const DEFAULT_LOGO_IMAGE = null` par `const DEFAULT_LOGO_IMAGE = logo.url`.
+ * Logo de la boutique lépuremaison.
+ * Le fichier image est chargé depuis le CDN via le pointeur
+ * `@/assets/logo-lepuremaison.webp.asset.json`.
+ * Pour le remplacer : recréez l'asset (lovable-assets create --file <nouveau.webp>
+ * --filename logo-lepuremaison.webp > src/assets/logo-lepuremaison.webp.asset.json)
+ * puis supprimez l'ancien asset.
  */
-const DEFAULT_LOGO_IMAGE: string | null = null;
+const DEFAULT_LOGO_IMAGE: string = logoAsset.url;
 
-export function StoreLogo({ imageSrc = DEFAULT_LOGO_IMAGE ?? undefined }: StoreLogoProps) {
+export function StoreLogo({ imageSrc = DEFAULT_LOGO_IMAGE }: StoreLogoProps) {
   return (
     <div className="flex h-20 w-[280px] items-center justify-center lg:h-[92px] lg:w-[322px]">
       {imageSrc ? (
