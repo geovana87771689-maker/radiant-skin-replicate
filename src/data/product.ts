@@ -48,7 +48,7 @@ export const quantities: QuantityOption[] = [
 export const product = {
   title: "CozyBand — Bandeau audio sans fil",
   promise: "Tu te tournes. Le podcast continue. Rien n'appuie.",
-  price: quantities[1].total,
+  price: 79.9,
 };
 
 export const benefits = [

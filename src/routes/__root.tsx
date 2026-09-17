@@ -77,18 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "L'ÉPURE MAISON — Housses de canapé en chenille" },
+      { title: "CozyBand — Bandeau audio sans fil" },
       {
         name: "description",
         content:
-          "Housses de canapé en chenille : anti-taches, anti-odeurs, lavables en machine. Livraison offerte en France.",
+          "Bandeau doux avec haut-parleurs Bluetooth ultra-plats et masque pour les yeux.",
       },
-      { name: "author", content: "L'ÉPURE MAISON" },
-      { property: "og:title", content: "L'ÉPURE MAISON — Housses de canapé en chenille" },
+      { name: "author", content: "CozyBand" },
+      { property: "og:title", content: "CozyBand — Bandeau audio sans fil" },
       {
         property: "og:description",
         content:
-          "Housses de canapé en chenille : anti-taches, anti-odeurs, lavables en machine. Livraison offerte en France.",
+          "Bandeau doux avec haut-parleurs Bluetooth ultra-plats et masque pour les yeux.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
