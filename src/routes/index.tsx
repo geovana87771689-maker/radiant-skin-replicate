@@ -10,9 +10,8 @@ import { StickyCta } from "@/components/product/StickyCta";
 import type { CheckoutColor, CheckoutQuantity } from "@/config/checkout";
 import { product } from "@/data/product";
 import { captureTrackingParams } from "@/lib/tracking";
-import { trackEvent } from "@/lib/pixel";
 
-const title = "CozyBand — Bandeau audio sans fil";
+const title = "CozyBand — Bandeau audio sans fil | lépuremaison";
 const description = "Bandeau doux avec haut-parleurs Bluetooth ultra-plats et masque pour les yeux, conçu pour écouter sans pression contre l'oreiller.";
 
 export const Route = createFileRoute("/")({
@@ -27,7 +26,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary" },
     ],
     links: [{ rel: "canonical", href: "https://radiant-skin-replicate.lovable.app/" }],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Product", name: product.title, description, brand: { "@type": "Brand", name: "CozyBand" }, offers: { "@type": "AggregateOffer", lowPrice: "49.90", highPrice: "129.90", priceCurrency: "EUR", availability: "https://schema.org/InStock" } }) }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Product", name: product.title, description, brand: { "@type": "Brand", name: "lépuremaison" }, offers: { "@type": "AggregateOffer", lowPrice: "49.90", highPrice: "129.90", priceCurrency: "EUR", availability: "https://schema.org/InStock" } }) }],
   }),
   component: ProductPage,
 });
@@ -38,7 +37,6 @@ function ProductPage() {
 
   useEffect(() => {
     captureTrackingParams();
-    trackEvent("ViewContent", { content_name: product.title, content_type: "product", currency: "EUR", value: product.price });
   }, []);
 
   return (
