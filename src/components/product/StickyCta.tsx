@@ -4,11 +4,11 @@ import {
   colors,
   formatPrice,
   getVariantId,
-  product,
   sizes,
 } from "@/data/product";
 import { Button } from "@/components/ui/button";
 import { buildCheckoutUrl } from "@/lib/checkout";
+
 
 
 type SizeId = "2p" | "3p" | "4p";
