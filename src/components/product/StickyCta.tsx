@@ -1,69 +1,25 @@
 import { toast } from "sonner";
-import {
-  formules,
-  colors,
-  formatPrice,
-  getVariantId,
-  sizes,
-} from "@/data/product";
 import { Button } from "@/components/ui/button";
+import type { CheckoutColor, CheckoutQuantity } from "@/config/checkout";
+import { formatPrice, quantities } from "@/data/product";
 import { buildCheckoutUrl } from "@/lib/checkout";
 
-
-
-type SizeId = "2p" | "3p" | "4p";
-type ColorId = "noir" | "vert" | "gris";
-type FormuleId = "simple" | "complet";
-
-export function StickyCta({
-  selectedSizeId,
-  selectedColorId,
-  selectedFormuleId,
-}: {
-  selectedSizeId: SizeId;
-  selectedColorId: ColorId;
-  selectedFormuleId: FormuleId;
-}) {
-  const size = sizes.find((s) => s.id === selectedSizeId) ?? sizes[0]!;
-  const color = colors.find((c) => c.id === selectedColorId) ?? colors[0]!;
-  const variantId = getVariantId(size.id, color.id);
-
-  const formule = formules.find((f) => f.id === selectedFormuleId) ?? formules[0]!;
-  const total = size.price;
-  const totalCompareAt = size.compareAt;
+export function StickyCta({ selectedColorId, selectedQuantity }: { selectedColorId: CheckoutColor; selectedQuantity: CheckoutQuantity }) {
+  const offer = quantities.find((item) => item.quantity === selectedQuantity) ?? quantities[1];
+  if (!offer) return null;
 
   const handleCheckout = () => {
-    toast.success(`${size.label} · ${color.label} — redirection vers le paiement`);
-    const checkoutUrl = buildCheckoutUrl(variantId, formule.id === "complet");
-    setTimeout(() => {
-      window.location.href = checkoutUrl;
-    }, 300);
+    const checkoutUrl = buildCheckoutUrl(selectedColorId, selectedQuantity);
+    if (checkoutUrl.includes("REMPLACER_VARIANT_ID")) {
+      toast.error("Identifiant Shopify à compléter avant la mise en ligne");
+      return;
+    }
+    window.location.href = checkoutUrl;
   };
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card/95 px-3 py-2.5 backdrop-blur lg:hidden">
-      <div className="flex items-center gap-3">
-        <div className="min-w-0 flex-1">
-          <p className="truncate text-xs font-bold text-foreground">
-            {size.label} · {color.label}
-          </p>
-          <div className="flex items-baseline gap-1.5">
-            <span className="text-sm font-extrabold text-primary">
-              {formatPrice(total)}
-            </span>
-            <span className="text-[10px] text-muted-foreground line-through">
-              {formatPrice(totalCompareAt)}
-            </span>
-          </div>
-        </div>
-        <Button
-          type="button"
-          onClick={handleCheckout}
-          className="h-11 shrink-0 rounded-full px-5 text-xs font-extrabold uppercase shadow-lg"
-        >
-          Commander
-        </Button>
-      </div>
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-card/95 px-4 py-2 backdrop-blur lg:hidden">
+      <Button type="button" onClick={handleCheckout} className="h-12 w-full rounded-md font-extrabold">AJOUTER AU PANIER · {formatPrice(offer.total)}</Button>
     </div>
   );
 }

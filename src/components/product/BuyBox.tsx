@@ -1,230 +1,98 @@
-import { Check, Ruler, ShieldCheck, Truck } from "lucide-react";
+import { BatteryMedium, Bluetooth, Check, Eye, Package, Shirt, Volume2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import {
-  colors,
-  formatPrice,
-  formules,
-  getVariantId,
-  product,
-  sizeGuide,
-  sizes,
-} from "@/data/product";
+import type { CheckoutColor, CheckoutQuantity } from "@/config/checkout";
+import { benefits, colors, formatPrice, product, quantities } from "@/data/product";
 import { buildCheckoutUrl } from "@/lib/checkout";
 
-import { Stars } from "./Stars";
-import { CardBrands } from "./CardBrands";
+const benefitIcons = [Volume2, Shirt, BatteryMedium, Bluetooth, Eye, Package];
 
-
-type SizeId = "2p" | "3p" | "4p";
-type ColorId = "noir" | "vert" | "gris";
-type FormuleId = "simple" | "complet";
-
-export function BuyBox({
-  selectedSizeId,
-  onSelectSize,
-  selectedColorId,
-  onSelectColor,
-  selectedFormuleId,
-  onSelectFormule,
-}: {
-  selectedSizeId: SizeId;
-  onSelectSize: (id: SizeId) => void;
-  selectedColorId: ColorId;
-  onSelectColor: (id: ColorId) => void;
-  selectedFormuleId: FormuleId;
-  onSelectFormule: (id: FormuleId) => void;
+export function BuyBox({ selectedColorId, onSelectColor, selectedQuantity, onSelectQuantity }: {
+  selectedColorId: CheckoutColor;
+  onSelectColor: (id: CheckoutColor) => void;
+  selectedQuantity: CheckoutQuantity;
+  onSelectQuantity: (quantity: CheckoutQuantity) => void;
 }) {
-  const size = sizes.find((s) => s.id === selectedSizeId) ?? sizes[0]!;
-  const color = colors.find((c) => c.id === selectedColorId) ?? colors[0]!;
-  const formule = formules.find((f) => f.id === selectedFormuleId) ?? formules[0]!;
-  const variantId = getVariantId(size.id, color.id);
+  const color = colors.find((item) => item.id === selectedColorId) ?? colors[0];
+  const offer = quantities.find((item) => item.quantity === selectedQuantity) ?? quantities[1];
 
-  const total = size.price;
-  const totalCompareAt = size.compareAt;
-  const reviewCountFmt = new Intl.NumberFormat("fr-FR").format(product.reviewCount);
+  if (!color || !offer) return null;
 
   const handleCheckout = () => {
-    toast.success(`${size.label} · ${color.label} — redirection vers le paiement`);
-    const checkoutUrl = buildCheckoutUrl(variantId, formule.id === "complet");
-    setTimeout(() => {
-      window.location.href = checkoutUrl;
-    }, 300);
+    const checkoutUrl = buildCheckoutUrl(selectedColorId, selectedQuantity);
+    if (checkoutUrl.includes("REMPLACER_VARIANT_ID")) {
+      toast.error("Identifiant Shopify à compléter avant la mise en ligne");
+      return;
+    }
+    window.location.href = checkoutUrl;
   };
 
   return (
-    <div
-      id="acheter"
-      className="min-w-0 flex scroll-mt-24 flex-col gap-4 bg-card px-4 py-4 sm:px-6 lg:rounded-2xl lg:border lg:border-border lg:p-7 lg:shadow-sm"
-    >
-      <h1 className="text-lg font-bold leading-tight text-foreground sm:text-2xl">
-        {product.title}
-      </h1>
-
-      <div className="flex items-center gap-1.5">
-        <Stars rating={5} size={16} />
-        <span className="text-xs font-bold text-foreground">
-          {product.rating.toFixed(1)} · {reviewCountFmt} salons transformés
-        </span>
+    <section id="acheter" className="min-w-0 px-4 pb-8 pt-4 lg:px-8 lg:py-0">
+      <h1 className="text-2xl font-extrabold leading-tight text-foreground sm:text-3xl">{product.title}</h1>
+      <div className="mt-3 flex items-baseline gap-2">
+        <span className="text-3xl font-extrabold text-foreground">{formatPrice(offer.total)}</span>
+        {/* Prix de référence désactivé : il devra correspondre au prix le plus bas
+            pratiqué pendant les 30 jours précédents (directive Omnibus de l'UE). */}
       </div>
+      <p className="mt-5 border-y border-border py-4 text-xl font-extrabold leading-snug text-foreground">« {product.promise} »</p>
 
-      <p className="text-sm leading-relaxed text-muted-foreground">
-        Tissu chenille Spandex UltraFit · bouclier anti-taches & anti-odeurs ·
-        lavable en machine
-      </p>
+      <ul className="mt-5 space-y-3">
+        {benefits.map((benefit, index) => {
+          const Icon = benefitIcons[index] ?? Check;
+          return (
+            <li key={benefit} className="flex items-start gap-3 text-sm leading-snug">
+              <Icon className="mt-0.5 size-4 shrink-0 text-foreground" strokeWidth={1.6} />
+              <span>{benefit}</span>
+            </li>
+          );
+        })}
+      </ul>
 
-      <div className="flex items-baseline gap-2">
-        <span className="text-3xl font-extrabold text-primary">{formatPrice(total)}</span>
-        <span className="text-lg font-medium text-muted-foreground line-through">
-          {formatPrice(totalCompareAt)}
-        </span>
-      </div>
-
-      {/* 1 — TAILLE, avec le guide de mesure à côté */}
-      <div>
-        <h2 className="mb-2 text-xs font-bold tracking-wide text-foreground uppercase">
-          1. Choisissez la taille
-        </h2>
-        <div className="grid gap-3 sm:grid-cols-[1fr_auto] sm:items-start">
-          <div className="flex flex-col gap-2">
-            {sizes.map((s) => {
-              const isSelected = s.id === selectedSizeId;
-              return (
-                <button
-                  key={s.id}
-                  type="button"
-                  onClick={() => onSelectSize(s.id)}
-                  className={`flex w-full items-start gap-3 rounded-xl border px-4 py-3 text-left transition-colors ${
-                    isSelected
-                      ? "border-primary bg-accent ring-1 ring-primary"
-                      : "border-border hover:border-primary/50"
-                  }`}
-                >
-                  <span
-                    className={`mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border ${
-                      isSelected
-                        ? "border-primary bg-primary text-primary-foreground"
-                        : "border-border"
-                    }`}
-                  >
-                    {isSelected && <Check className="size-3" />}
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block text-sm font-extrabold leading-snug">
-                      {s.label}{" "}
-                      <span className="font-bold text-muted-foreground">
-                        · {s.qualifier}
-                      </span>
-                    </span>
-                    <span className="mt-0.5 block text-sm font-extrabold text-primary">
-                      {formatPrice(s.price)}
-                    </span>
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-
-          <aside className="rounded-xl border border-border bg-secondary p-3 sm:w-52">
-            <p className="flex items-center gap-1.5 text-[11px] font-extrabold uppercase">
-              <Ruler className="size-3.5 text-primary" />
-              Guide de mesure
-            </p>
-            <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">
-              Mesurez l'assise d'un accoudoir à l'autre, sans les coussins.
-            </p>
-            <ul className="mt-2 space-y-1">
-              {sizeGuide.map((row) => (
-                <li
-                  key={row.size}
-                  className="flex items-baseline justify-between gap-2 text-[11px]"
-                >
-                  <span className="font-semibold">{row.size.split(" (")[0]}</span>
-                  <span className="text-muted-foreground">{row.seat}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-2 text-[10px] text-muted-foreground">
-              Entre deux tailles ? Prenez la taille au-dessus.
-            </p>
-          </aside>
-        </div>
-      </div>
-
-      {/* 2 — COULEUR (change la photo principale) */}
-      <div>
-        <h2 className="mb-2 text-xs font-bold tracking-wide text-foreground uppercase">
-          2. Choisissez la couleur : <span className="text-primary">{color.label}</span>
-        </h2>
-        <div className="flex flex-wrap gap-2">
-          {colors.map((c) => {
-            const isSelected = c.id === selectedColorId;
+      <div className="mt-7">
+        <h2 className="text-xs font-extrabold uppercase">Couleur : {color.label}</h2>
+        <div className="mt-3 flex gap-3">
+          {colors.map((item) => {
+            const selected = item.id === selectedColorId;
             return (
-              <button
-                key={c.id}
-                type="button"
-                onClick={() => onSelectColor(c.id)}
-                aria-pressed={isSelected}
-                className={`flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-bold transition-colors ${
-                  isSelected
-                    ? "border-primary bg-accent text-foreground ring-1 ring-primary"
-                    : "border-border text-muted-foreground hover:border-primary/50"
-                }`}
-              >
-                <span
-                  className="size-4 rounded-full border border-border"
-                  style={{ backgroundColor: c.swatch }}
-                />
-                {c.label}
-              </button>
+              <Button key={item.id} type="button" variant="outline" onClick={() => onSelectColor(item.id)} aria-pressed={selected} className={`h-11 gap-2 rounded-full px-4 ${selected ? "border-foreground ring-1 ring-foreground" : ""}`}>
+                <span className={`size-5 rounded-full border border-border ${item.swatchClass}`} />
+                {item.label}
+              </Button>
             );
           })}
         </div>
       </div>
 
-      <Button
-        onClick={handleCheckout}
-        className="h-16 w-full rounded-full bg-primary text-primary-foreground shadow-lg"
-      >
-        <span className="flex w-full items-center justify-center gap-2 text-sm font-extrabold tracking-tight uppercase sm:text-base">
-          Finaliser la commande · {formatPrice(total)}
-        </span>
-      </Button>
-
-
-      <CardBrands />
-
-      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[11px] font-medium text-muted-foreground">
-        <span className="flex items-center gap-1.5">
-          <ShieldCheck className="size-4 text-primary" />
-          30 jours satisfait ou remboursé
-        </span>
-        <span className="flex items-center gap-1.5">
-          <Truck className="size-4 text-primary" />
-          Livraison offerte & suivie
-        </span>
+      <div className="mt-7">
+        <h2 className="text-xs font-extrabold uppercase">Quantité</h2>
+        <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+          {quantities.map((item) => {
+            const selected = item.quantity === selectedQuantity;
+            return (
+              <Button key={item.quantity} type="button" variant="outline" onClick={() => onSelectQuantity(item.quantity)} aria-pressed={selected} className={`relative h-[92px] flex-col gap-0 rounded-md px-2 ${selected ? "border-foreground bg-foreground text-primary-foreground ring-1 ring-foreground hover:bg-foreground" : ""}`}>
+                {item.popular && <span className={`absolute -top-2.5 rounded-full border px-2 py-0.5 text-[9px] font-extrabold uppercase ${selected ? "border-primary-foreground bg-foreground" : "border-foreground bg-background text-foreground"}`}>Choix populaire</span>}
+                <span className="text-lg font-extrabold">{item.quantity}</span>
+                <span className="text-sm font-bold">{formatPrice(item.total)}</span>
+                <span className={`text-[10px] ${selected ? "text-primary-foreground/75" : "text-muted-foreground"}`}>{formatPrice(item.perUnit)} / bandeau</span>
+              </Button>
+            );
+          })}
+        </div>
+        {offer.savingsPerUnit && (
+          <p className="mt-3 bg-secondary px-3 py-2 text-center text-xs font-semibold">
+            Seulement {formatPrice(offer.perUnit)} par bandeau. Tu économises {formatPrice(offer.savingsPerUnit)} sur chacun.
+          </p>
+        )}
       </div>
 
-      <dl className="divide-y divide-border border-y border-border text-xs sm:text-sm">
-        <div className="grid grid-cols-[115px_1fr] gap-3 py-3">
-          <dt className="font-semibold">Matière</dt>
-          <dd className="text-muted-foreground">
-            Chenille extensible (polyester + Spandex UltraFit)
-          </dd>
-        </div>
-        <div className="grid grid-cols-[115px_1fr] gap-3 py-3">
-          <dt className="font-semibold">Compatibilité</dt>
-          <dd className="text-muted-foreground">
-            Canapés droits, convertibles, relax et méridiennes
-          </dd>
-        </div>
-        <div className="grid grid-cols-[115px_1fr] gap-3 py-3">
-          <dt className="font-semibold">Entretien</dt>
-          <dd className="text-muted-foreground">
-            Lavable en machine à 30°C, séchage à l'air libre
-          </dd>
-        </div>
-      </dl>
-    </div>
+      <p className="mt-5 flex items-center gap-2 text-sm font-bold"><span className="size-2 rounded-full bg-foreground" />En stock, expédié sous 24 h</p>
+      <Button type="button" onClick={handleCheckout} className="mt-4 h-14 w-full rounded-md text-sm font-extrabold tracking-wide">AJOUTER AU PANIER · {formatPrice(offer.total)}</Button>
+
+      <div className="mt-3 grid gap-px overflow-hidden border border-border bg-border text-center text-[11px] font-extrabold sm:grid-cols-2">
+        <div className="bg-card px-3 py-3">LIVRAISON OFFERTE — [DÉLAI À CONFIRMER] JOURS</div>
+        <div className="bg-card px-3 py-3">ESSAIE-LE 30 JOURS SANS RISQUE</div>
+      </div>
+    </section>
   );
 }
