@@ -1,6 +1,7 @@
 import { ShieldCheck } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { faq } from "@/data/product";
+import cozyBandUsages from "@/assets/cozyband-usages.webp.asset.json";
 
 export function DescriptionSection() {
   return (
@@ -8,6 +9,12 @@ export function DescriptionSection() {
       <div className="mx-auto max-w-3xl px-4">
         <div className="space-y-8 text-base leading-relaxed text-foreground">
           <div><h2 className="text-xl font-extrabold">Tu écoutais déjà quelque chose pour t'endormir.</h2><p className="mt-3 text-muted-foreground">Une méditation, un podcast, un bruit blanc. Le problème n'a jamais été le contenu — c'était l'écouteur. Il appuie sur l'oreille dès que tu te mets sur le côté. Tu le repositionnes. Tu le retrouves dans les draps le lendemain matin.</p></div>
+          <img
+            src={cozyBandUsages.url}
+            alt="Utilisations du bandeau audio CozyBand au repos, en méditation et pendant une activité physique"
+            className="aspect-square w-full object-cover"
+            loading="lazy"
+          />
           <div><h2 className="text-xl font-extrabold">CozyBand règle ça d'une seule façon : il n'y a rien à mettre dans l'oreille.</h2><p className="mt-3 text-muted-foreground">Les haut-parleurs sont plats et cousus à l'intérieur du bandeau, à hauteur des oreilles. Tu poses la tête sur l'oreiller, tu te tournes autant que tu veux — le son reste, rien ne bouge, rien n'appuie. Le bandeau couvre aussi les yeux : tu n'as plus besoin d'un masque en plus.</p></div>
           <div><h2 className="text-xl font-extrabold">Ce que tu reçois :</h2><p className="mt-3 text-muted-foreground">le bandeau, le câble de charge USB, la pochette de rangement et la notice. Le module audio se retire en une seconde pour laver le bandeau à froid.</p></div>
         </div>
