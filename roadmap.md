@@ -5,4 +5,4 @@
 - [x] Ajouter la configuration checkout couleur × quantité avec suivi
 - [x] Remplacer les sections longues, FAQ et garantie
 - [x] Harmoniser la palette noir et blanc et le logo CozyBand
-- [ ] Vérifier mobile, desktop, conformité et anciens contenus
+- [x] Vérifier mobile, desktop, conformité et anciens contenus
