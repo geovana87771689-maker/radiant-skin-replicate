@@ -6,3 +6,6 @@
 - [x] Remplacer les sections longues, FAQ et garantie
 - [x] Harmoniser la palette noir et blanc et le logo CozyBand
 - [x] Vérifier mobile, desktop, conformité et anciens contenus
+- [ ] Rétablir lépuremaison dans l’en-tête, le pied de page et les métadonnées
+- [ ] Charger uniquement Meta PageView depuis une configuration dédiée
+- [ ] Installer les huit liens Shopify réels avec transmission des campagnes
