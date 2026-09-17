@@ -1,4 +1,4 @@
-const LOGO_URL = "/images/product/logo-lepure-maison.png";
+const LOGO_URL = "/images/product/logo-lepure-maison.webp";
 import { CardBrands } from "./CardBrands";
 
 const columns = [
