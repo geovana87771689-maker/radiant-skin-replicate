@@ -10,6 +10,16 @@ import av6 from "@/assets/av6.jpg.asset.json";
 import av7 from "@/assets/av7.jpg.asset.json";
 import av8 from "@/assets/av8.jpg.asset.json";
 import av9 from "@/assets/av9.jpg.asset.json";
+import av10 from "@/assets/av10.jpg.asset.json";
+import av11 from "@/assets/av11.jpg.asset.json";
+import av12 from "@/assets/av12.jpg.asset.json";
+import av13 from "@/assets/av13.jpg.asset.json";
+import av14 from "@/assets/av14.jpg.asset.json";
+import av15 from "@/assets/av15.jpg.asset.json";
+import av16 from "@/assets/av16.jpg.asset.json";
+import av17 from "@/assets/av17.jpg.asset.json";
+import av18 from "@/assets/av18.jpg.asset.json";
+import av19 from "@/assets/av19.jpg.asset.json";
 
 type Review = {
   image: string;
