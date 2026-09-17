@@ -6,13 +6,8 @@ const TRACKED_KEYS = [
   "utm_campaign",
   "utm_content",
   "utm_term",
-  "utm_id",
   "fbclid",
-  "gclid",
   "ttclid",
-  "sck",
-  "src",
-  "ref",
 ];
 
 function readStored(): URLSearchParams {
@@ -35,7 +30,7 @@ export function captureTrackingParams(): string {
 
   current.forEach((value, key) => {
     if (!value) return;
-    if (TRACKED_KEYS.includes(key) || key.startsWith("utm_")) {
+    if (TRACKED_KEYS.includes(key)) {
       stored.set(key, value);
     }
   });

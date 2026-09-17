@@ -1,5 +1,4 @@
 import { BatteryMedium, Bluetooth, Check, Eye, Package, Shirt, Volume2 } from "lucide-react";
-import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import type { CheckoutColor, CheckoutQuantity } from "@/config/checkout";
 import { benefits, colors, formatPrice, product, quantities } from "@/data/product";
@@ -20,10 +19,6 @@ export function BuyBox({ selectedColorId, onSelectColor, selectedQuantity, onSel
 
   const handleCheckout = () => {
     const checkoutUrl = buildCheckoutUrl(selectedColorId, selectedQuantity);
-    if (checkoutUrl.includes("REMPLACER_VARIANT_ID")) {
-      toast.error("Identifiant Shopify à compléter avant la mise en ligne");
-      return;
-    }
     window.location.href = checkoutUrl;
   };
 
