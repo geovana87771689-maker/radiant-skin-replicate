@@ -32,14 +32,20 @@ export function ProductGallery({ selectedColorId }: { selectedColorId: CheckoutC
         }}
         className="scrollbar-none flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain"
       >
-        {color.images.map((label, index) => (
-          <div key={label} className="aspect-square w-full shrink-0 snap-start bg-muted p-5 sm:p-8">
-            <div className="flex h-full flex-col items-center justify-center border border-dashed border-muted-foreground bg-secondary text-center">
-              <ImageIcon className="size-10 text-muted-foreground" strokeWidth={1.25} />
-              <strong className="mt-4 text-sm tracking-wide text-foreground">IMAGE À REMPLACER</strong>
-              <span className="mt-1 text-xs text-muted-foreground">{label}</span>
-              <span className="mt-4 text-[10px] uppercase text-muted-foreground">Emplacement {index + 1} sur 3</span>
-            </div>
+        {color.images.map((image, index) => (
+          <div key={image.label} className="aspect-square w-full shrink-0 snap-start bg-muted">
+            {image.src ? (
+              <img src={image.src} alt={image.label} className="h-full w-full object-contain" />
+            ) : (
+              <div className="h-full p-5 sm:p-8">
+                <div className="flex h-full flex-col items-center justify-center border border-dashed border-muted-foreground bg-secondary text-center">
+                  <ImageIcon className="size-10 text-muted-foreground" strokeWidth={1.25} />
+                  <strong className="mt-4 text-sm tracking-wide text-foreground">IMAGE À REMPLACER</strong>
+                  <span className="mt-1 text-xs text-muted-foreground">{image.label}</span>
+                  <span className="mt-4 text-[10px] uppercase text-muted-foreground">Emplacement {index + 1} sur 3</span>
+                </div>
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -52,8 +58,8 @@ export function ProductGallery({ selectedColorId }: { selectedColorId: CheckoutC
       </Button>
 
       <div className="mt-3 flex justify-center gap-2" aria-label={`Image ${active + 1} sur ${color.images.length}`}>
-        {color.images.map((label, index) => (
-          <Button key={label} variant="ghost" size="icon" type="button" aria-label={`Afficher l'image ${index + 1}`} onClick={() => goTo(index)} className="size-5 rounded-full p-1">
+        {color.images.map((image, index) => (
+          <Button key={image.label} variant="ghost" size="icon" type="button" aria-label={`Afficher l'image ${index + 1}`} onClick={() => goTo(index)} className="size-5 rounded-full p-1">
             <span className={`block size-2 rounded-full ${active === index ? "bg-foreground" : "bg-border"}`} />
           </Button>
         ))}
