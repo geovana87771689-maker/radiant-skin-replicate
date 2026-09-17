@@ -24,8 +24,6 @@ export const colors: ColorOption[] = [
     swatchClass: "bg-foreground",
     images: [
       { label: "Vue principale — Noir", src: cozyBandNoir },
-      { label: "Profil des haut-parleurs — Noir" },
-      { label: "Contenu du colis — Noir" },
     ],
   },
   {
@@ -34,8 +32,6 @@ export const colors: ColorOption[] = [
     swatchClass: "bg-muted-foreground",
     images: [
       { label: "Vue principale — Gris", src: cozyBandGris },
-      { label: "Profil des haut-parleurs — Gris" },
-      { label: "Contenu du colis — Gris" },
     ],
   },
 ];
