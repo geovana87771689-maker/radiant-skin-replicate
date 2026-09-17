@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { BuyBox } from "@/components/product/BuyBox";
 import { DescriptionSection, FaqSection, GuaranteeSection } from "@/components/product/PageSections";
 import { ProductGallery } from "@/components/product/ProductGallery";
+import { ReviewsSection } from "@/components/product/ReviewsSection";
 import { SiteFooter } from "@/components/product/SiteFooter";
 import { SiteHeader } from "@/components/product/SiteHeader";
 import { StickyCta } from "@/components/product/StickyCta";
@@ -48,6 +49,7 @@ function ProductPage() {
           <BuyBox selectedColorId={color} onSelectColor={setColor} selectedQuantity={quantity} onSelectQuantity={setQuantity} />
         </div>
         <DescriptionSection />
+        <ReviewsSection />
         <FaqSection />
         <GuaranteeSection />
       </main>
