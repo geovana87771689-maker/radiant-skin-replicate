@@ -1,4 +1,4 @@
-import logoAsset from "@/assets/logo-lepuremaison.webp.asset.json";
+import logoAsset from "@/assets/logo-lepuremaison.webp";
 
 type StoreLogoProps = {
   imageSrc?: string;
@@ -12,7 +12,7 @@ type StoreLogoProps = {
  * --filename logo-lepuremaison.webp > src/assets/logo-lepuremaison.webp.asset.json)
  * puis supprimez l'ancien asset.
  */
-const DEFAULT_LOGO_IMAGE: string = logoAsset.url;
+const DEFAULT_LOGO_IMAGE: string = logoAsset;
 
 export function StoreLogo({ imageSrc = DEFAULT_LOGO_IMAGE }: StoreLogoProps) {
   return (
