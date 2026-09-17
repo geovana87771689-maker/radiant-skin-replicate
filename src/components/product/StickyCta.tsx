@@ -9,7 +9,7 @@ import {
 } from "@/data/product";
 import { Button } from "@/components/ui/button";
 import { buildCheckoutUrl } from "@/lib/checkout";
-import { trackCheckoutEvents } from "@/lib/pixel";
+
 
 type SizeId = "2p" | "3p" | "4p";
 type ColorId = "noir" | "vert" | "gris";
