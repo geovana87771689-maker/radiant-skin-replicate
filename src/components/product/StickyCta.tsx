@@ -1,4 +1,3 @@
-import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import type { CheckoutColor, CheckoutQuantity } from "@/config/checkout";
 import { formatPrice, quantities } from "@/data/product";
@@ -10,10 +9,6 @@ export function StickyCta({ selectedColorId, selectedQuantity }: { selectedColor
 
   const handleCheckout = () => {
     const checkoutUrl = buildCheckoutUrl(selectedColorId, selectedQuantity);
-    if (checkoutUrl.includes("REMPLACER_VARIANT_ID")) {
-      toast.error("Identifiant Shopify à compléter avant la mise en ligne");
-      return;
-    }
     window.location.href = checkoutUrl;
   };
 
