@@ -1,4 +1,6 @@
 import type { CheckoutColor, CheckoutQuantity } from "@/config/checkout";
+import cozyBandNoir from "@/assets/cozyband-noir.webp.asset.json";
+import cozyBandGris from "@/assets/cozyband-gris.jpg.asset.json";
 
 export const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
 
@@ -12,7 +14,7 @@ export type ColorOption = {
   id: CheckoutColor;
   label: string;
   swatchClass: string;
-  images: string[];
+  images: Array<{ label: string; src?: string }>;
 };
 
 export const colors: ColorOption[] = [
@@ -20,13 +22,21 @@ export const colors: ColorOption[] = [
     id: "noir",
     label: "Noir",
     swatchClass: "bg-foreground",
-    images: ["Vue principale — Noir", "Profil des haut-parleurs — Noir", "Contenu du colis — Noir"],
+    images: [
+      { label: "Vue principale — Noir", src: cozyBandNoir.url },
+      { label: "Profil des haut-parleurs — Noir" },
+      { label: "Contenu du colis — Noir" },
+    ],
   },
   {
     id: "gris",
     label: "Gris",
     swatchClass: "bg-muted-foreground",
-    images: ["Vue principale — Gris", "Profil des haut-parleurs — Gris", "Contenu du colis — Gris"],
+    images: [
+      { label: "Vue principale — Gris", src: cozyBandGris.url },
+      { label: "Profil des haut-parleurs — Gris" },
+      { label: "Contenu du colis — Gris" },
+    ],
   },
 ];
 
