@@ -1,25 +1,25 @@
 import { useState } from "react";
 import { Star } from "lucide-react";
-import av1 from "@/assets/av1.jpg.asset.json";
-import av2 from "@/assets/av2.jpg.asset.json";
-import av3 from "@/assets/av3.jpg.asset.json";
-import av32 from "@/assets/av3-2.jpg.asset.json";
-import av4 from "@/assets/av4.jpg.asset.json";
-import av5 from "@/assets/av5.jpg.asset.json";
-import av6 from "@/assets/av6.jpg.asset.json";
-import av7 from "@/assets/av7.jpg.asset.json";
-import av8 from "@/assets/av8.jpg.asset.json";
-import av9 from "@/assets/av9.jpg.asset.json";
-import av10 from "@/assets/av10.jpg.asset.json";
-import av11 from "@/assets/av11.jpg.asset.json";
-import av12 from "@/assets/av12.jpg.asset.json";
-import av13 from "@/assets/av13.jpg.asset.json";
-import av14 from "@/assets/av14.jpg.asset.json";
-import av15 from "@/assets/av15.jpg.asset.json";
-import av16 from "@/assets/av16.jpg.asset.json";
-import av17 from "@/assets/av17.jpg.asset.json";
-import av18 from "@/assets/av18.jpg.asset.json";
-import av19 from "@/assets/av19.jpg.asset.json";
+import av1 from "@/assets/av1.jpg";
+import av2 from "@/assets/av2.jpg";
+import av3 from "@/assets/av3.jpg";
+import av32 from "@/assets/av3-2.jpg";
+import av4 from "@/assets/av4.jpg";
+import av5 from "@/assets/av5.jpg";
+import av6 from "@/assets/av6.jpg";
+import av7 from "@/assets/av7.jpg";
+import av8 from "@/assets/av8.jpg";
+import av9 from "@/assets/av9.jpg";
+import av10 from "@/assets/av10.jpg";
+import av11 from "@/assets/av11.jpg";
+import av12 from "@/assets/av12.jpg";
+import av13 from "@/assets/av13.jpg";
+import av14 from "@/assets/av14.jpg";
+import av15 from "@/assets/av15.jpg";
+import av16 from "@/assets/av16.jpg";
+import av17 from "@/assets/av17.jpg";
+import av18 from "@/assets/av18.jpg";
+import av19 from "@/assets/av19.jpg";
 
 type Review = {
   image: string;
@@ -34,134 +34,134 @@ type Review = {
 // Les photos sont fournies par le client, dans l'ordre av1 → av9.
 const reviews: Review[] = [
   {
-    image: av1.url,
+    image: av1,
     name: "Grace S.",
     date: "24/03/2024",
     rating: 5,
     text: "J'écoute de la musique et des podcasts au lit juste avant de dormir, donc c'est exactement ce qu'il me fallait, et c'est tellement doux à porter !",
   },
   {
-    image: av2.url,
+    image: av2,
     name: "Brandon H.",
     date: "27/02/2025",
     rating: 5,
     text: "Très confortable. La connexion Bluetooth est impeccable, je n'ai jamais eu de mal à l'appairer. J'ai écouté plus de 3 heures d'affilée sans aucun souci.",
   },
   {
-    image: av3.url,
-    extraImage: av32.url,
+    image: av3,
+    extraImage: av32,
     name: "Callum H.",
     date: "19/02/2024",
     rating: 5,
     text: "C'est exactement ce qui est annoncé. Bien ajusté, confortable, et ça ne me fait pas mal aux oreilles comme mes écouteurs.",
   },
   {
-    image: av4.url,
+    image: av4,
     name: "Danielle C.",
     date: "22/11/2024",
     rating: 5,
     text: "J'adore mon bandeau ! Je travaille de nuit alors je l'utilise beaucoup pour mes siestes de journée. Je l'ai aussi pris parce que mon copain déteste le bruit blanc — le meilleur achat !",
   },
   {
-    image: av5.url,
+    image: av5,
     name: "Amy B.",
     date: "18/09/2024",
     rating: 5,
     text: "Je l'utilise à vélo et le soir au lit. Plus besoin de m'inquiéter que les écouteurs tombent. Très confortable, il se recharge bien et le son est vraiment agréable.",
   },
   {
-    image: av6.url,
+    image: av6,
     name: "Carol B.",
     date: "17/05/2025",
     rating: 5,
     text: "J'aime le fait qu'il soit vraiment doux ! Je peux m'endormir avec ma méditation ou ma musique, sans écouteurs inconfortables. Et il me sert aussi de masque pour les yeux.",
   },
   {
-    image: av7.url,
+    image: av7,
     name: "Angela K.",
     date: "08/05/2025",
     rating: 5,
     text: "J'adore mon bandeau ! Je mets ma musique préférée et je fais mon yoga les yeux couverts, une expérience très agréable.",
   },
   {
-    image: av8.url,
+    image: av8,
     name: "David J.",
     date: "28/08/2026",
     rating: 5,
     text: "Je l'utilise tous les soirs. Léger, discret, et le module se retire en une seconde quand je veux laver le bandeau.",
   },
   {
-    image: av9.url,
+    image: av9,
     name: "Isabelle V.",
     date: "12/07/2026",
     rating: 5,
     text: "J'adore ce bandeau. Il est confortable et de meilleure qualité que ceux d'autres marques que j'avais achetés auparavant.",
   },
   {
-    image: av10.url,
+    image: av10,
     name: "Martine D.",
     date: "03/04/2026",
     rating: 5,
     text: "Parfait pour mes podcasts du soir. Je le porte aussi avec mes lunettes sans aucun problème, il reste bien en place.",
   },
   {
-    image: av11.url,
+    image: av11,
     name: "Jasmine R.",
     date: "21/12/2025",
     rating: 5,
     text: "Je l'ai eu en cadeau et je ne m'en passe plus. Le son est clair et le bandeau est très doux, même porté plusieurs heures.",
   },
   {
-    image: av12.url,
+    image: av12,
     name: "Léa M.",
     date: "14/06/2026",
     rating: 5,
     text: "Je l'utilise pour mes séances de yoga et d'étirements. Il ne bouge pas, même la tête en bas, et la musique me suit partout.",
   },
   {
-    image: av13.url,
+    image: av13,
     name: "Patrick L.",
     date: "30/05/2026",
     rating: 5,
     text: "Les boutons sur le devant sont très pratiques, je change de piste sans sortir mon téléphone. Simple et efficace.",
   },
   {
-    image: av14.url,
+    image: av14,
     name: "Sonia P.",
     date: "09/01/2026",
     rating: 5,
     text: "Le tissu est vraiment doux et le module se retire facilement pour le lavage. Je le recommande à toutes les personnes qui écoutent quelque chose au calme.",
   },
   {
-    image: av15.url,
+    image: av15,
     name: "Denise F.",
     date: "25/02/2026",
     rating: 5,
     text: "Très confortable, je l'oublie complètement une fois en place. La batterie tient largement toute la soirée.",
   },
   {
-    image: av16.url,
+    image: av16,
     name: "Chantal G.",
     date: "11/08/2026",
     rating: 5,
     text: "Je m'en sers aussi comme masque pour les yeux avec ma méditation guidée. Un seul accessoire pour les deux usages, c'est parfait.",
   },
   {
-    image: av17.url,
+    image: av17,
     name: "Évelyne T.",
     date: "19/05/2026",
     rating: 5,
     text: "Je cours avec chaque semaine : il tient bien, les écouteurs ne tombent plus et je garde les oreilles au chaud. Excellent produit.",
   },
   {
-    image: av18.url,
+    image: av18,
     name: "Karine B.",
     date: "06/09/2026",
     rating: 5,
     text: "Discret et léger, je le porte dans la maison pour mes podcasts. Plus personne n'est dérangé et je suis libre de mes mouvements.",
   },
   {
-    image: av19.url,
+    image: av19,
     name: "Marc A.",
     date: "02/09/2026",
     rating: 5,

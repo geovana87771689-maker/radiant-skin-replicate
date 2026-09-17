@@ -1,7 +1,7 @@
 import { ShieldCheck } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { faq } from "@/data/product";
-import cozyBandUsages from "@/assets/cozyband-usages.webp.asset.json";
+import cozyBandUsages from "@/assets/cozyband-usages.webp";
 
 export function DescriptionSection() {
   return (
@@ -10,7 +10,7 @@ export function DescriptionSection() {
         <div className="space-y-8 text-base leading-relaxed text-foreground">
           <div><h2 className="text-xl font-extrabold">Tu écoutais déjà quelque chose pour t'endormir.</h2><p className="mt-3 text-muted-foreground">Une méditation, un podcast, un bruit blanc. Le problème n'a jamais été le contenu — c'était l'écouteur. Il appuie sur l'oreille dès que tu te mets sur le côté. Tu le repositionnes. Tu le retrouves dans les draps le lendemain matin.</p></div>
           <img
-            src={cozyBandUsages.url}
+            src={cozyBandUsages}
             alt="Utilisations du bandeau audio CozyBand au repos, en méditation et pendant une activité physique"
             className="aspect-square w-full object-cover"
             loading="lazy"
