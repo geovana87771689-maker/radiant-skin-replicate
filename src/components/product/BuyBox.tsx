@@ -11,7 +11,7 @@ import {
   sizes,
 } from "@/data/product";
 import { buildCheckoutUrl } from "@/lib/checkout";
-import { trackCheckoutEvents } from "@/lib/pixel";
+
 import { Stars } from "./Stars";
 import { CardBrands } from "./CardBrands";
 
@@ -47,12 +47,6 @@ export function BuyBox({
   const handleCheckout = () => {
     toast.success(`${size.label} · ${color.label} — redirection vers le paiement`);
     const checkoutUrl = buildCheckoutUrl(variantId, formule.id === "complet");
-    trackCheckoutEvents({
-      title: `${product.title} — ${size.label} / ${color.label} / ${formule.label}`,
-      variantId,
-      value: total,
-      source: "buybox",
-    });
     setTimeout(() => {
       window.location.href = checkoutUrl;
     }, 300);

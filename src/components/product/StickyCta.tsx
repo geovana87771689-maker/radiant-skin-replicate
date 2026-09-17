@@ -4,12 +4,12 @@ import {
   colors,
   formatPrice,
   getVariantId,
-  product,
   sizes,
 } from "@/data/product";
 import { Button } from "@/components/ui/button";
 import { buildCheckoutUrl } from "@/lib/checkout";
-import { trackCheckoutEvents } from "@/lib/pixel";
+
+
 
 type SizeId = "2p" | "3p" | "4p";
 type ColorId = "noir" | "vert" | "gris";
@@ -35,12 +35,6 @@ export function StickyCta({
   const handleCheckout = () => {
     toast.success(`${size.label} · ${color.label} — redirection vers le paiement`);
     const checkoutUrl = buildCheckoutUrl(variantId, formule.id === "complet");
-    trackCheckoutEvents({
-      title: `${product.title} — ${size.label} / ${color.label} / ${formule.label}`,
-      variantId,
-      value: total,
-      source: "sticky_cta",
-    });
     setTimeout(() => {
       window.location.href = checkoutUrl;
     }, 300);
