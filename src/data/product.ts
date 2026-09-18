@@ -75,7 +75,7 @@ export const faq = [
   },
   {
     q: "Est-ce que ça chauffe ou ça gratte la nuit ?",
-    a: "La composition exacte du tissu est : À COMPLÉTER. Nous indiquons cette information clairement afin que tu puisses vérifier si la matière te convient avant de commander.",
+    a: "Non, absolument pas. Le bandeau est conçu dans un tissu ultra-doux, respirant et hypoallergénique. Il laisse respirer la peau sans retenir la chaleur ni provoquer de démangeaisons, même après plusieurs heures de sommeil.",
   },
   {
     q: "Les haut-parleurs bougent quand je me tourne ?",
