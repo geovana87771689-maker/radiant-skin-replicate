@@ -71,7 +71,7 @@ export const benefits = [
 export const faq = [
   {
     q: "Est-ce que ça va me serrer la tête ?",
-    a: "Le bandeau mesure À COMPLÉTER cm au repos et À COMPLÉTER cm une fois étiré. Si la taille ne convient pas, tu peux demander un échange selon notre politique : À COMPLÉTER.",
+    a: "Non, elle s'adapte à la forme de la tête pour ne pas causer d'inconfort.",
   },
   {
     q: "Est-ce que ça chauffe ou ça gratte la nuit ?",
