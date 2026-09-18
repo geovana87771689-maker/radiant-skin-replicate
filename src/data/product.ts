@@ -4,11 +4,13 @@ import cozyBandGris from "@/assets/cozyband-gris.jpg";
 
 export const PLACEHOLDER_IMAGE = "/images/placeholder.svg";
 
-export const formatPrice = (value: number) =>
-  new Intl.NumberFormat("fr-FR", {
-    style: "currency",
-    currency: "EUR",
+export const formatPrice = (value: number) => {
+  const formatted = new Intl.NumberFormat("fr-FR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
   }).format(value);
+  return `€${formatted} EUR`;
+};
 
 export type ColorOption = {
   id: CheckoutColor;
