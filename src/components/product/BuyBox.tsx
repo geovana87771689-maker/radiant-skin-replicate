@@ -61,7 +61,6 @@ export function BuyBox({ selectedColorId, onSelectColor, selectedQuantity, onSel
         {/* Prix de référence désactivé : il devra correspondre au prix le plus bas
             pratiqué pendant les 30 jours précédents (directive Omnibus de l'UE). */}
       </div>
-      <p className="mt-5 border-y border-border py-4 text-xl font-extrabold leading-snug text-foreground">« {product.promise} »</p>
 
       <ul className="mt-5 space-y-3">
         {benefits.map((benefit, index) => {
