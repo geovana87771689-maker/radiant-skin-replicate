@@ -117,7 +117,7 @@ export function BuyBox({ selectedColorId, onSelectColor, selectedQuantity, onSel
       <Button type="button" onClick={handleCheckout} className="mt-4 h-14 w-full rounded-md text-sm font-extrabold tracking-wide">AJOUTER AU PANIER · {formatPrice(offer.total)}</Button>
 
       <div className="mt-3 grid gap-px overflow-hidden border border-border bg-border text-center text-[11px] font-extrabold sm:grid-cols-2">
-        <div className="bg-card px-3 py-3">LIVRAISON SUIVIE OFFERTE — 6 À 10 JOURS OUVRÉS</div>
+        <div className="bg-card px-3 py-3">LIVRAISON SUIVIE OFFERTE — 1 À 3 JOURS OUVRÉS</div>
         <div className="bg-card px-3 py-3">ESSAIE-LE 30 JOURS SANS RISQUE</div>
       </div>
     </section>
