@@ -9,7 +9,7 @@ const benefitIcons = [Volume2, Shirt, BatteryMedium, Bluetooth, Eye, Package];
 
 function Star({ fill }: { fill: number }) {
   return (
-    <svg viewBox="0 0 20 20" className="size-4 text-foreground" aria-hidden="true">
+    <svg viewBox="0 0 20 20" className="size-4 text-amber-400" aria-hidden="true">
       <defs>
         <linearGradient id={`star-${fill}`}>
           <stop offset={`${fill}%`} stopColor="currentColor" />
