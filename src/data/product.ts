@@ -87,7 +87,7 @@ export const faq = [
   },
   {
     q: "Ça se lave ?",
-    a: "Oui. Retire d'abord le module audio amovible : À COMPLÉTER. Lave ensuite le bandeau à froid, à la main, puis laisse-le sécher à l'air libre.",
+    a: "Oui. Retire d'abord le module audio amovible. Lave ensuite le bandeau à froid, à la main, puis laisse-le sécher à l'air libre.",
   },
   {
     q: "Livraison, retour, remboursement : comment ça marche ?",
