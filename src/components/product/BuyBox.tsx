@@ -30,41 +30,41 @@ function Star({ fill }: { fill: number }) {
 const PAYMENT_SVGS: Record<string, ReactNode> = {
   Visa: (
     <svg viewBox="0 0 48 16" className="h-3 w-auto" aria-hidden="true">
-      <text x="0" y="13" fontFamily="Arial, sans-serif" fontWeight="900" fontStyle="italic" fontSize="14" fill="currentColor">VISA</text>
+      <text x="0" y="13" fontFamily="Arial, sans-serif" fontWeight="900" fontStyle="italic" fontSize="14" fill="#1A1F71">VISA</text>
     </svg>
   ),
   Mastercard: (
     <svg viewBox="0 0 32 20" className="h-3 w-auto" aria-hidden="true">
-      <circle cx="12" cy="10" r="8" fill="currentColor" opacity="0.9" />
-      <circle cx="20" cy="10" r="8" fill="currentColor" opacity="0.6" />
+      <circle cx="12" cy="10" r="8" fill="#EB001B" />
+      <circle cx="20" cy="10" r="8" fill="#F79E1B" fillOpacity="0.85" />
     </svg>
   ),
   JCB: (
     <svg viewBox="0 0 36 16" className="h-3 w-auto" aria-hidden="true">
-      <text x="0" y="13" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="13" fill="currentColor">JCB</text>
+      <text x="0" y="13" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="13" fill="#0E4C96">JCB</text>
     </svg>
   ),
   Discover: (
     <svg viewBox="0 0 56 16" className="h-3 w-auto" aria-hidden="true">
-      <text x="0" y="13" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="12" fill="currentColor">DISC</text>
-      <circle cx="52" cy="8" r="4" fill="currentColor" />
+      <text x="0" y="13" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="12" fill="#231F20">DISC</text>
+      <circle cx="52" cy="8" r="4" fill="#F76B1D" />
     </svg>
   ),
   Diners: (
     <svg viewBox="0 0 44 16" className="h-3 w-auto" aria-hidden="true">
-      <text x="0" y="13" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="11" fill="currentColor">Diners</text>
+      <text x="0" y="13" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="11" fill="#004A98">Diners</text>
     </svg>
   ),
   "Apple Pay": (
     <svg viewBox="0 0 52 16" className="h-3 w-auto" aria-hidden="true">
-      <path d="M7 5.2c.6-.8 1-1.9.9-3-.9.1-1.8.6-2.4 1.4-.5.6-1 1.7-.8 2.7 1 .1 1.8-.5 2.3-1.1zm1.5 9.8c1.2-1.6 1.8-3.1 1.6-4.8-.1-1.3-1.2-2.2-2.2-2.2-1.1 0-1.6.5-2.3.5s-1.4-.5-2.3-.5c-1 0-2.1.8-2.2 2.4-.1 1.6.8 3.6 1.6 4.6.5.6 1 1.1 1.6 1.1.6 0 .8-.4 1.6-.4s1 .4 1.6.4c.6 0 1.1-.6 1.6-1.1z" fill="currentColor" />
-      <text x="16" y="13" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="12" fill="currentColor">Pay</text>
+      <path d="M7 5.2c.6-.8 1-1.9.9-3-.9.1-1.8.6-2.4 1.4-.5.6-1 1.7-.8 2.7 1 .1 1.8-.5 2.3-1.1zm1.5 9.8c1.2-1.6 1.8-3.1 1.6-4.8-.1-1.3-1.2-2.2-2.2-2.2-1.1 0-1.6.5-2.3.5s-1.4-.5-2.3-.5c-1 0-2.1.8-2.2 2.4-.1 1.6.8 3.6 1.6 4.6.5.6 1 1.1 1.6 1.1.6 0 .8-.4 1.6-.4s1 .4 1.6.4c.6 0 1.1-.6 1.6-1.1z" fill="#000" />
+      <text x="16" y="13" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="12" fill="#000">Pay</text>
     </svg>
   ),
   "Google Pay": (
     <svg viewBox="0 0 64 16" className="h-3 w-auto" aria-hidden="true">
-      <text x="0" y="13" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="12" fill="currentColor">G</text>
-      <text x="12" y="13" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="12" fill="currentColor">Pay</text>
+      <text x="0" y="13" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="12" fill="#4285F4">G</text>
+      <text x="12" y="13" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="12" fill="#5F6368">Pay</text>
     </svg>
   ),
 };
@@ -72,7 +72,7 @@ const PAYMENT_SVGS: Record<string, ReactNode> = {
 function PaymentBadge({ label }: { label: string }) {
   const svg = PAYMENT_SVGS[label] ?? label;
   return (
-    <span className="flex h-6 items-center justify-center rounded border border-border bg-card px-2 text-foreground">
+    <span className="flex h-6 items-center justify-center rounded border border-border bg-card px-2">
       {svg}
     </span>
   );
