@@ -27,7 +27,7 @@ function Star({ fill }: { fill: number }) {
   );
 }
 
-const PAYMENT_SVGS: Record<string, React.ReactNode> = {
+const PAYMENT_SVGS: Record<string, ReactNode> = {
   Visa: (
     <svg viewBox="0 0 48 16" className="h-3 w-auto" aria-hidden="true">
       <text x="0" y="13" fontFamily="Arial, sans-serif" fontWeight="900" fontStyle="italic" fontSize="14" fill="currentColor">VISA</text>
