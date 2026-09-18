@@ -79,7 +79,7 @@ export const faq = [
   },
   {
     q: "Les haut-parleurs bougent quand je me tourne ?",
-    a: "Chaque haut-parleur est maintenu dans une poche intérieure : À COMPLÉTER. Il reste positionné à hauteur de l'oreille et peut être ajusté si nécessaire.",
+    a: "Non, ils restent bien en place. Les haut-parleurs sont maintenus dans des poches intérieures ajustées par l'élasticité du tissu. Vous pouvez vous retourner librement toute la nuit sans qu'ils ne glissent, tout en pouvant les ajuster facilement à la main pour les aligner parfaitement avec vos oreilles.",
   },
   {
     q: "L'autonomie tient toute la nuit ?",
