@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { BatteryMedium, Bluetooth, Check, Eye, Package, Shirt, Volume2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { CheckoutColor, CheckoutQuantity } from "@/config/checkout";
@@ -23,6 +24,57 @@ function Star({ fill }: { fill: number }) {
         strokeLinejoin="round"
       />
     </svg>
+  );
+}
+
+const PAYMENT_SVGS: Record<string, ReactNode> = {
+  Visa: (
+    <svg viewBox="0 0 48 16" className="h-3 w-auto" aria-hidden="true">
+      <text x="0" y="13" fontFamily="Arial, sans-serif" fontWeight="900" fontStyle="italic" fontSize="14" fill="currentColor">VISA</text>
+    </svg>
+  ),
+  Mastercard: (
+    <svg viewBox="0 0 32 20" className="h-3 w-auto" aria-hidden="true">
+      <circle cx="12" cy="10" r="8" fill="currentColor" opacity="0.9" />
+      <circle cx="20" cy="10" r="8" fill="currentColor" opacity="0.6" />
+    </svg>
+  ),
+  JCB: (
+    <svg viewBox="0 0 36 16" className="h-3 w-auto" aria-hidden="true">
+      <text x="0" y="13" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="13" fill="currentColor">JCB</text>
+    </svg>
+  ),
+  Discover: (
+    <svg viewBox="0 0 56 16" className="h-3 w-auto" aria-hidden="true">
+      <text x="0" y="13" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="12" fill="currentColor">DISC</text>
+      <circle cx="52" cy="8" r="4" fill="currentColor" />
+    </svg>
+  ),
+  Diners: (
+    <svg viewBox="0 0 44 16" className="h-3 w-auto" aria-hidden="true">
+      <text x="0" y="13" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="11" fill="currentColor">Diners</text>
+    </svg>
+  ),
+  "Apple Pay": (
+    <svg viewBox="0 0 52 16" className="h-3 w-auto" aria-hidden="true">
+      <path d="M7 5.2c.6-.8 1-1.9.9-3-.9.1-1.8.6-2.4 1.4-.5.6-1 1.7-.8 2.7 1 .1 1.8-.5 2.3-1.1zm1.5 9.8c1.2-1.6 1.8-3.1 1.6-4.8-.1-1.3-1.2-2.2-2.2-2.2-1.1 0-1.6.5-2.3.5s-1.4-.5-2.3-.5c-1 0-2.1.8-2.2 2.4-.1 1.6.8 3.6 1.6 4.6.5.6 1 1.1 1.6 1.1.6 0 .8-.4 1.6-.4s1 .4 1.6.4c.6 0 1.1-.6 1.6-1.1z" fill="currentColor" />
+      <text x="16" y="13" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="12" fill="currentColor">Pay</text>
+    </svg>
+  ),
+  "Google Pay": (
+    <svg viewBox="0 0 64 16" className="h-3 w-auto" aria-hidden="true">
+      <text x="0" y="13" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="12" fill="currentColor">G</text>
+      <text x="12" y="13" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="12" fill="currentColor">Pay</text>
+    </svg>
+  ),
+};
+
+function PaymentBadge({ label }: { label: string }) {
+  const svg = PAYMENT_SVGS[label] ?? label;
+  return (
+    <span className="flex h-6 items-center justify-center rounded border border-border bg-card px-2 text-foreground">
+      {svg}
+    </span>
   );
 }
 
@@ -115,6 +167,16 @@ export function BuyBox({ selectedColorId, onSelectColor, selectedQuantity, onSel
 
       <p className="mt-5 flex items-center gap-2 text-sm font-bold"><span className="size-2 rounded-full bg-foreground" />En stock — expédié sous 24 à 48 h ouvrées</p>
       <Button type="button" onClick={handleCheckout} className="mt-4 h-14 w-full rounded-md text-sm font-extrabold tracking-wide">AJOUTER AU PANIER · {formatPrice(offer.total)}</Button>
+
+      <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
+        <PaymentBadge label="Visa" />
+        <PaymentBadge label="Mastercard" />
+        <PaymentBadge label="JCB" />
+        <PaymentBadge label="Discover" />
+        <PaymentBadge label="Diners" />
+        <PaymentBadge label="Apple Pay" />
+        <PaymentBadge label="Google Pay" />
+      </div>
 
       <div className="mt-3 grid gap-px overflow-hidden border border-border bg-border text-center text-[11px] font-extrabold sm:grid-cols-2">
         <div className="bg-card px-3 py-3">LIVRAISON SUIVIE OFFERTE — 1 À 3 JOURS OUVRÉS</div>
