@@ -62,6 +62,8 @@ export function BuyBox({ selectedColorId, onSelectColor, selectedQuantity, onSel
             pratiqué pendant les 30 jours précédents (directive Omnibus de l'UE). */}
       </div>
 
+      <p className="mt-2 text-sm font-semibold text-muted-foreground">Les écouteurs sans fil les plus confortables au monde. Garanti.</p>
+
       <ul className="mt-5 space-y-3">
         {benefits.map((benefit, index) => {
           const Icon = benefitIcons[index] ?? Check;
