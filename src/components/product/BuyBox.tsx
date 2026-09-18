@@ -171,8 +171,6 @@ export function BuyBox({ selectedColorId, onSelectColor, selectedQuantity, onSel
         <PaymentBadge label="JCB" />
         <PaymentBadge label="Discover" />
         <PaymentBadge label="Diners" />
-        <PaymentBadge label="Apple Pay" />
-        <PaymentBadge label="Google Pay" />
       </div>
 
       <div className="mt-3 grid gap-px overflow-hidden border border-border bg-border text-center text-[11px] font-extrabold sm:grid-cols-2">
