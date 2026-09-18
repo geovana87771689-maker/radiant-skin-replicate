@@ -24,6 +24,7 @@ export const colors: ColorOption[] = [
     swatchClass: "bg-foreground",
     images: [
       { label: "Vue principale — Noir", src: cozyBandNoir },
+      { label: "Vue principale — Gris", src: cozyBandGris },
     ],
   },
   {
@@ -32,6 +33,7 @@ export const colors: ColorOption[] = [
     swatchClass: "bg-muted-foreground",
     images: [
       { label: "Vue principale — Gris", src: cozyBandGris },
+      { label: "Vue principale — Noir", src: cozyBandNoir },
     ],
   },
 ];
