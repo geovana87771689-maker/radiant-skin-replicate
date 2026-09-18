@@ -25,6 +25,17 @@ export function BuyBox({ selectedColorId, onSelectColor, selectedQuantity, onSel
   return (
     <section id="acheter" className="min-w-0 px-4 pb-8 pt-4 lg:px-8 lg:py-0">
       <h1 className="text-2xl font-extrabold leading-tight text-foreground sm:text-3xl">{product.title}</h1>
+      <div className="mt-2 flex items-center gap-2">
+        <div className="flex" aria-label="4,9 sur 5 étoiles">
+          <Star fill="100" />
+          <Star fill="100" />
+          <Star fill="100" />
+          <Star fill="100" />
+          <Star fill="90" />
+        </div>
+        <span className="text-sm font-bold text-foreground">4,9</span>
+        <span className="text-sm text-muted-foreground">(3223 avis)</span>
+      </div>
       <div className="mt-3 flex items-baseline gap-2">
         <span className="text-3xl font-extrabold text-foreground">{formatPrice(offer.total)}</span>
         {/* Prix de référence désactivé : il devra correspondre au prix le plus bas
