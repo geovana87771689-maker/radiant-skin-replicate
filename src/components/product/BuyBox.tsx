@@ -47,11 +47,11 @@ export function BuyBox({ selectedColorId, onSelectColor, selectedQuantity, onSel
       <h1 className="text-2xl font-extrabold leading-tight text-foreground sm:text-3xl">{product.title}</h1>
       <div className="mt-2 flex items-center gap-2">
         <div className="flex" aria-label="4,9 sur 5 étoiles">
-          <Star fill="100" />
-          <Star fill="100" />
-          <Star fill="100" />
-          <Star fill="100" />
-          <Star fill="90" />
+          <Star fill={100} />
+          <Star fill={100} />
+          <Star fill={100} />
+          <Star fill={100} />
+          <Star fill={90} />
         </div>
         <span className="text-sm font-bold text-foreground">4,9</span>
         <span className="text-sm text-muted-foreground">(3223 avis)</span>
