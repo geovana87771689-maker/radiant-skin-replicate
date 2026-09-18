@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { BatteryMedium, Bluetooth, Check, Eye, Package, Shirt, Volume2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { CheckoutColor, CheckoutQuantity } from "@/config/checkout";
