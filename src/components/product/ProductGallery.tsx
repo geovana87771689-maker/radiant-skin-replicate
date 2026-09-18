@@ -33,7 +33,7 @@ export function ProductGallery({ selectedColorId }: { selectedColorId: CheckoutC
         className="scrollbar-none flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain"
       >
         {color.images.map((image, index) => (
-          <div key={image.label} className="aspect-square w-full shrink-0 snap-start bg-muted">
+          <div key={image.label} className="aspect-square w-full shrink-0 snap-start bg-white">
             {image.src ? (
               <img src={image.src} alt={image.label} className="h-full w-full object-contain" />
             ) : (
