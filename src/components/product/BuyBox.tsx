@@ -6,6 +6,26 @@ import { buildCheckoutUrl } from "@/lib/checkout";
 
 const benefitIcons = [Volume2, Shirt, BatteryMedium, Bluetooth, Eye, Package];
 
+function Star({ fill }: { fill: number }) {
+  return (
+    <svg viewBox="0 0 20 20" className="size-4 text-foreground" aria-hidden="true">
+      <defs>
+        <linearGradient id={`star-${fill}`}>
+          <stop offset={`${fill}%`} stopColor="currentColor" />
+          <stop offset={`${fill}%`} stopColor="transparent" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M10 1.5l2.6 5.27 5.82.85-4.21 4.1.99 5.79L10 14.77 4.8 17.5l.99-5.79-4.21-4.1 5.82-.85L10 1.5z"
+        fill={`url(#star-${fill})`}
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function BuyBox({ selectedColorId, onSelectColor, selectedQuantity, onSelectQuantity }: {
   selectedColorId: CheckoutColor;
   onSelectColor: (id: CheckoutColor) => void;
