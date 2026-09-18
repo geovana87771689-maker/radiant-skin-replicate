@@ -113,11 +113,11 @@ export function BuyBox({ selectedColorId, onSelectColor, selectedQuantity, onSel
         )}
       </div>
 
-      <p className="mt-5 flex items-center gap-2 text-sm font-bold"><span className="size-2 rounded-full bg-foreground" />En stock, expédié sous 24 h</p>
+      <p className="mt-5 flex items-center gap-2 text-sm font-bold"><span className="size-2 rounded-full bg-foreground" />En stock — expédié sous 24 à 48 h ouvrées</p>
       <Button type="button" onClick={handleCheckout} className="mt-4 h-14 w-full rounded-md text-sm font-extrabold tracking-wide">AJOUTER AU PANIER · {formatPrice(offer.total)}</Button>
 
       <div className="mt-3 grid gap-px overflow-hidden border border-border bg-border text-center text-[11px] font-extrabold sm:grid-cols-2">
-        <div className="bg-card px-3 py-3">LIVRAISON OFFERTE — [DÉLAI À CONFIRMER] JOURS</div>
+        <div className="bg-card px-3 py-3">LIVRAISON SUIVIE OFFERTE — 6 À 10 JOURS OUVRÉS</div>
         <div className="bg-card px-3 py-3">ESSAIE-LE 30 JOURS SANS RISQUE</div>
       </div>
     </section>

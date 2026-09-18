@@ -90,7 +90,7 @@ export const faq = [
     a: "Oui. Retire d'abord le module audio amovible : À COMPLÉTER. Lave ensuite le bandeau à froid, à la main, puis laisse-le sécher à l'air libre.",
   },
   {
-    q: "D'où vient le produit et comment je le renvoie ?",
-    a: "Origine du produit : À COMPLÉTER. Délai de livraison réel : [DÉLAI À CONFIRMER] JOURS. Politique de retour : À COMPLÉTER. Adresse de retour : À COMPLÉTER.",
+    q: "Livraison, retour, remboursement : comment ça marche ?",
+    a: "**Livraison.** Ta commande est préparée sous 24 à 48 h ouvrées, puis expédiée avec suivi complet. Compte 6 à 10 jours ouvrés en France métropolitaine, 7 à 12 jours ouvrés ailleurs en Union européenne. Dès l'expédition tu reçois un e-mail avec ton numéro de suivi et un lien pour suivre le colis en temps réel. La livraison est offerte.\n\n**Retour.** Tu as 30 jours après réception pour demander un retour. L'article doit être non porté, non utilisé, avec ses étiquettes et dans son emballage d'origine. Tu écris à **katelinelizabeth748@outlook.com**, et si le retour est accepté nous t'envoyons une étiquette d'expédition de retour avec les instructions. Tu n'as pas à chercher l'adresse toi-même : l'étiquette te l'apporte. Les articles renvoyés sans demande préalable ne sont pas acceptés.\n\n**Droit de rétractation.** Pour toute commande livrée dans l'Union européenne, tu disposes en plus de 14 jours pour annuler ou retourner ta commande, sans avoir à te justifier.\n\n**Remboursement.** Une fois le retour reçu et inspecté, nous te disons si le remboursement est approuvé. S'il l'est, tu es remboursé automatiquement sur ton moyen de paiement d'origine sous 10 jours ouvrables.",
   },
 ];
